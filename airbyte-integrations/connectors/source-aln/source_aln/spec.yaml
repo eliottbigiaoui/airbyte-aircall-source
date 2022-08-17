@@ -1,0 +1,14 @@
+documentationUrl: https://docsurl.com
+connectionSpecification:
+  $schema: http://json-schema.org/draft-07/schema#
+  title: Aln Spec
+  type: object
+  required:
+    - apikey
+  properties:
+    apikey:
+      title: API key
+      type: string
+      description: The API key
+      order: 0
+      airbyte_secret: true
