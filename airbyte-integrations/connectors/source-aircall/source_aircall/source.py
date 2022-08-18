@@ -7,7 +7,6 @@ from abc import ABC
 from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple
 from base64 import b64encode
 import urllib
-import pendulum
 
 import requests
 from airbyte_cdk.sources import AbstractSource
