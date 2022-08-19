@@ -125,7 +125,7 @@ class IncrementalAlnStream(AlnStream, ABC):
 
         :return str: The name of the cursor field.
         """
-        return []
+        return "RowVersion"
 
     def get_updated_state(self, current_stream_state: MutableMapping[str, Any], latest_record: Mapping[str, Any]) -> Mapping[str, Any]:
         """
@@ -135,7 +135,7 @@ class IncrementalAlnStream(AlnStream, ABC):
         return {}
 
 
-class Employees(IncrementalAlnStream):
+class Apartments(IncrementalAlnStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
@@ -177,5 +177,6 @@ class SourceAln(AbstractSource):
 
         :param config: A Mapping of the user input configuration as defined in the connector spec.
         """
-        auth = TokenAuthenticator(token="api_key")
+        apikey = config["apikey"]
+        auth = TokenAuthenticator(token=apikey)
         return [Apartments(authenticator=auth)]
