@@ -89,7 +89,7 @@ class IncrementalAircallStream(AircallStream, ABC):
                 f"Expected {self.cursor_field} type '{type(current_state).__name__}' but returned type '{type(latest_state).__name__}'."
             ) from e
 
-class OLDVERSIONCalls(AircallStream):
+class OLD(AircallStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
@@ -104,7 +104,7 @@ class OLDVERSIONCalls(AircallStream):
         TODO: Override this method to define the path this stream corresponds to. E.g. if the url is https://example-api.com/v1/customers then this
         should return "customers". Required.
         """
-        return "calls"
+        return None
 
 
 class Calls(IncrementalAircallStream):
