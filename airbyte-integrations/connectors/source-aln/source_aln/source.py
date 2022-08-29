@@ -7,6 +7,8 @@ from abc import ABC
 from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple
 
 import requests
+import urllib
+import json
 from airbyte_cdk.sources import AbstractSource
 from airbyte_cdk.sources.streams import Stream
 from airbyte_cdk.sources.streams.http import HttpStream
@@ -25,6 +27,8 @@ The approach here is not authoritative, and devs are free to use their own judge
 
 There are additional required TODOs in the files within the integration_tests folder and the spec.yaml file.
 """
+
+
 
 
 # Basic full refresh stream
@@ -73,8 +77,14 @@ class AlnStream(HttpStream, ABC):
         :return If there is another page in the result, a mapping (e.g: dict) containing information needed to query the next page in the response.
                 If there are no more pages in the result, return None.
         """
-        return None
-
+        decoded_response = response.json()
+        try:
+            next = decoded_response.get("@odata.nextLink")
+        except:
+            return None
+        next_url = urllib.parse.urlparse(next)
+        return {str(k): str(v) for (k, v) in urllib.parse.parse_qsl(next_url.query)}
+        
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
     ) -> MutableMapping[str, Any]:
@@ -82,17 +92,20 @@ class AlnStream(HttpStream, ABC):
         TODO: Override this method to define any query parameters to be set. Remove this method if you don't need to define request params.
         Usually contains common params e.g. pagination size etc.
         """
-        return {}
+        params = super().request_params(stream_state, stream_slice, next_page_token)
+        apikey = "b85f4d81-d726-42d4-a524-30f75e28a1ac" #test key
+        params['apikey'] = apikey
+        return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
         """
         TODO: Override this method to define how a response is parsed.
         :return an iterable containing each record in the response
         """
-        yield {}
+        yield response.json()
 
 
-class Apartments(AlnStream):
+class OTHERApartments(AlnStream):
     """
     TODO: Change class name to match the table/data source this stream corresponds to.
     """
@@ -151,7 +164,7 @@ class Apartments(IncrementalAlnStream):
         TODO: Override this method to define the path this stream corresponds to. E.g. if the url is https://example-api.com/v1/employees then this should
         return "single". Required.
         """
-        return "Apartments"
+        return "FlatApartments"
 
     
 
@@ -177,6 +190,4 @@ class SourceAln(AbstractSource):
 
         :param config: A Mapping of the user input configuration as defined in the connector spec.
         """
-        apikey = config["apikey"]
-        auth = TokenAuthenticator(token=apikey)
-        return [Apartments(authenticator=auth)]
+        return [Apartments()]
