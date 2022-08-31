@@ -4,11 +4,12 @@
 
 
 from abc import ABC
-from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple
+from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple, Union
 
 import requests
 import urllib
 import json
+from airbyte_cdk.models import SyncMode
 from airbyte_cdk.sources import AbstractSource
 from airbyte_cdk.sources.streams import Stream
 from airbyte_cdk.sources.streams.http import HttpStream
@@ -63,60 +64,39 @@ class AlnStream(HttpStream, ABC):
     url_base = "https://odata4.alndata.com/"
 
     def next_page_token(self, response: requests.Response) -> Optional[Mapping[str, Any]]:
-        """
-        TODO: Override this method to define a pagination strategy. If you will not be using pagination, no action is required - just return None.
-
-        This method should return a Mapping (e.g: dict) containing whatever information required to make paginated requests. This dict is passed
-        to most other methods in this class to help you form headers, request bodies, query params, etc..
-
-        For example, if the API accepts a 'page' parameter to determine which page of the result to return, and a response from the API contains a
-        'page' number, then this method should probably return a dict {'page': response.json()['page'] + 1} to increment the page count by 1.
-        The request_params method should then read the input next_page_token and set the 'page' param to next_page_token['page'].
-
-        :param response: the most recent response from the API
-        :return If there is another page in the result, a mapping (e.g: dict) containing information needed to query the next page in the response.
-                If there are no more pages in the result, return None.
-        """
         decoded_response = response.json()
         try:
             next = decoded_response.get("@odata.nextLink")
         except:
             return None
         next_url = urllib.parse.urlparse(next)
+        #return None
         return {str(k): str(v) for (k, v) in urllib.parse.parse_qsl(next_url.query)}
         
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
     ) -> MutableMapping[str, Any]:
-        """
-        TODO: Override this method to define any query parameters to be set. Remove this method if you don't need to define request params.
-        Usually contains common params e.g. pagination size etc.
-        """
+        print(f"This is the stream_state: {stream_state}")
         params = super().request_params(stream_state, stream_slice, next_page_token)
-        apikey = "b85f4d81-d726-42d4-a524-30f75e28a1ac" #test key
-        params['apikey'] = apikey
+        params['apikey'] = self.apikey
+        #params['$filter'] = "RowVersion%20gt%20" + str(100000)
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
-        """
-        TODO: Override this method to define how a response is parsed.
-        :return an iterable containing each record in the response
-        """
-        yield response.json()
+        json_response = response.json()
+        records = json_response.get("value", [])
+        yield from records
+        #yield response.json()
 
+    def read_records(self, sync_mode: SyncMode, cursor_field: List[str] = None, stream_slice: Mapping[str, Any] = None,
+                     stream_state: Mapping[str, Any] = None) -> Iterable[Mapping[str, Any]]:
+        print(cursor_field)
+        active_row_version = ActiveRowVersion(self.apikey)
+        #stream_state['RowVersion'] = active_row_version
+        yield from super().read_records(
+                sync_mode=sync_mode, cursor_field=cursor_field, stream_slice=stream_slice, stream_state=stream_state
+            )
 
-class OTHERApartments(AlnStream):
-    """
-    TODO: Change class name to match the table/data source this stream corresponds to.
-    """
-
-    # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "ApartmentId"
-
-    def path(
-        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
-    ) -> str:
-        return "Apartments"
 
 
 # Basic incremental stream
@@ -127,10 +107,10 @@ class IncrementalAlnStream(AlnStream, ABC):
     """
 
     # TODO: Fill in to checkpoint stream reads after N records. This prevents re-reading of data if the stream fails for any reason.
-    state_checkpoint_interval = None
+    state_checkpoint_interval = 1
 
     @property
-    def cursor_field(self) -> str:
+    def cursor_field(self) -> List[str]:
         """
         TODO
         Override to return the cursor field used by this stream e.g: an API entity might always use created_at as the cursor field. This is
@@ -138,14 +118,33 @@ class IncrementalAlnStream(AlnStream, ABC):
 
         :return str: The name of the cursor field.
         """
-        return "RowVersion"
+        return ["data", "RowVersion"]
 
     def get_updated_state(self, current_stream_state: MutableMapping[str, Any], latest_record: Mapping[str, Any]) -> Mapping[str, Any]:
         """
         Override to determine the latest state after reading the latest record. This typically compared the cursor_field from the latest record and
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
-        return {}
+        #print(latest_record)
+        #return {self.cursor_field: latest_record.get('RowVersion')}
+        if current_stream_state.get('RowVersion') != None:
+            latest_row_version = max(current_stream_state.get('RowVersion'), latest_record.get('RowVersion'))
+        else:
+            latest_row_version = latest_record.get('RowVersion')
+        return {self.cursor_field[-1]: latest_row_version}
+
+
+class ActiveRowVersion(AlnStream):
+
+    primary_key = "HighestRowVersion"
+
+    def __init__(self, apikey: str):
+        super().__init__()
+        self.apikey = apikey
+
+    def path(self, stream_slice: Mapping[str, Any] = None, **kwargs) -> str:
+        return "ActiveRowVersion"
+
 
 
 class Apartments(IncrementalAlnStream):
@@ -154,17 +153,36 @@ class Apartments(IncrementalAlnStream):
     """
 
     # TODO: Fill in the cursor_field. Required.
-    cursor_field = "start_date"
+    #cursor_field = "RowVersion"
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
     primary_key = "ApartmentId"
 
-    def path(self, **kwargs) -> str:
+    def __init__(self, apikey: str):
+        super().__init__()
+        self.apikey = apikey
+
+
+    def path(self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None) -> str:
         """
         TODO: Override this method to define the path this stream corresponds to. E.g. if the url is https://example-api.com/v1/employees then this should
         return "single". Required.
         """
-        return "FlatApartments"
+        print(stream_state)
+        if stream_state != {}:
+            return f"FlatApartments{stream_state}"
+        else:
+            return "FlatApartments"
+
+    @property
+    def supports_incremental(self) -> bool: 
+         """ 
+         :return: True if this stream supports incrementally reading data 
+         """ 
+         return True
+
+    def source_defined_cursor(self) -> bool:
+        return True 
 
     
 
@@ -190,4 +208,5 @@ class SourceAln(AbstractSource):
 
         :param config: A Mapping of the user input configuration as defined in the connector spec.
         """
-        return [Apartments()]
+        return [Apartments(config['apikey']),
+                ActiveRowVersion(config['apikey'])]
