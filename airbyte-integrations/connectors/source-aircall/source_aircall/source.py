@@ -44,13 +44,16 @@ class AircallStream(HttpStream, ABC):
             return None
 
         next_url = urllib.parse.urlparse(next)
+        #return None
         return {str(k): str(v) for (k, v) in urllib.parse.parse_qsl(next_url.query)}
 
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
     ) -> MutableMapping[str, Any]:
+        #print(self.state)
+        print(f"This is the stream state: {stream_state}")
         params = super().request_params(stream_state, stream_slice, next_page_token)
-        params['order'] = 'desc'
+        params['order'] = 'asc'
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
@@ -61,7 +64,7 @@ class AircallStream(HttpStream, ABC):
 # Basic incremental stream
 class IncrementalAircallStream(AircallStream, ABC):
     # TODO: Fill in to checkpoint stream reads after N records. This prevents re-reading of data if the stream fails for any reason.
-    state_checkpoint_interval = 2
+    state_checkpoint_interval = 1
 
     @property
     def cursor_field(self) -> str:
@@ -78,21 +81,21 @@ class IncrementalAircallStream(AircallStream, ABC):
         Override to determine the latest state after reading the latest record. This typically compared the cursor_field from the latest record and
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
-        print(latest_record.get('created_at'))
         try:
             latest_id = max([record['id'] for record in latest_record['calls']])
-            print(latest_id)
+            print(f"This is the current stream state: {current_stream_state}")
             if current_stream_state is not None:
-                return {self.cursor_field: max(current_stream_state, latest_id)}
+                return {self.cursor_field: max(current_stream_state['id'], latest_id)}
             else:
                 return {self.cursor_field: latest_id}
         except:
             None
 
-        @property
-        def state(self) -> Mapping[str, Any]:
-            return {self.cursor_field: str(self._cursor_value)}
-
+"""
+    @property
+    def state(self) -> Mapping[str, Any]:
+        return {self.cursor_field: }
+"""
 """
         try:
             latest_state = latest_record.get(self.cursor_field)
