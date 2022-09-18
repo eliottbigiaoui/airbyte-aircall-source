@@ -1,0 +1,154 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "users",
+        "meta"
+    ],
+    "properties": {
+        "users": {
+            "type": "array",
+            "default": [],
+            "title": "The users Schema",
+            "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": [
+                    "id",
+                    "direct_link"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "The id Schema",
+                        "examples": [
+                            380365,
+                            380376,
+                            380468,
+                            380469,
+                            380471,
+                            380472,
+                            380473,
+                            380475,
+                            380476,
+                            380477,
+                            380478,
+                            380479,
+                            380481,
+                            380483,
+                            380485,
+                            380487,
+                            380497,
+                            380498,
+                            380500,
+                            380501
+                        ]
+                    },
+                    "direct_link": {
+                        "type": "string",
+                        "title": "The direct_link Schema",
+                        "examples": [
+                            "https://api.aircall.io/v1/users/380365",
+                            "https://api.aircall.io/v1/users/380376",
+                            "https://api.aircall.io/v1/users/380468",
+                            "https://api.aircall.io/v1/users/380469",
+                            "https://api.aircall.io/v1/users/380471",
+                            "https://api.aircall.io/v1/users/380472",
+                            "https://api.aircall.io/v1/users/380473",
+                            "https://api.aircall.io/v1/users/380475",
+                            "https://api.aircall.io/v1/users/380476",
+                            "https://api.aircall.io/v1/users/380477",
+                            "https://api.aircall.io/v1/users/380478",
+                            "https://api.aircall.io/v1/users/380479",
+                            "https://api.aircall.io/v1/users/380481",
+                            "https://api.aircall.io/v1/users/380483",
+                            "https://api.aircall.io/v1/users/380485",
+                            "https://api.aircall.io/v1/users/380487",
+                            "https://api.aircall.io/v1/users/380497",
+                            "https://api.aircall.io/v1/users/380498",
+                            "https://api.aircall.io/v1/users/380500",
+                            "https://api.aircall.io/v1/users/380501"
+                        ]
+                    }
+                },
+                "examples": [
+            ]
+        },
+        "meta": {
+            "type": "object",
+            "default": {},
+            "title": "The meta Schema",
+            "required": [
+                "count",
+                "total",
+                "current_page",
+                "per_page",
+                "next_page_link",
+                "previous_page_link"
+            ],
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The count Schema",
+                    "examples": [
+                        20
+                    ]
+                },
+                "total": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The total Schema",
+                    "examples": [
+                        111
+                    ]
+                },
+                "current_page": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The current_page Schema",
+                    "examples": [
+                        1
+                    ]
+                },
+                "per_page": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The per_page Schema",
+                    "examples": [
+                        20
+                    ]
+                },
+                "next_page_link": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The next_page_link Schema",
+                    "examples": [
+                        "https://api.aircall.io/v1/users?order=asc\u0026page=2\u0026per_page=20"
+                    ]
+                },
+                "previous_page_link": {
+                    "type": "null",
+                    "default": null,
+                    "title": "The previous_page_link Schema",
+                    "examples": [
+                        null
+                    ]
+                }
+            },
+            "examples": [{
+                "count": 20,
+                "total": 111,
+                "current_page": 1,
+                "per_page": 20,
+                "next_page_link": "https://api.aircall.io/v1/users?order=asc\u0026page=2\u0026per_page=20",
+                "previous_page_link": null
+            }]
+        }
+    },
+    "examples": []
+}
+}

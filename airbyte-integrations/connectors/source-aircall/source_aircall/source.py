@@ -7,26 +7,13 @@ from abc import ABC
 from typing import Any, Iterable, List, Mapping, MutableMapping, Optional, Tuple
 from base64 import b64encode
 import urllib
+from datetime import datetime
 
 import requests
 from airbyte_cdk.sources import AbstractSource
 from airbyte_cdk.sources.streams import Stream
 from airbyte_cdk.sources.streams.http import HttpStream
 from airbyte_cdk.sources.streams.http.auth import TokenAuthenticator
-
-"""
-TODO: Most comments in this class are instructive and should be deleted after the source is implemented.
-
-This file provides a stubbed example of how to use the Airbyte CDK to develop both a source connector which supports full refresh or and an
-incremental syncs from an HTTP API.
-
-The various TODOs are both implementation hints and steps - fulfilling all the TODOs should be sufficient to implement one basic and one incremental
-stream from a source. This pattern is the same one used by Airbyte internally to implement connectors.
-
-The approach here is not authoritative, and devs are free to use their own judgement.
-
-There are additional required TODOs in the files within the integration_tests folder and the spec.yaml file.
-"""
 
 
 # Basic full refresh stream
@@ -44,37 +31,45 @@ class AircallStream(HttpStream, ABC):
             return None
 
         next_url = urllib.parse.urlparse(next)
-        #return None
         return {str(k): str(v) for (k, v) in urllib.parse.parse_qsl(next_url.query)}
 
     def request_params(
         self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, any] = None, next_page_token: Mapping[str, Any] = None
     ) -> MutableMapping[str, Any]:
-        #print(self.state)
-        print(f"This is the stream state: {stream_state}")
         params = super().request_params(stream_state, stream_slice, next_page_token)
-        params['order'] = 'asc'
+        if stream_state not in [None, {}]:
+            if stream_state.get('ended_at') == None:
+                params['from'] = int(datetime.utcnow().timestamp()) - 260000
+            else:
+                params['from'] = stream_state.get('ended_at')
+        else:
+            params['from'] = int(datetime.utcnow().timestamp()) - 260000
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
         response_json = response.json()
-        yield response_json
+        records = response_json.get("calls", [])
+        for record in records:
+            record["user"] = str(record.get("user"))
+            record["number"] = str(record.get("number"))
+        yield from records
+        #yield response_json
 
 
 # Basic incremental stream
 class IncrementalAircallStream(AircallStream, ABC):
     # TODO: Fill in to checkpoint stream reads after N records. This prevents re-reading of data if the stream fails for any reason.
-    state_checkpoint_interval = 1
+    state_checkpoint_interval = 100
 
     @property
-    def cursor_field(self) -> str:
+    def cursor_field(self) -> List[str]:
         """
         Override to return the cursor field used by this stream e.g: an API entity might always use created_at as the cursor field. This is
         usually id or date based. This field's presence tells the framework this in an incremental stream. Required for incremental.
 
         :return str: The name of the cursor field.
         """
-        return "id"
+        return ["ended_at"]
 
     def get_updated_state(self, current_stream_state: MutableMapping[str, Any], latest_record: Mapping[str, Any]) -> Mapping[str, Any]:
         """
@@ -82,48 +77,20 @@ class IncrementalAircallStream(AircallStream, ABC):
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
         try:
-            latest_id = max([record['id'] for record in latest_record['calls']])
-            print(f"This is the current stream state: {current_stream_state}")
-            if current_stream_state is not None:
-                return {self.cursor_field: max(current_stream_state['id'], latest_id)}
+            latest_call = latest_record['ended_at']
+            if current_stream_state not in [None, {}]:
+                if latest_call != None:
+                    return {self.cursor_field[-1]: max(current_stream_state['ended_at'], latest_call)}
+                else:
+                    {self.cursor_field[-1]: current_stream_state['ended_at']}
             else:
-                return {self.cursor_field: latest_id}
+                if latest_call != None:
+                    return {self.cursor_field[-1]: latest_call}
+                else:
+                    return None
         except:
             None
 
-"""
-    @property
-    def state(self) -> Mapping[str, Any]:
-        return {self.cursor_field: }
-"""
-"""
-        try:
-            latest_state = latest_record.get(self.cursor_field)
-            current_state = current_stream_state.get(self.cursor_field) or latest_state
-            if current_state:
-                return {self.cursor_field: max(latest_state, current_state)}
-            return {}
-        except TypeError as e:
-            raise TypeError(
-                f"Expected {self.cursor_field} type '{type(current_state).__name__}' but returned type '{type(latest_state).__name__}'."
-            ) from e
-"""
-class OLD(AircallStream):
-    """
-    TODO: Change class name to match the table/data source this stream corresponds to.
-    """
-
-    # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
-    primary_key = "id"
-
-    def path(
-        self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None
-    ) -> str:
-        """
-        TODO: Override this method to define the path this stream corresponds to. E.g. if the url is https://example-api.com/v1/customers then this
-        should return "customers". Required.
-        """
-        return None
 
 
 class Calls(IncrementalAircallStream):
@@ -132,7 +99,7 @@ class Calls(IncrementalAircallStream):
     """
 
     # TODO: Fill in the cursor_field. Required.
-    cursor_field = "id"
+    cursor_field = ["ended_at"]
 
     # TODO: Fill in the primary key. Required. This is usually a unique field in the stream, like an ID or a timestamp.
     primary_key = "id"

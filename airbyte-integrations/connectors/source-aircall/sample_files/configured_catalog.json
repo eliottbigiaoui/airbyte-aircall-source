@@ -4,376 +4,211 @@
       "stream": {
         "name": "calls",
         "json_schema": {
-          "$schema": "https://json-schema.org/draft/2019-09/schema",
-          "$id": "http://example.com/example.json",
-          "title": "Root Schema",
-          "type": "object",
-          "default": {},
-          "required": ["calls", "meta"],
-          "properties": {
-            "calls": {
-              "title": "The calls Schema",
-              "type": "array",
-              "default": [],
-              "items": {
-                "title": "A Schema",
-                "type": "object",
-                "default": {},
-                "required": [
-                  "id",
-                  "direct_link",
-                  "direction",
-                  "status",
-                  "missed_call_reason",
-                  "started_at",
-                  "answered_at",
-                  "ended_at",
-                  "duration",
-                  "voicemail",
-                  "recording",
-                  "asset",
-                  "raw_digits",
-                  "user",
-                  "contact",
-                  "archived",
-                  "assigned_to",
-                  "tags",
-                  "transferred_by",
-                  "transferred_to",
-                  "teams",
-                  "number",
-                  "cost",
-                  "country_code_a2",
-                  "pricing_type",
-                  "comments"
-                ],
-                "properties": {
-                  "id": {
+            "title": "The calls Schema",
+            "type": "object",
+            "default": {},
+            "required": [
+                "id",
+                "direct_link",
+                "direction",
+                "status",
+                "missed_call_reason",
+                "started_at",
+                "answered_at",
+                "ended_at",
+                "duration",
+                "voicemail",
+                "recording",
+                "asset",
+                "raw_digits",
+                "user",
+                "contact",
+                "archived",
+                "assigned_to",
+                "tags",
+                "transferred_by",
+                "transferred_to",
+                "teams",
+                "number",
+                "cost",
+                "country_code_a2",
+                "pricing_type",
+                "comments"
+            ],
+            "properties": {
+                "id": {
                     "title": "The id Schema",
                     "type": "integer",
                     "default": 0,
-                    "examples": [775361795]
-                  },
-                  "direct_link": {
+                    "examples": [
+                        775361795
+                    ]
+                },
+                "direct_link": {
                     "title": "The direct_link Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["https://api.aircall.io/v1/calls/775361795"]
-                  },
-                  "direction": {
+                    "examples": [
+                        "https://api.aircall.io/v1/calls/775361795"
+                    ]
+                },
+                "direction": {
                     "title": "The direction Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["inbound"]
-                  },
-                  "status": {
+                    "examples": [
+                        "inbound"
+                    ]
+                },
+                "status": {
                     "title": "The status Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["done"]
-                  },
-                  "missed_call_reason": {
+                    "examples": [
+                        "done"
+                    ]
+                },
+                "missed_call_reason": {
                     "title": "The missed_call_reason Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["out_of_opening_hours"]
-                  },
-                  "started_at": {
+                    "examples": [
+                        "out_of_opening_hours"
+                    ]
+                },
+                "started_at": {
                     "title": "The started_at Schema",
                     "type": "integer",
                     "default": 0,
-                    "examples": [1646092804]
-                  },
-                  "answered_at": {
+                    "examples": [
+                        1646092804
+                    ]
+                },
+                "answered_at": {
                     "title": "The answered_at Schema",
-                    "type": "null",
+                    "type": ["integer", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "ended_at": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "ended_at": {
                     "title": "The ended_at Schema",
                     "type": "integer",
                     "default": 0,
-                    "examples": [1646092852]
-                  },
-                  "duration": {
+                    "examples": [
+                        1646092852
+                    ]
+                },
+                "duration": {
                     "title": "The duration Schema",
                     "type": "integer",
                     "default": 0,
-                    "examples": [48]
-                  },
-                  "voicemail": {
+                    "examples": [
+                        48
+                    ]
+                },
+                "voicemail": {
                     "title": "The voicemail Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "recording": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "recording": {
                     "title": "The recording Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "asset": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "asset": {
                     "title": "The asset Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "raw_digits": {
+                    "examples": [
+                        "https://assets.aircall.io/calls/817362624/recording"
+                    ]
+                },
+                "raw_digits": {
                     "title": "The raw_digits Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["+1 303-669-0586"]
-                  },
-                  "user": {
+                    "examples": [
+                        "+1 303-669-0586"
+                    ]
+                },
+                "user": {
                     "title": "The user Schema",
-                    "type": "null",
-                    "default": null,
-                    "examples": [null]
-                  },
-                  "contact": {
+                    "type": "string",
+                    "default": "",
+                    "examples": []
+                },
+                "contact": {
                     "title": "The contact Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "archived": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "archived": {
                     "title": "The archived Schema",
                     "type": "boolean",
                     "default": false,
-                    "examples": [true]
-                  },
-                  "assigned_to": {
+                    "examples": [
+                        true
+                    ]
+                },
+                "assigned_to": {
                     "title": "The assigned_to Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "tags": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "tags": {
                     "title": "The tags Schema",
                     "type": "array",
                     "default": [],
                     "items": {},
-                    "examples": [[]]
-                  },
-                  "transferred_by": {
+                    "examples": [
+                        []
+                    ]
+                },
+                "transferred_by": {
                     "title": "The transferred_by Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "transferred_to": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "transferred_to": {
                     "title": "The transferred_to Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "teams": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "teams": {
                     "title": "The teams Schema",
                     "type": "array",
                     "default": [],
                     "items": {},
-                    "examples": [[]]
-                  },
-                  "number": {
-                    "title": "The number Schema",
-                    "type": "object",
-                    "default": {},
-                    "required": [
-                      "id",
-                      "direct_link",
-                      "name",
-                      "digits",
-                      "country",
-                      "time_zone",
-                      "open",
-                      "availability_status",
-                      "is_ivr",
-                      "live_recording_activated",
-                      "priority",
-                      "messages",
-                      "created_at"
-                    ],
-                    "properties": {
-                      "id": {
-                        "title": "The id Schema",
-                        "type": "integer",
-                        "default": 0,
-                        "examples": [296206]
-                      },
-                      "direct_link": {
-                        "title": "The direct_link Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["https://api.aircall.io/v1/numbers/296206"]
-                      },
-                      "name": {
-                        "title": "The name Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["AutoResponse - Sign \u0026 Pay Alert"]
-                      },
-                      "digits": {
-                        "title": "The digits Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["+1 929-203-3664"]
-                      },
-                      "country": {
-                        "title": "The country Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["US"]
-                      },
-                      "time_zone": {
-                        "title": "The time_zone Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["America/New_York"]
-                      },
-                      "open": {
-                        "title": "The open Schema",
-                        "type": "boolean",
-                        "default": false,
-                        "examples": [false]
-                      },
-                      "availability_status": {
-                        "title": "The availability_status Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["closed"]
-                      },
-                      "is_ivr": {
-                        "title": "The is_ivr Schema",
-                        "type": "boolean",
-                        "default": false,
-                        "examples": [false]
-                      },
-                      "live_recording_activated": {
-                        "title": "The live_recording_activated Schema",
-                        "type": "boolean",
-                        "default": false,
-                        "examples": [true]
-                      },
-                      "priority": {
-                        "title": "The priority Schema",
-                        "type": "null",
-                        "default": null,
-                        "examples": [null]
-                      },
-                      "messages": {
-                        "title": "The messages Schema",
-                        "type": "object",
-                        "default": {},
-                        "required": [
-                          "welcome",
-                          "waiting",
-                          "ivr",
-                          "voicemail",
-                          "closed",
-                          "callback_later",
-                          "unanswered_call",
-                          "after_hours",
-                          "ringing_tone"
-                        ],
-                        "properties": {
-                          "welcome": {
-                            "title": "The welcome Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3"
-                            ]
-                          },
-                          "waiting": {
-                            "title": "The waiting Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3"
-                            ]
-                          },
-                          "ivr": {
-                            "title": "The ivr Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3"
-                            ]
-                          },
-                          "voicemail": {
-                            "title": "The voicemail Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3"
-                            ]
-                          },
-                          "closed": {
-                            "title": "The closed Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3"
-                            ]
-                          },
-                          "callback_later": {
-                            "title": "The callback_later Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3"
-                            ]
-                          },
-                          "unanswered_call": {
-                            "title": "The unanswered_call Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3"
-                            ]
-                          },
-                          "after_hours": {
-                            "title": "The after_hours Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3"
-                            ]
-                          },
-                          "ringing_tone": {
-                            "title": "The ringing_tone Schema",
-                            "type": "string",
-                            "default": "",
-                            "examples": [
-                              "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
-                            ]
-                          }
-                        },
-                        "examples": [
-                          {
-                            "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
-                            "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
-                            "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
-                            "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                            "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                            "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
-                            "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                            "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                            "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
-                          }
-                        ]
-                      },
-                      "created_at": {
-                        "title": "The created_at Schema",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["2021-06-03T12:19:51.000Z"]
-                      }
-                    },
                     "examples": [
-                      {
+                        []
+                    ]
+                },
+                "number": {
+                    "title": "The number Schema",
+                    "type": "string",
+                    "default": "",
+                    "examples": [{
                         "id": 296206,
                         "direct_link": "https://api.aircall.io/v1/numbers/296206",
                         "name": "AutoResponse - Sign \u0026 Pay Alert",
@@ -386,248 +221,76 @@
                         "live_recording_activated": true,
                         "priority": null,
                         "messages": {
-                          "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
-                          "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
-                          "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
-                          "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                          "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                          "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
-                          "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                          "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                          "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
+                            "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
+                            "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
+                            "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
+                            "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
+                            "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
+                            "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
+                            "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
+                            "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
+                            "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
                         },
                         "created_at": "2021-06-03T12:19:51.000Z"
-                      }
-                    ]
-                  },
-                  "cost": {
+                    }]
+                },
+                "cost": {
                     "title": "The cost Schema",
                     "type": "string",
                     "default": "",
-                    "examples": ["0.0"]
-                  },
-                  "country_code_a2": {
+                    "examples": [
+                        "0.0"
+                    ]
+                },
+                "country_code_a2": {
                     "title": "The country_code_a2 Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "pricing_type": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "pricing_type": {
                     "title": "The pricing_type Schema",
-                    "type": "null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "examples": [null]
-                  },
-                  "comments": {
+                    "examples": [
+                        null
+                    ]
+                },
+                "comments": {
                     "title": "The comments Schema",
                     "type": "array",
                     "default": [],
                     "items": {},
-                    "examples": [[]]
-                  }
-                },
-                "examples": [
-                  {
-                    "id": 775361795,
-                    "direct_link": "https://api.aircall.io/v1/calls/775361795",
-                    "direction": "inbound",
-                    "status": "done",
-                    "missed_call_reason": "out_of_opening_hours",
-                    "started_at": 1646092804,
-                    "answered_at": null,
-                    "ended_at": 1646092852,
-                    "duration": 48,
-                    "voicemail": null,
-                    "recording": null,
-                    "asset": null,
-                    "raw_digits": "+1 303-669-0586",
-                    "user": null,
-                    "contact": null,
-                    "archived": true,
-                    "assigned_to": null,
-                    "tags": [],
-                    "transferred_by": null,
-                    "transferred_to": null,
-                    "teams": [],
-                    "number": {
-                      "id": 296206,
-                      "direct_link": "https://api.aircall.io/v1/numbers/296206",
-                      "name": "AutoResponse - Sign \u0026 Pay Alert",
-                      "digits": "+1 929-203-3664",
-                      "country": "US",
-                      "time_zone": "America/New_York",
-                      "open": false,
-                      "availability_status": "closed",
-                      "is_ivr": false,
-                      "live_recording_activated": true,
-                      "priority": null,
-                      "messages": {
-                        "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
-                        "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
-                        "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
-                        "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                        "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                        "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
-                        "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                        "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                        "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
-                      },
-                      "created_at": "2021-06-03T12:19:51.000Z"
-                    },
-                    "cost": "0.0",
-                    "country_code_a2": null,
-                    "pricing_type": null,
-                    "comments": []
-                  }
-                ]
-              },
-              "examples": [
-                [
-                  {
-                    "id": 775361795,
-                    "direct_link": "https://api.aircall.io/v1/calls/775361795",
-                    "direction": "inbound",
-                    "status": "done",
-                    "missed_call_reason": "out_of_opening_hours",
-                    "started_at": 1646092804,
-                    "answered_at": null,
-                    "ended_at": 1646092852,
-                    "duration": 48,
-                    "voicemail": null,
-                    "recording": null,
-                    "asset": null,
-                    "raw_digits": "+1 303-669-0586",
-                    "user": null,
-                    "contact": null,
-                    "archived": true,
-                    "assigned_to": null,
-                    "tags": [],
-                    "transferred_by": null,
-                    "transferred_to": null,
-                    "teams": [],
-                    "number": {
-                      "id": 296206,
-                      "direct_link": "https://api.aircall.io/v1/numbers/296206",
-                      "name": "AutoResponse - Sign \u0026 Pay Alert",
-                      "digits": "+1 929-203-3664",
-                      "country": "US",
-                      "time_zone": "America/New_York",
-                      "open": false,
-                      "availability_status": "closed",
-                      "is_ivr": false,
-                      "live_recording_activated": true,
-                      "priority": null,
-                      "messages": {
-                        "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
-                        "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
-                        "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
-                        "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                        "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                        "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
-                        "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                        "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                        "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
-                      },
-                      "created_at": "2021-06-03T12:19:51.000Z"
-                    },
-                    "cost": "0.0",
-                    "country_code_a2": null,
-                    "pricing_type": null,
-                    "comments": []
-                  }
-                ]
-              ]
+                    "examples": [
+                        []
+                    ]
+                }
             },
-            "meta": {
-              "title": "The meta Schema",
-              "type": "object",
-              "default": {},
-              "required": [
-                "count",
-                "total",
-                "current_page",
-                "per_page",
-                "next_page_link",
-                "previous_page_link"
-              ],
-              "properties": {
-                "count": {
-                  "title": "The count Schema",
-                  "type": "integer",
-                  "default": 0,
-                  "examples": [20]
-                },
-                "total": {
-                  "title": "The total Schema",
-                  "type": "integer",
-                  "default": 0,
-                  "examples": [10000]
-                },
-                "current_page": {
-                  "title": "The current_page Schema",
-                  "type": "integer",
-                  "default": 0,
-                  "examples": [1]
-                },
-                "per_page": {
-                  "title": "The per_page Schema",
-                  "type": "integer",
-                  "default": 0,
-                  "examples": [20]
-                },
-                "next_page_link": {
-                  "title": "The next_page_link Schema",
-                  "type": "string",
-                  "default": "",
-                  "examples": [
-                    "https://api.aircall.io/v1/calls?order=asc\u0026page=2\u0026per_page=20"
-                  ]
-                },
-                "previous_page_link": {
-                  "title": "The previous_page_link Schema",
-                  "type": "null",
-                  "default": null,
-                  "examples": [null]
-                }
-              },
-              "examples": [
-                {
-                  "count": 20,
-                  "total": 10000,
-                  "current_page": 1,
-                  "per_page": 20,
-                  "next_page_link": "https://api.aircall.io/v1/calls?order=asc\u0026page=2\u0026per_page=20",
-                  "previous_page_link": null
-                }
-              ]
-            }
-          },
-          "examples": [
-            {
-              "calls": [
-                {
-                  "id": 775361795,
-                  "direct_link": "https://api.aircall.io/v1/calls/775361795",
-                  "direction": "inbound",
-                  "status": "done",
-                  "missed_call_reason": "out_of_opening_hours",
-                  "started_at": 1646092804,
-                  "answered_at": null,
-                  "ended_at": 1646092852,
-                  "duration": 48,
-                  "voicemail": null,
-                  "recording": null,
-                  "asset": null,
-                  "raw_digits": "+1 303-669-0586",
-                  "user": null,
-                  "contact": null,
-                  "archived": true,
-                  "assigned_to": null,
-                  "tags": [],
-                  "transferred_by": null,
-                  "transferred_to": null,
-                  "teams": [],
-                  "number": {
+            "examples": [{
+                "id": 775361795,
+                "direct_link": "https://api.aircall.io/v1/calls/775361795",
+                "direction": "inbound",
+                "status": "done",
+                "missed_call_reason": "out_of_opening_hours",
+                "started_at": 1646092804,
+                "answered_at": null,
+                "ended_at": 1646092852,
+                "duration": 48,
+                "voicemail": null,
+                "recording": null,
+                "asset": null,
+                "raw_digits": "+1 303-669-0586",
+                "user": null,
+                "contact": null,
+                "archived": true,
+                "assigned_to": null,
+                "tags": [],
+                "transferred_by": null,
+                "transferred_to": null,
+                "teams": [],
+                "number": {
                     "id": 296206,
                     "direct_link": "https://api.aircall.io/v1/numbers/296206",
                     "name": "AutoResponse - Sign \u0026 Pay Alert",
@@ -640,42 +303,34 @@
                     "live_recording_activated": true,
                     "priority": null,
                     "messages": {
-                      "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
-                      "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
-                      "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
-                      "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                      "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                      "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
-                      "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
-                      "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
-                      "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
+                        "welcome": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/85a54589f4bac4767f07c3adb4d5bad49602c0e4.mp3",
+                        "waiting": "https://media-web.aircall.io/tracks/library/bensound-retrosoul.mp3",
+                        "ivr": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/5b2401096b75861108e2ceb6ccc4e4c81e03b525.mp3",
+                        "voicemail": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
+                        "closed": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
+                        "callback_later": "https://media-web.aircall.io/tts/languages/en/voices/Joanna/a04a676e475a50791cccbea7faa349dab88c4f05.mp3",
+                        "unanswered_call": "https://media-web.aircall.io/tracks/tts/languages/en/voices/Joanna/74ce97ac9772be646ccf5583b92be7248930af18.mp3",
+                        "after_hours": "https://media-web.aircall.io/companies/95577/numbers/296206/tracks/library/1622722826/Response%20to%20SignPay%20Alert.mp3",
+                        "ringing_tone": "https://media-web.aircall.io/tracks/ringing_tones/US.mp3"
                     },
                     "created_at": "2021-06-03T12:19:51.000Z"
-                  },
-                  "cost": "0.0",
-                  "country_code_a2": null,
-                  "pricing_type": null,
-                  "comments": []
-                }
-              ],
-              "meta": {
-                "count": 20,
-                "total": 10000,
-                "current_page": 1,
-                "per_page": 20,
-                "next_page_link": "https://api.aircall.io/v1/calls?order=asc\u0026page=2\u0026per_page=20",
-                "previous_page_link": null
-              }
-            }
-          ]
+                },
+                "cost": "0.0",
+                "country_code_a2": null,
+                "pricing_type": null,
+                "comments": []
+            }]
         },
         "supported_sync_modes": ["full_refresh", "incremental"],
-        "source_defined_cursor": true,
-        "default_cursor_field": ["created_at"],
-        "source_defined_primary_key": [["id"]]
+        "source_defined_cursor": false,
+        "default_cursor_field": ["ended_at"],
+        "source_defined_primary_key": [["id"]],
+        "namespace": "AIRCALL"
       },
       "sync_mode": "incremental",
-      "destination_sync_mode": "append_dedup"
+      "cursor_field": ["ended_at"],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [["id"]]
     }
   ]
 }
