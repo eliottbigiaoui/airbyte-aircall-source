@@ -9,2114 +9,1869 @@
           "type": "object",
           "default": {},
           "title": "Root Schema",
-          "required": ["@odata.context", "value"],
+          "required": [
+              "@odata.context",
+              "value",
+              "@odata.nextLink"
+          ],
           "properties": {
-            "@odata.context": {
-              "type": "string",
-              "default": "",
-              "title": "The @odata.context Schema",
-              "examples": ["https://odata4.alndata.com/$metadata#Apartments"]
-            },
-            "value": {
-              "type": "array",
-              "default": [],
-              "title": "The value Schema",
-              "items": {
-                "type": "object",
-                "title": "A Schema",
-                "required": [
-                  "ApartmentId",
-                  "LastDateUpdated",
-                  "LastDateChanged",
-                  "LastDateContacted",
-                  "DateStabilized",
-                  "RowVersion",
-                  "Property",
-                  "Pets",
-                  "Leasing",
-                  "GeoLocation",
-                  "Agency"
-                ],
-                "properties": {
-                  "ApartmentId": {
-                    "type": "string",
-                    "title": "The ApartmentId Schema",
-                    "examples": [
-                      "a78c3fd4-95a3-46a8-8423-01af3aa08c1a",
-                      "ad973cb0-2ca9-49b0-a4a4-fc0f7663a164",
-                      "a6f39c52-3d30-46c2-948e-fe4fbd909d5a"
-                    ]
-                  },
-                  "LastDateUpdated": {
-                    "type": "string",
-                    "title": "The LastDateUpdated Schema",
-                    "examples": [
-                      "2022-07-27T08:53:26.457Z",
-                      "1970-01-01T00:00:00Z",
-                      "2015-07-13T00:00:00Z"
-                    ]
-                  },
-                  "LastDateChanged": {
-                    "type": "string",
-                    "title": "The LastDateChanged Schema",
-                    "examples": [
-                      "2022-07-27T08:57:26.13Z",
-                      "2022-06-18T16:55:31.853Z",
-                      "2022-05-22T20:00:13.097Z"
-                    ]
-                  },
-                  "LastDateContacted": {
-                    "type": "string",
-                    "title": "The LastDateContacted Schema",
-                    "examples": [
-                      "2022-07-27T08:53:26.457Z",
-                      "1970-01-01T00:00:00Z",
-                      "2015-07-13T00:00:00Z"
-                    ]
-                  },
-                  "DateStabilized": {
-                    "type": ["string", "null"],
-                    "title": "The DateStabilized Schema",
-                    "examples": ["2016-10-01T00:00:00Z", null]
-                  },
-                  "RowVersion": {
-                    "type": "integer",
-                    "title": "The RowVersion Schema",
-                    "examples": [425334108, 424590461, 415162148]
-                  },
-                  "Property": {
-                    "type": "object",
-                    "title": "The Property Schema",
-                    "required": [
-                      "ALNId",
-                      "Status",
-                      "StatusDescription",
-                      "AptName",
-                      "FKA",
-                      "Hours",
-                      "EMailAddress",
-                      "Market",
-                      "MarketDescription",
-                      "AptOwnerId",
-                      "SubmarketId",
-                      "SubmarketDescription",
-                      "NumUnits",
-                      "YearBuilt",
-                      "YearRemodeled",
-                      "TimeZone",
-                      "Occupancy",
-                      "NumberOfStories",
-                      "Directions",
-                      "PropertyDescription",
-                      "AptHomePage",
-                      "AptPictureURL",
-                      "CurrManager",
-                      "AreaSupervisorId",
-                      "RegionalManagementCompanyId",
-                      "CorporateManagementCompanyId",
-                      "OwnerId",
-                      "Views",
-                      "ACHeating",
-                      "MapCoordinates",
-                      "OtherNotes",
-                      "AverageRent",
-                      "AverageSqFt",
-                      "MktPctEffRentUnit",
-                      "MktPctEffRentSqFt",
-                      "SubMktPctEffRentUnit",
-                      "SubMktPctEffRentSqFt",
-                      "MktPctNetRentUnit",
-                      "MktPctNetRentSqFt",
-                      "SubMktPctNetRentUnit",
-                      "SubMktPctNetRentSqFt",
-                      "PricingAndAvailWebsite",
-                      "PricingAndAvailWebsiteAlt",
-                      "RMSId",
-                      "RMSProgram",
-                      "PricingTier",
-                      "AssetOrFeeManaged",
-                      "PMSoftware",
-                      "PMSoftwareNotes"
-                    ],
-                    "properties": {
-                      "ALNId": {
-                        "type": "integer",
-                        "title": "The ALNId Schema",
-                        "examples": [226494, 260055, 276514]
-                      },
-                      "Status": {
-                        "type": "integer",
-                        "title": "The Status Schema",
-                        "examples": [92, 15, 21]
-                      },
-                      "StatusDescription": {
-                        "type": "string",
-                        "title": "The StatusDescription Schema",
-                        "examples": [
-                          "92-Published, Does Not Pay Locators",
-                          "15-Duplicate/Discarded",
-                          "21-New Construction (For Lease)"
-                        ]
-                      },
-                      "AptName": {
-                        "type": "string",
-                        "title": "The AptName Schema",
-                        "examples": [
-                          "Givens Gerber Park I",
-                          "Lofts on the Square",
-                          "Villages at Westview"
-                        ]
-                      },
-                      "FKA": {
-                        "type": ["null", "string"],
-                        "title": "The FKA Schema",
-                        "examples": [null, "Westview Village"]
-                      },
-                      "Hours": {
-                        "type": ["string", "null"],
-                        "title": "The Hours Schema",
-                        "examples": ["MTh 9-3", null]
-                      },
-                      "EMailAddress": {
-                        "type": ["string", "null"],
-                        "title": "The EMailAddress Schema",
-                        "examples": [
-                          "info@givensgerberpark.org",
-                          "info@themartinogroup.com",
-                          null
-                        ]
-                      },
-                      "Market": {
-                        "type": "string",
-                        "title": "The Market Schema",
-                        "examples": ["AVL", "DFW", "MRY"]
-                      },
-                      "MarketDescription": {
-                        "type": "string",
-                        "title": "The MarketDescription Schema",
-                        "examples": [
-                          "NC - Asheville",
-                          "TX - Dallas/Ft. Worth",
-                          "CA - Central Coast"
-                        ]
-                      },
-                      "AptOwnerId": {
-                        "type": ["integer", "null"],
-                        "title": "The AptOwnerId Schema",
-                        "examples": [194983, null]
-                      },
-                      "SubmarketId": {
-                        "type": "string",
-                        "title": "The SubmarketId Schema",
-                        "examples": [
-                          "3baef41b-7b18-426a-82b5-a4ed80a567c6",
-                          "9ed9a205-5ba6-41bf-871e-6ea6ab942d68",
-                          "44df90c6-4a07-418f-b3a3-056b4f4c935d"
-                        ]
-                      },
-                      "SubmarketDescription": {
-                        "type": "string",
-                        "title": "The SubmarketDescription Schema",
-                        "examples": [
-                          "South Asheville / Arden",
-                          "Denton / Corinth",
-                          "Ventura / Oxnard"
-                        ]
-                      },
-                      "NumUnits": {
-                        "type": ["integer", "null"],
-                        "title": "The NumUnits Schema",
-                        "examples": [120, null, 180]
-                      },
-                      "YearBuilt": {
-                        "type": ["string", "null"],
-                        "title": "The YearBuilt Schema",
-                        "examples": ["2015", null, "2021"]
-                      },
-                      "YearRemodeled": {
-                        "type": "null",
-                        "title": "The YearRemodeled Schema",
-                        "examples": [null]
-                      },
-                      "TimeZone": {
-                        "type": "string",
-                        "title": "The TimeZone Schema",
-                        "examples": ["E ", "C ", "P "]
-                      },
-                      "Occupancy": {
-                        "type": ["string", "null"],
-                        "title": "The Occupancy Schema",
-                        "examples": ["N/A", null, "0.01"]
-                      },
-                      "NumberOfStories": {
-                        "type": ["string", "null"],
-                        "title": "The NumberOfStories Schema",
-                        "examples": ["4", null]
-                      },
-                      "Directions": {
-                        "type": "null",
-                        "title": "The Directions Schema",
-                        "examples": [null]
-                      },
-                      "PropertyDescription": {
-                        "type": "null",
-                        "title": "The PropertyDescription Schema",
-                        "examples": [null]
-                      },
-                      "AptHomePage": {
-                        "type": "string",
-                        "title": "The AptHomePage Schema",
-                        "examples": [
-                          "http://www.givensgerberpark.org/",
-                          "http://www.themartinogroup.com/showlisting.php?sid=1005",
-                          "https://hacityventura.org/westview.html"
-                        ]
-                      },
-                      "AptPictureURL": {
-                        "type": "string",
-                        "title": "The AptPictureURL Schema",
-                        "examples": [
-                          "https://picturescdn.alndata.com/?pid=97b9da08-572f-4b53-8863-7084fa37f346",
-                          "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf"
-                        ]
-                      },
-                      "CurrManager": {
-                        "type": "string",
-                        "title": "The CurrManager Schema",
-                        "examples": ["Nicole Allen", ""]
-                      },
-                      "AreaSupervisorId": {
-                        "type": ["string", "null"],
-                        "title": "The AreaSupervisorId Schema",
-                        "examples": [
-                          "cc2d623b-46e4-4b4b-b7cc-f97b39911ef1",
-                          null
-                        ]
-                      },
-                      "RegionalManagementCompanyId": {
-                        "type": ["string", "null"],
-                        "title": "The RegionalManagementCompanyId Schema",
-                        "examples": [
-                          "b65d1b43-8431-4e94-868f-c844a41ec290",
-                          null,
-                          "b8d9fcac-19db-4383-b884-9fc5c6212d55"
-                        ]
-                      },
-                      "CorporateManagementCompanyId": {
-                        "type": ["string", "null"],
-                        "title": "The CorporateManagementCompanyId Schema",
-                        "examples": [
-                          "b65d1b43-8431-4e94-868f-c844a41ec290",
-                          null,
-                          "b8d9fcac-19db-4383-b884-9fc5c6212d55"
-                        ]
-                      },
-                      "OwnerId": {
-                        "type": ["string", "null"],
-                        "title": "The OwnerId Schema",
-                        "examples": [
-                          "1546a325-8b8e-47a5-b9b8-ab1c223cc81e",
-                          null
-                        ]
-                      },
-                      "Views": {
-                        "type": "null",
-                        "title": "The Views Schema",
-                        "examples": [null]
-                      },
-                      "ACHeating": {
-                        "type": "null",
-                        "title": "The ACHeating Schema",
-                        "examples": [null]
-                      },
-                      "MapCoordinates": {
-                        "type": "null",
-                        "title": "The MapCoordinates Schema",
-                        "examples": [null]
-                      },
-                      "OtherNotes": {
-                        "type": "null",
-                        "title": "The OtherNotes Schema",
-                        "examples": [null]
-                      },
-                      "AverageRent": {
-                        "type": ["number", "null"],
-                        "title": "The AverageRent Schema",
-                        "examples": [471.79167, null]
-                      },
-                      "AverageSqFt": {
-                        "type": ["number", "null"],
-                        "title": "The AverageSqFt Schema",
-                        "examples": [771.60417, null]
-                      },
-                      "MktPctEffRentUnit": {
-                        "type": "null",
-                        "title": "The MktPctEffRentUnit Schema",
-                        "examples": [null]
-                      },
-                      "MktPctEffRentSqFt": {
-                        "type": "null",
-                        "title": "The MktPctEffRentSqFt Schema",
-                        "examples": [null]
-                      },
-                      "SubMktPctEffRentUnit": {
-                        "type": "null",
-                        "title": "The SubMktPctEffRentUnit Schema",
-                        "examples": [null]
-                      },
-                      "SubMktPctEffRentSqFt": {
-                        "type": "null",
-                        "title": "The SubMktPctEffRentSqFt Schema",
-                        "examples": [null]
-                      },
-                      "MktPctNetRentUnit": {
-                        "type": "null",
-                        "title": "The MktPctNetRentUnit Schema",
-                        "examples": [null]
-                      },
-                      "MktPctNetRentSqFt": {
-                        "type": "null",
-                        "title": "The MktPctNetRentSqFt Schema",
-                        "examples": [null]
-                      },
-                      "SubMktPctNetRentUnit": {
-                        "type": "null",
-                        "title": "The SubMktPctNetRentUnit Schema",
-                        "examples": [null]
-                      },
-                      "SubMktPctNetRentSqFt": {
-                        "type": "null",
-                        "title": "The SubMktPctNetRentSqFt Schema",
-                        "examples": [null]
-                      },
-                      "PricingAndAvailWebsite": {
-                        "type": "null",
-                        "title": "The PricingAndAvailWebsite Schema",
-                        "examples": [null]
-                      },
-                      "PricingAndAvailWebsiteAlt": {
-                        "type": "null",
-                        "title": "The PricingAndAvailWebsiteAlt Schema",
-                        "examples": [null]
-                      },
-                      "RMSId": {
-                        "type": ["integer", "null"],
-                        "title": "The RMSId Schema",
-                        "examples": [14, null]
-                      },
-                      "RMSProgram": {
-                        "type": ["string", "null"],
-                        "title": "The RMSProgram Schema",
-                        "examples": ["No RMS Program", null]
-                      },
-                      "PricingTier": {
-                        "type": "null",
-                        "title": "The PricingTier Schema",
-                        "examples": [null]
-                      },
-                      "AssetOrFeeManaged": {
-                        "type": ["string", "null"],
-                        "title": "The AssetOrFeeManaged Schema",
-                        "examples": ["F", null]
-                      },
-                      "PMSoftware": {
-                        "type": ["string", "null"],
-                        "title": "The PMSoftware Schema",
-                        "examples": ["Yardi", null]
-                      },
-                      "PMSoftwareNotes": {
-                        "type": "null",
-                        "title": "The PMSoftwareNotes Schema",
-                        "examples": [null]
-                      }
-                    },
-                    "examples": [
-                      {
-                        "ALNId": 226494,
-                        "Status": 92,
-                        "StatusDescription": "92-Published, Does Not Pay Locators",
-                        "AptName": "Givens Gerber Park I",
-                        "FKA": null,
-                        "Hours": "MTh 9-3",
-                        "EMailAddress": "info@givensgerberpark.org",
-                        "Market": "AVL",
-                        "MarketDescription": "NC - Asheville",
-                        "AptOwnerId": 194983,
-                        "SubmarketId": "3baef41b-7b18-426a-82b5-a4ed80a567c6",
-                        "SubmarketDescription": "South Asheville / Arden",
-                        "NumUnits": 120,
-                        "YearBuilt": "2015",
-                        "YearRemodeled": null,
-                        "TimeZone": "E ",
-                        "Occupancy": "N/A",
-                        "NumberOfStories": "4",
-                        "Directions": null,
-                        "PropertyDescription": null,
-                        "AptHomePage": "http://www.givensgerberpark.org/",
-                        "AptPictureURL": "https://picturescdn.alndata.com/?pid=97b9da08-572f-4b53-8863-7084fa37f346",
-                        "CurrManager": "Nicole Allen",
-                        "AreaSupervisorId": "cc2d623b-46e4-4b4b-b7cc-f97b39911ef1",
-                        "RegionalManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                        "CorporateManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                        "OwnerId": "1546a325-8b8e-47a5-b9b8-ab1c223cc81e",
-                        "Views": null,
-                        "ACHeating": null,
-                        "MapCoordinates": null,
-                        "OtherNotes": null,
-                        "AverageRent": 471.79167,
-                        "AverageSqFt": 771.60417,
-                        "MktPctEffRentUnit": null,
-                        "MktPctEffRentSqFt": null,
-                        "SubMktPctEffRentUnit": null,
-                        "SubMktPctEffRentSqFt": null,
-                        "MktPctNetRentUnit": null,
-                        "MktPctNetRentSqFt": null,
-                        "SubMktPctNetRentUnit": null,
-                        "SubMktPctNetRentSqFt": null,
-                        "PricingAndAvailWebsite": null,
-                        "PricingAndAvailWebsiteAlt": null,
-                        "RMSId": 14,
-                        "RMSProgram": "No RMS Program",
-                        "PricingTier": null,
-                        "AssetOrFeeManaged": "F",
-                        "PMSoftware": "Yardi",
-                        "PMSoftwareNotes": null
-                      },
-                      {
-                        "ALNId": 260055,
-                        "Status": 15,
-                        "StatusDescription": "15-Duplicate/Discarded",
-                        "AptName": "Lofts on the Square",
-                        "FKA": null,
-                        "Hours": null,
-                        "EMailAddress": "info@themartinogroup.com",
-                        "Market": "DFW",
-                        "MarketDescription": "TX - Dallas/Ft. Worth",
-                        "AptOwnerId": null,
-                        "SubmarketId": "9ed9a205-5ba6-41bf-871e-6ea6ab942d68",
-                        "SubmarketDescription": "Denton / Corinth",
-                        "NumUnits": null,
-                        "YearBuilt": null,
-                        "YearRemodeled": null,
-                        "TimeZone": "C ",
-                        "Occupancy": null,
-                        "NumberOfStories": null,
-                        "Directions": null,
-                        "PropertyDescription": null,
-                        "AptHomePage": "http://www.themartinogroup.com/showlisting.php?sid=1005",
-                        "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                        "CurrManager": "",
-                        "AreaSupervisorId": null,
-                        "RegionalManagementCompanyId": null,
-                        "CorporateManagementCompanyId": null,
-                        "OwnerId": null,
-                        "Views": null,
-                        "ACHeating": null,
-                        "MapCoordinates": null,
-                        "OtherNotes": null,
-                        "AverageRent": null,
-                        "AverageSqFt": null,
-                        "MktPctEffRentUnit": null,
-                        "MktPctEffRentSqFt": null,
-                        "SubMktPctEffRentUnit": null,
-                        "SubMktPctEffRentSqFt": null,
-                        "MktPctNetRentUnit": null,
-                        "MktPctNetRentSqFt": null,
-                        "SubMktPctNetRentUnit": null,
-                        "SubMktPctNetRentSqFt": null,
-                        "PricingAndAvailWebsite": null,
-                        "PricingAndAvailWebsiteAlt": null,
-                        "RMSId": null,
-                        "RMSProgram": null,
-                        "PricingTier": null,
-                        "AssetOrFeeManaged": null,
-                        "PMSoftware": null,
-                        "PMSoftwareNotes": null
-                      },
-                      {
-                        "ALNId": 276514,
-                        "Status": 21,
-                        "StatusDescription": "21-New Construction (For Lease)",
-                        "AptName": "Villages at Westview",
-                        "FKA": "Westview Village",
-                        "Hours": null,
-                        "EMailAddress": null,
-                        "Market": "MRY",
-                        "MarketDescription": "CA - Central Coast",
-                        "AptOwnerId": null,
-                        "SubmarketId": "44df90c6-4a07-418f-b3a3-056b4f4c935d",
-                        "SubmarketDescription": "Ventura / Oxnard",
-                        "NumUnits": 180,
-                        "YearBuilt": "2021",
-                        "YearRemodeled": null,
-                        "TimeZone": "P ",
-                        "Occupancy": "0.01",
-                        "NumberOfStories": null,
-                        "Directions": null,
-                        "PropertyDescription": null,
-                        "AptHomePage": "https://hacityventura.org/westview.html",
-                        "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                        "CurrManager": "",
-                        "AreaSupervisorId": null,
-                        "RegionalManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                        "CorporateManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                        "OwnerId": null,
-                        "Views": null,
-                        "ACHeating": null,
-                        "MapCoordinates": null,
-                        "OtherNotes": null,
-                        "AverageRent": null,
-                        "AverageSqFt": null,
-                        "MktPctEffRentUnit": null,
-                        "MktPctEffRentSqFt": null,
-                        "SubMktPctEffRentUnit": null,
-                        "SubMktPctEffRentSqFt": null,
-                        "MktPctNetRentUnit": null,
-                        "MktPctNetRentSqFt": null,
-                        "SubMktPctNetRentUnit": null,
-                        "SubMktPctNetRentSqFt": null,
-                        "PricingAndAvailWebsite": null,
-                        "PricingAndAvailWebsiteAlt": null,
-                        "RMSId": null,
-                        "RMSProgram": null,
-                        "PricingTier": null,
-                        "AssetOrFeeManaged": null,
-                        "PMSoftware": null,
-                        "PMSoftwareNotes": null
-                      }
-                    ]
-                  },
-                  "Pets": {
-                    "type": "object",
-                    "title": "The Pets Schema",
-                    "required": [
-                      "MaxNumPets",
-                      "MaxPetWeight",
-                      "MaxPetHeight",
-                      "PetDescription",
-                      "PetDeposit",
-                      "PetNonRefundable",
-                      "PetRentPerMonth",
-                      "CatsOnly",
-                      "BreedRestrictions"
-                    ],
-                    "properties": {
-                      "MaxNumPets": {
-                        "type": ["integer", "null"],
-                        "title": "The MaxNumPets Schema",
-                        "examples": [1, null]
-                      },
-                      "MaxPetWeight": {
-                        "type": ["integer", "null"],
-                        "title": "The MaxPetWeight Schema",
-                        "examples": [35, null]
-                      },
-                      "MaxPetHeight": {
-                        "type": "null",
-                        "title": "The MaxPetHeight Schema",
-                        "examples": [null]
-                      },
-                      "PetDescription": {
-                        "type": "null",
-                        "title": "The PetDescription Schema",
-                        "examples": [null]
-                      },
-                      "PetDeposit": {
-                        "type": "null",
-                        "title": "The PetDeposit Schema",
-                        "examples": [null]
-                      },
-                      "PetNonRefundable": {
-                        "type": ["string", "null"],
-                        "title": "The PetNonRefundable Schema",
-                        "examples": ["300", null]
-                      },
-                      "PetRentPerMonth": {
-                        "type": "null",
-                        "title": "The PetRentPerMonth Schema",
-                        "examples": [null]
-                      },
-                      "CatsOnly": {
-                        "type": "string",
-                        "title": "The CatsOnly Schema",
-                        "examples": ["N"]
-                      },
-                      "BreedRestrictions": {
-                        "type": "string",
-                        "title": "The BreedRestrictions Schema",
-                        "examples": ["Y", "N"]
-                      }
-                    },
-                    "examples": [
-                      {
-                        "MaxNumPets": 1,
-                        "MaxPetWeight": 35,
-                        "MaxPetHeight": null,
-                        "PetDescription": null,
-                        "PetDeposit": null,
-                        "PetNonRefundable": "300",
-                        "PetRentPerMonth": null,
-                        "CatsOnly": "N",
-                        "BreedRestrictions": "Y"
-                      },
-                      {
-                        "MaxNumPets": null,
-                        "MaxPetWeight": null,
-                        "MaxPetHeight": null,
-                        "PetDescription": null,
-                        "PetDeposit": null,
-                        "PetNonRefundable": null,
-                        "PetRentPerMonth": null,
-                        "CatsOnly": "N",
-                        "BreedRestrictions": "N"
-                      },
-                      {
-                        "MaxNumPets": null,
-                        "MaxPetWeight": null,
-                        "MaxPetHeight": null,
-                        "PetDescription": null,
-                        "PetDeposit": null,
-                        "PetNonRefundable": null,
-                        "PetRentPerMonth": null,
-                        "CatsOnly": "N",
-                        "BreedRestrictions": "N"
-                      }
-                    ]
-                  },
-                  "Leasing": {
-                    "type": "object",
-                    "title": "The Leasing Schema",
-                    "required": [
-                      "IncomeRestricted",
-                      "IncomeRestrictionSpecifics",
-                      "Section8",
-                      "SeniorLiving",
-                      "StudentHousing",
-                      "LeaseTerms",
-                      "ShortTerm",
-                      "Corporate",
-                      "ApplicationFee",
-                      "CurrentSpecials",
-                      "AssistedLiving"
-                    ],
-                    "properties": {
-                      "IncomeRestricted": {
-                        "type": "string",
-                        "title": "The IncomeRestricted Schema",
-                        "examples": ["Y", "N"]
-                      },
-                      "IncomeRestrictionSpecifics": {
-                        "type": ["string", "null"],
-                        "title": "The IncomeRestrictionSpecifics Schema",
-                        "examples": ["1p-$33,780, 2p-$38,580", null]
-                      },
-                      "Section8": {
-                        "type": "string",
-                        "title": "The Section8 Schema",
-                        "examples": ["Y", "N"]
-                      },
-                      "SeniorLiving": {
-                        "type": "string",
-                        "title": "The SeniorLiving Schema",
-                        "examples": ["Y", "N"]
-                      },
-                      "StudentHousing": {
-                        "type": "string",
-                        "title": "The StudentHousing Schema",
-                        "examples": ["N"]
-                      },
-                      "LeaseTerms": {
-                        "type": ["string", "null"],
-                        "title": "The LeaseTerms Schema",
-                        "examples": ["12", null]
-                      },
-                      "ShortTerm": {
-                        "type": ["string", "null"],
-                        "title": "The ShortTerm Schema",
-                        "examples": ["N", null]
-                      },
-                      "Corporate": {
-                        "type": ["string", "null"],
-                        "title": "The Corporate Schema",
-                        "examples": ["N", null]
-                      },
-                      "ApplicationFee": {
-                        "type": "string",
-                        "title": "The ApplicationFee Schema",
-                        "examples": ["", "0"]
-                      },
-                      "CurrentSpecials": {
-                        "type": ["string", "null"],
-                        "title": "The CurrentSpecials Schema",
-                        "examples": [
-                          "Deposit Can Be Up To 1mo Rent Based On Credit; Wait List ",
-                          null
-                        ]
-                      },
-                      "AssistedLiving": {
-                        "type": "string",
-                        "title": "The AssistedLiving Schema",
-                        "examples": ["N"]
-                      }
-                    },
-                    "examples": [
-                      {
-                        "IncomeRestricted": "Y",
-                        "IncomeRestrictionSpecifics": "1p-$33,780, 2p-$38,580",
-                        "Section8": "Y",
-                        "SeniorLiving": "Y",
-                        "StudentHousing": "N",
-                        "LeaseTerms": "12",
-                        "ShortTerm": "N",
-                        "Corporate": "N",
-                        "ApplicationFee": "",
-                        "CurrentSpecials": "Deposit Can Be Up To 1mo Rent Based On Credit; Wait List ",
-                        "AssistedLiving": "N"
-                      },
-                      {
-                        "IncomeRestricted": "N",
-                        "IncomeRestrictionSpecifics": null,
-                        "Section8": "N",
-                        "SeniorLiving": "N",
-                        "StudentHousing": "N",
-                        "LeaseTerms": null,
-                        "ShortTerm": null,
-                        "Corporate": null,
-                        "ApplicationFee": "0",
-                        "CurrentSpecials": null,
-                        "AssistedLiving": "N"
-                      },
-                      {
-                        "IncomeRestricted": "N",
-                        "IncomeRestrictionSpecifics": null,
-                        "Section8": "N",
-                        "SeniorLiving": "N",
-                        "StudentHousing": "N",
-                        "LeaseTerms": null,
-                        "ShortTerm": null,
-                        "Corporate": null,
-                        "ApplicationFee": "0",
-                        "CurrentSpecials": null,
-                        "AssistedLiving": "N"
-                      }
-                    ]
-                  },
-                  "GeoLocation": {
-                    "type": "object",
-                    "title": "The GeoLocation Schema",
-                    "required": [
-                      "County",
-                      "GPSLatitude",
-                      "GPSLongitude",
-                      "PMSA",
-                      "PMSADescription",
-                      "CMSA",
-                      "CensusBlock",
-                      "CensusTract",
-                      "CountyFIPSCode",
-                      "CensusTract2010GeoId",
-                      "CensusTractGeoId"
-                    ],
-                    "properties": {
-                      "County": {
-                        "type": "string",
-                        "title": "The County Schema",
-                        "examples": ["Buncombe", "Denton", "Ventura"]
-                      },
-                      "GPSLatitude": {
-                        "type": "string",
-                        "title": "The GPSLatitude Schema",
-                        "examples": ["35.5032638", "33.215191", "34.2935904"]
-                      },
-                      "GPSLongitude": {
-                        "type": "string",
-                        "title": "The GPSLongitude Schema",
-                        "examples": [
-                          "-82.5208934",
-                          "-97.1320085",
-                          "-119.3037525"
-                        ]
-                      },
-                      "PMSA": {
-                        "type": "string",
-                        "title": "The PMSA Schema",
-                        "examples": ["11700", "19100", "37100"]
-                      },
-                      "PMSADescription": {
-                        "type": "string",
-                        "title": "The PMSADescription Schema",
-                        "examples": [
-                          "Asheville, NC",
-                          "Dallas-Fort Worth-Arlington, TX",
-                          "Oxnard-Thousand Oaks-Ventura, CA"
-                        ]
-                      },
-                      "CMSA": {
-                        "type": "string",
-                        "title": "The CMSA Schema",
-                        "examples": ["120", "206", "348"]
-                      },
-                      "CensusBlock": {
-                        "type": "null",
-                        "title": "The CensusBlock Schema",
-                        "examples": [null]
-                      },
-                      "CensusTract": {
-                        "type": "string",
-                        "title": "The CensusTract Schema",
-                        "examples": ["0022.04", "0211.00", "0023.02"]
-                      },
-                      "CountyFIPSCode": {
-                        "type": "string",
-                        "title": "The CountyFIPSCode Schema",
-                        "examples": ["37021", "48121", "06111"]
-                      },
-                      "CensusTract2010GeoId": {
-                        "type": "string",
-                        "title": "The CensusTract2010GeoId Schema",
-                        "examples": [
-                          "37021002204",
-                          "48121021100",
-                          "06111002300"
-                        ]
-                      },
-                      "CensusTractGeoId": {
-                        "type": "string",
-                        "title": "The CensusTractGeoId Schema",
-                        "examples": [
-                          "37021002204",
-                          "48121021100",
-                          "06111002302"
-                        ]
-                      }
-                    },
-                    "examples": [
-                      {
-                        "County": "Buncombe",
-                        "GPSLatitude": "35.5032638",
-                        "GPSLongitude": "-82.5208934",
-                        "PMSA": "11700",
-                        "PMSADescription": "Asheville, NC",
-                        "CMSA": "120",
-                        "CensusBlock": null,
-                        "CensusTract": "0022.04",
-                        "CountyFIPSCode": "37021",
-                        "CensusTract2010GeoId": "37021002204",
-                        "CensusTractGeoId": "37021002204"
-                      },
-                      {
-                        "County": "Denton",
-                        "GPSLatitude": "33.215191",
-                        "GPSLongitude": "-97.1320085",
-                        "PMSA": "19100",
-                        "PMSADescription": "Dallas-Fort Worth-Arlington, TX",
-                        "CMSA": "206",
-                        "CensusBlock": null,
-                        "CensusTract": "0211.00",
-                        "CountyFIPSCode": "48121",
-                        "CensusTract2010GeoId": "48121021100",
-                        "CensusTractGeoId": "48121021100"
-                      },
-                      {
-                        "County": "Ventura",
-                        "GPSLatitude": "34.2935904",
-                        "GPSLongitude": "-119.3037525",
-                        "PMSA": "37100",
-                        "PMSADescription": "Oxnard-Thousand Oaks-Ventura, CA",
-                        "CMSA": "348",
-                        "CensusBlock": null,
-                        "CensusTract": "0023.02",
-                        "CountyFIPSCode": "06111",
-                        "CensusTract2010GeoId": "06111002300",
-                        "CensusTractGeoId": "06111002302"
-                      }
-                    ]
-                  },
-                  "Agency": {
-                    "type": "object",
-                    "title": "The Agency Schema",
-                    "required": [
-                      "Commission",
-                      "LocatorSpecials",
-                      "PayLocatorsOnSection8",
-                      "DotComCommission",
-                      "RegistrationRequired",
-                      "RegisterByFax",
-                      "FaxRegistrationNumber",
-                      "RegisterByPhone",
-                      "PhoneRegistrationNumber",
-                      "RegisterByEMail",
-                      "EMailRegistrationAddress",
-                      "AptRegDotCom",
-                      "RegisterWithLRN",
-                      "NoteToLocators",
-                      "NoteToLocatorsExpires"
-                    ],
-                    "properties": {
-                      "Commission": {
-                        "type": ["string", "null"],
-                        "title": "The Commission Schema",
-                        "examples": ["NO LOCATORS", null]
-                      },
-                      "LocatorSpecials": {
-                        "type": "null",
-                        "title": "The LocatorSpecials Schema",
-                        "examples": [null]
-                      },
-                      "PayLocatorsOnSection8": {
-                        "type": "string",
-                        "title": "The PayLocatorsOnSection8 Schema",
-                        "examples": ["N"]
-                      },
-                      "DotComCommission": {
-                        "type": "null",
-                        "title": "The DotComCommission Schema",
-                        "examples": [null]
-                      },
-                      "RegistrationRequired": {
-                        "type": "string",
-                        "title": "The RegistrationRequired Schema",
-                        "examples": ["N"]
-                      },
-                      "RegisterByFax": {
-                        "type": "string",
-                        "title": "The RegisterByFax Schema",
-                        "examples": ["N"]
-                      },
-                      "FaxRegistrationNumber": {
-                        "type": "null",
-                        "title": "The FaxRegistrationNumber Schema",
-                        "examples": [null]
-                      },
-                      "RegisterByPhone": {
-                        "type": "string",
-                        "title": "The RegisterByPhone Schema",
-                        "examples": ["N"]
-                      },
-                      "PhoneRegistrationNumber": {
-                        "type": "null",
-                        "title": "The PhoneRegistrationNumber Schema",
-                        "examples": [null]
-                      },
-                      "RegisterByEMail": {
-                        "type": "string",
-                        "title": "The RegisterByEMail Schema",
-                        "examples": ["N"]
-                      },
-                      "EMailRegistrationAddress": {
-                        "type": "null",
-                        "title": "The EMailRegistrationAddress Schema",
-                        "examples": [null]
-                      },
-                      "AptRegDotCom": {
-                        "type": "string",
-                        "title": "The AptRegDotCom Schema",
-                        "examples": ["N"]
-                      },
-                      "RegisterWithLRN": {
-                        "type": "string",
-                        "title": "The RegisterWithLRN Schema",
-                        "examples": ["N"]
-                      },
-                      "NoteToLocators": {
-                        "type": "null",
-                        "title": "The NoteToLocators Schema",
-                        "examples": [null]
-                      },
-                      "NoteToLocatorsExpires": {
-                        "type": "null",
-                        "title": "The NoteToLocatorsExpires Schema",
-                        "examples": [null]
-                      }
-                    },
-                    "examples": [
-                      {
-                        "Commission": "NO LOCATORS",
-                        "LocatorSpecials": null,
-                        "PayLocatorsOnSection8": "N",
-                        "DotComCommission": null,
-                        "RegistrationRequired": "N",
-                        "RegisterByFax": "N",
-                        "FaxRegistrationNumber": null,
-                        "RegisterByPhone": "N",
-                        "PhoneRegistrationNumber": null,
-                        "RegisterByEMail": "N",
-                        "EMailRegistrationAddress": null,
-                        "AptRegDotCom": "N",
-                        "RegisterWithLRN": "N",
-                        "NoteToLocators": null,
-                        "NoteToLocatorsExpires": null
-                      },
-                      {
-                        "Commission": null,
-                        "LocatorSpecials": null,
-                        "PayLocatorsOnSection8": "N",
-                        "DotComCommission": null,
-                        "RegistrationRequired": "N",
-                        "RegisterByFax": "N",
-                        "FaxRegistrationNumber": null,
-                        "RegisterByPhone": "N",
-                        "PhoneRegistrationNumber": null,
-                        "RegisterByEMail": "N",
-                        "EMailRegistrationAddress": null,
-                        "AptRegDotCom": "N",
-                        "RegisterWithLRN": "N",
-                        "NoteToLocators": null,
-                        "NoteToLocatorsExpires": null
-                      },
-                      {
-                        "Commission": null,
-                        "LocatorSpecials": null,
-                        "PayLocatorsOnSection8": "N",
-                        "DotComCommission": null,
-                        "RegistrationRequired": "N",
-                        "RegisterByFax": "N",
-                        "FaxRegistrationNumber": null,
-                        "RegisterByPhone": "N",
-                        "PhoneRegistrationNumber": null,
-                        "RegisterByEMail": "N",
-                        "EMailRegistrationAddress": null,
-                        "AptRegDotCom": "N",
-                        "RegisterWithLRN": "N",
-                        "NoteToLocators": null,
-                        "NoteToLocatorsExpires": null
-                      }
-                    ]
-                  }
-                },
-                "examples": [
-                  {
-                    "ApartmentId": "a78c3fd4-95a3-46a8-8423-01af3aa08c1a",
-                    "LastDateUpdated": "2022-07-27T08:53:26.457Z",
-                    "LastDateChanged": "2022-07-27T08:57:26.13Z",
-                    "LastDateContacted": "2022-07-27T08:53:26.457Z",
-                    "DateStabilized": "2016-10-01T00:00:00Z",
-                    "RowVersion": 425334108,
-                    "Property": {
-                      "ALNId": 226494,
-                      "Status": 92,
-                      "StatusDescription": "92-Published, Does Not Pay Locators",
-                      "AptName": "Givens Gerber Park I",
-                      "FKA": null,
-                      "Hours": "MTh 9-3",
-                      "EMailAddress": "info@givensgerberpark.org",
-                      "Market": "AVL",
-                      "MarketDescription": "NC - Asheville",
-                      "AptOwnerId": 194983,
-                      "SubmarketId": "3baef41b-7b18-426a-82b5-a4ed80a567c6",
-                      "SubmarketDescription": "South Asheville / Arden",
-                      "NumUnits": 120,
-                      "YearBuilt": "2015",
-                      "YearRemodeled": null,
-                      "TimeZone": "E ",
-                      "Occupancy": "N/A",
-                      "NumberOfStories": "4",
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "http://www.givensgerberpark.org/",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=97b9da08-572f-4b53-8863-7084fa37f346",
-                      "CurrManager": "Nicole Allen",
-                      "AreaSupervisorId": "cc2d623b-46e4-4b4b-b7cc-f97b39911ef1",
-                      "RegionalManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                      "CorporateManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                      "OwnerId": "1546a325-8b8e-47a5-b9b8-ab1c223cc81e",
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": 471.79167,
-                      "AverageSqFt": 771.60417,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": 14,
-                      "RMSProgram": "No RMS Program",
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": "F",
-                      "PMSoftware": "Yardi",
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": 1,
-                      "MaxPetWeight": 35,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": "300",
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "Y"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "Y",
-                      "IncomeRestrictionSpecifics": "1p-$33,780, 2p-$38,580",
-                      "Section8": "Y",
-                      "SeniorLiving": "Y",
-                      "StudentHousing": "N",
-                      "LeaseTerms": "12",
-                      "ShortTerm": "N",
-                      "Corporate": "N",
-                      "ApplicationFee": "",
-                      "CurrentSpecials": "Deposit Can Be Up To 1mo Rent Based On Credit; Wait List ",
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Buncombe",
-                      "GPSLatitude": "35.5032638",
-                      "GPSLongitude": "-82.5208934",
-                      "PMSA": "11700",
-                      "PMSADescription": "Asheville, NC",
-                      "CMSA": "120",
-                      "CensusBlock": null,
-                      "CensusTract": "0022.04",
-                      "CountyFIPSCode": "37021",
-                      "CensusTract2010GeoId": "37021002204",
-                      "CensusTractGeoId": "37021002204"
-                    },
-                    "Agency": {
-                      "Commission": "NO LOCATORS",
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
-                  },
-                  {
-                    "ApartmentId": "ad973cb0-2ca9-49b0-a4a4-fc0f7663a164",
-                    "LastDateUpdated": "1970-01-01T00:00:00Z",
-                    "LastDateChanged": "2022-06-18T16:55:31.853Z",
-                    "LastDateContacted": "1970-01-01T00:00:00Z",
-                    "DateStabilized": null,
-                    "RowVersion": 424590461,
-                    "Property": {
-                      "ALNId": 260055,
-                      "Status": 15,
-                      "StatusDescription": "15-Duplicate/Discarded",
-                      "AptName": "Lofts on the Square",
-                      "FKA": null,
-                      "Hours": null,
-                      "EMailAddress": "info@themartinogroup.com",
-                      "Market": "DFW",
-                      "MarketDescription": "TX - Dallas/Ft. Worth",
-                      "AptOwnerId": null,
-                      "SubmarketId": "9ed9a205-5ba6-41bf-871e-6ea6ab942d68",
-                      "SubmarketDescription": "Denton / Corinth",
-                      "NumUnits": null,
-                      "YearBuilt": null,
-                      "YearRemodeled": null,
-                      "TimeZone": "C ",
-                      "Occupancy": null,
-                      "NumberOfStories": null,
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "http://www.themartinogroup.com/showlisting.php?sid=1005",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                      "CurrManager": "",
-                      "AreaSupervisorId": null,
-                      "RegionalManagementCompanyId": null,
-                      "CorporateManagementCompanyId": null,
-                      "OwnerId": null,
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": null,
-                      "AverageSqFt": null,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": null,
-                      "RMSProgram": null,
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": null,
-                      "PMSoftware": null,
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": null,
-                      "MaxPetWeight": null,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": null,
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "N"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "N",
-                      "IncomeRestrictionSpecifics": null,
-                      "Section8": "N",
-                      "SeniorLiving": "N",
-                      "StudentHousing": "N",
-                      "LeaseTerms": null,
-                      "ShortTerm": null,
-                      "Corporate": null,
-                      "ApplicationFee": "0",
-                      "CurrentSpecials": null,
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Denton",
-                      "GPSLatitude": "33.215191",
-                      "GPSLongitude": "-97.1320085",
-                      "PMSA": "19100",
-                      "PMSADescription": "Dallas-Fort Worth-Arlington, TX",
-                      "CMSA": "206",
-                      "CensusBlock": null,
-                      "CensusTract": "0211.00",
-                      "CountyFIPSCode": "48121",
-                      "CensusTract2010GeoId": "48121021100",
-                      "CensusTractGeoId": "48121021100"
-                    },
-                    "Agency": {
-                      "Commission": null,
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
-                  },
-                  {
-                    "ApartmentId": "a6f39c52-3d30-46c2-948e-fe4fbd909d5a",
-                    "LastDateUpdated": "2015-07-13T00:00:00Z",
-                    "LastDateChanged": "2022-05-22T20:00:13.097Z",
-                    "LastDateContacted": "2015-07-13T00:00:00Z",
-                    "DateStabilized": null,
-                    "RowVersion": 415162148,
-                    "Property": {
-                      "ALNId": 276514,
-                      "Status": 21,
-                      "StatusDescription": "21-New Construction (For Lease)",
-                      "AptName": "Villages at Westview",
-                      "FKA": "Westview Village",
-                      "Hours": null,
-                      "EMailAddress": null,
-                      "Market": "MRY",
-                      "MarketDescription": "CA - Central Coast",
-                      "AptOwnerId": null,
-                      "SubmarketId": "44df90c6-4a07-418f-b3a3-056b4f4c935d",
-                      "SubmarketDescription": "Ventura / Oxnard",
-                      "NumUnits": 180,
-                      "YearBuilt": "2021",
-                      "YearRemodeled": null,
-                      "TimeZone": "P ",
-                      "Occupancy": "0.01",
-                      "NumberOfStories": null,
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "https://hacityventura.org/westview.html",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                      "CurrManager": "",
-                      "AreaSupervisorId": null,
-                      "RegionalManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                      "CorporateManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                      "OwnerId": null,
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": null,
-                      "AverageSqFt": null,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": null,
-                      "RMSProgram": null,
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": null,
-                      "PMSoftware": null,
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": null,
-                      "MaxPetWeight": null,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": null,
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "N"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "N",
-                      "IncomeRestrictionSpecifics": null,
-                      "Section8": "N",
-                      "SeniorLiving": "N",
-                      "StudentHousing": "N",
-                      "LeaseTerms": null,
-                      "ShortTerm": null,
-                      "Corporate": null,
-                      "ApplicationFee": "0",
-                      "CurrentSpecials": null,
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Ventura",
-                      "GPSLatitude": "34.2935904",
-                      "GPSLongitude": "-119.3037525",
-                      "PMSA": "37100",
-                      "PMSADescription": "Oxnard-Thousand Oaks-Ventura, CA",
-                      "CMSA": "348",
-                      "CensusBlock": null,
-                      "CensusTract": "0023.02",
-                      "CountyFIPSCode": "06111",
-                      "CensusTract2010GeoId": "06111002300",
-                      "CensusTractGeoId": "06111002302"
-                    },
-                    "Agency": {
-                      "Commission": null,
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
-                  }
-                ]
+              "@odata.context": {
+                  "type": "string",
+                  "default": "",
+                  "title": "The @odata.context Schema",
+                  "examples": [
+                      "https://odata4.alndata.com/$metadata#Apartments"
+                  ]
               },
-              "examples": [
-                [
-                  {
-                    "ApartmentId": "a78c3fd4-95a3-46a8-8423-01af3aa08c1a",
-                    "LastDateUpdated": "2022-07-27T08:53:26.457Z",
-                    "LastDateChanged": "2022-07-27T08:57:26.13Z",
-                    "LastDateContacted": "2022-07-27T08:53:26.457Z",
-                    "DateStabilized": "2016-10-01T00:00:00Z",
-                    "RowVersion": 425334108,
-                    "Property": {
-                      "ALNId": 226494,
-                      "Status": 92,
-                      "StatusDescription": "92-Published, Does Not Pay Locators",
-                      "AptName": "Givens Gerber Park I",
-                      "FKA": null,
-                      "Hours": "MTh 9-3",
-                      "EMailAddress": "info@givensgerberpark.org",
-                      "Market": "AVL",
-                      "MarketDescription": "NC - Asheville",
-                      "AptOwnerId": 194983,
-                      "SubmarketId": "3baef41b-7b18-426a-82b5-a4ed80a567c6",
-                      "SubmarketDescription": "South Asheville / Arden",
-                      "NumUnits": 120,
-                      "YearBuilt": "2015",
-                      "YearRemodeled": null,
-                      "TimeZone": "E ",
-                      "Occupancy": "N/A",
-                      "NumberOfStories": "4",
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "http://www.givensgerberpark.org/",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=97b9da08-572f-4b53-8863-7084fa37f346",
-                      "CurrManager": "Nicole Allen",
-                      "AreaSupervisorId": "cc2d623b-46e4-4b4b-b7cc-f97b39911ef1",
-                      "RegionalManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                      "CorporateManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                      "OwnerId": "1546a325-8b8e-47a5-b9b8-ab1c223cc81e",
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": 471.79167,
-                      "AverageSqFt": 771.60417,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": 14,
-                      "RMSProgram": "No RMS Program",
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": "F",
-                      "PMSoftware": "Yardi",
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": 1,
-                      "MaxPetWeight": 35,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": "300",
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "Y"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "Y",
-                      "IncomeRestrictionSpecifics": "1p-$33,780, 2p-$38,580",
-                      "Section8": "Y",
-                      "SeniorLiving": "Y",
-                      "StudentHousing": "N",
-                      "LeaseTerms": "12",
-                      "ShortTerm": "N",
-                      "Corporate": "N",
-                      "ApplicationFee": "",
-                      "CurrentSpecials": "Deposit Can Be Up To 1mo Rent Based On Credit; Wait List ",
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Buncombe",
-                      "GPSLatitude": "35.5032638",
-                      "GPSLongitude": "-82.5208934",
-                      "PMSA": "11700",
-                      "PMSADescription": "Asheville, NC",
-                      "CMSA": "120",
-                      "CensusBlock": null,
-                      "CensusTract": "0022.04",
-                      "CountyFIPSCode": "37021",
-                      "CensusTract2010GeoId": "37021002204",
-                      "CensusTractGeoId": "37021002204"
-                    },
-                    "Agency": {
-                      "Commission": "NO LOCATORS",
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
+              "value": {
+                  "type": "array",
+                  "default": [],
+                  "title": "The value Schema",
+                  "items": {
+                      "type": "object",
+                      "title": "A Schema",
+                      "required": [
+                          "ApartmentId",
+                          "LastDateUpdated",
+                          "LastDateChanged",
+                          "LastDateContacted",
+                          "DateStabilized",
+                          "RowVersion",
+                          "Property",
+                          "Pets",
+                          "Leasing",
+                          "GeoLocation",
+                          "Agency"
+                      ],
+                      "properties": {
+                          "ApartmentId": {
+                              "type": "string",
+                              "title": "The ApartmentId Schema",
+                              "examples": [
+                                  "a35b0838-39ef-44be-85d4-00002557fa5e",
+                                  "a9f29e7a-458e-4882-853e-0045bb443809"
+                              ]
+                          },
+                          "LastDateUpdated": {
+                              "type": "string",
+                              "title": "The LastDateUpdated Schema",
+                              "examples": [
+                                  "1970-01-01T00:00:00Z",
+                                  "2013-08-01T12:37:02.503Z"
+                              ]
+                          },
+                          "LastDateChanged": {
+                              "type": "string",
+                              "title": "The LastDateChanged Schema",
+                              "examples": [
+                                  "2022-06-17T09:33:38.74Z",
+                                  "2022-07-20T14:47:32.28Z"
+                              ]
+                          },
+                          "LastDateContacted": {
+                              "type": "string",
+                              "title": "The LastDateContacted Schema",
+                              "examples": [
+                                  "1970-01-01T00:00:00Z",
+                                  "2013-08-01T12:37:02.503Z"
+                              ]
+                          },
+                          "DateStabilized": {
+                              "type": [
+                                  "null",
+                                  "string"
+                              ],
+                              "title": "The DateStabilized Schema",
+                              "examples": [
+                                  null,
+                                  "1999-11-01T00:00:00Z"
+                              ]
+                          },
+                          "RowVersion": {
+                              "type": "integer",
+                              "title": "The RowVersion Schema",
+                              "examples": [
+                                  415136504,
+                                  422880378
+                              ]
+                          },
+                          "Property": {
+                              "type": "object",
+                              "title": "The Property Schema",
+                              "required": [
+                                  "ALNId",
+                                  "Status",
+                                  "StatusDescription",
+                                  "AptName",
+                                  "FKA",
+                                  "Hours",
+                                  "EMailAddress",
+                                  "Market",
+                                  "MarketDescription",
+                                  "AptOwnerId",
+                                  "SubmarketId",
+                                  "SubmarketDescription",
+                                  "NumUnits",
+                                  "YearBuilt",
+                                  "YearRemodeled",
+                                  "TimeZone",
+                                  "Occupancy",
+                                  "NumberOfStories",
+                                  "Directions",
+                                  "PropertyDescription",
+                                  "AptHomePage",
+                                  "AptPictureURL",
+                                  "CurrManager",
+                                  "AreaSupervisorId",
+                                  "RegionalManagementCompanyId",
+                                  "CorporateManagementCompanyId",
+                                  "OwnerId",
+                                  "Views",
+                                  "ACHeating",
+                                  "MapCoordinates",
+                                  "OtherNotes",
+                                  "AverageRent",
+                                  "AverageSqFt",
+                                  "MktPctEffRentUnit",
+                                  "MktPctEffRentSqFt",
+                                  "SubMktPctEffRentUnit",
+                                  "SubMktPctEffRentSqFt",
+                                  "MktPctNetRentUnit",
+                                  "MktPctNetRentSqFt",
+                                  "SubMktPctNetRentUnit",
+                                  "SubMktPctNetRentSqFt",
+                                  "PricingAndAvailWebsite",
+                                  "PricingAndAvailWebsiteAlt",
+                                  "RMSId",
+                                  "RMSProgram",
+                                  "PricingTier",
+                                  "AssetOrFeeManaged",
+                                  "PMSoftware",
+                                  "PMSoftwareNotes"
+                              ],
+                              "properties": {
+                                  "ALNId": {
+                                      "type": "integer",
+                                      "title": "The ALNId Schema",
+                                      "examples": [
+                                          288546,
+                                          166799
+                                      ]
+                                  },
+                                  "Status": {
+                                      "type": "integer",
+                                      "title": "The Status Schema",
+                                      "examples": [
+                                          15,
+                                          33
+                                      ]
+                                  },
+                                  "StatusDescription": {
+                                      "type": "string",
+                                      "title": "The StatusDescription Schema",
+                                      "examples": [
+                                          "15-Duplicate/Discarded",
+                                          "33-Rent Based on Income"
+                                      ]
+                                  },
+                                  "AptName": {
+                                      "type": "string",
+                                      "title": "The AptName Schema",
+                                      "examples": [
+                                          "Oceanside Pompano Beach",
+                                          "Russell Manor"
+                                      ]
+                                  },
+                                  "FKA": {
+                                      "type": "null",
+                                      "title": "The FKA Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "Hours": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The Hours Schema",
+                                      "examples": [
+                                          null,
+                                          "MF 8-4:30"
+                                      ]
+                                  },
+                                  "EMailAddress": {
+                                      "type": "null",
+                                      "title": "The EMailAddress Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "Market": {
+                                      "type": "string",
+                                      "title": "The Market Schema",
+                                      "examples": [
+                                          "FLL",
+                                          "SMF"
+                                      ]
+                                  },
+                                  "MarketDescription": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The MarketDescription Schema",
+                                      "examples": [
+                                          null,
+                                          "CA - Sacramento"
+                                      ]
+                                  },
+                                  "AptOwnerId": {
+                                      "type": [
+                                          "null",
+                                          "integer"
+                                      ],
+                                      "title": "The AptOwnerId Schema",
+                                      "examples": [
+                                          null,
+                                          52027
+                                      ]
+                                  },
+                                  "SubmarketId": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The SubmarketId Schema",
+                                      "examples": [
+                                          null,
+                                          "9f1e6ba9-1a74-44a6-8550-0b7c065fa309"
+                                      ]
+                                  },
+                                  "SubmarketDescription": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The SubmarketDescription Schema",
+                                      "examples": [
+                                          null,
+                                          "South Sacramento"
+                                      ]
+                                  },
+                                  "NumUnits": {
+                                      "type": "integer",
+                                      "title": "The NumUnits Schema",
+                                      "examples": [
+                                          77,
+                                          65
+                                      ]
+                                  },
+                                  "YearBuilt": {
+                                      "type": "string",
+                                      "title": "The YearBuilt Schema",
+                                      "examples": [
+                                          "2021",
+                                          "1998"
+                                      ]
+                                  },
+                                  "YearRemodeled": {
+                                      "type": "null",
+                                      "title": "The YearRemodeled Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "TimeZone": {
+                                      "type": "string",
+                                      "title": "The TimeZone Schema",
+                                      "examples": [
+                                          "E ",
+                                          "P "
+                                      ]
+                                  },
+                                  "Occupancy": {
+                                      "type": "string",
+                                      "title": "The Occupancy Schema",
+                                      "examples": [
+                                          "0.01",
+                                          "100"
+                                      ]
+                                  },
+                                  "NumberOfStories": {
+                                      "type": "string",
+                                      "title": "The NumberOfStories Schema",
+                                      "examples": [
+                                          "24",
+                                          "3"
+                                      ]
+                                  },
+                                  "Directions": {
+                                      "type": "null",
+                                      "title": "The Directions Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PropertyDescription": {
+                                      "type": "null",
+                                      "title": "The PropertyDescription Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AptHomePage": {
+                                      "type": "null",
+                                      "title": "The AptHomePage Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AptPictureURL": {
+                                      "type": "string",
+                                      "title": "The AptPictureURL Schema",
+                                      "examples": [
+                                          "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf"
+                                      ]
+                                  },
+                                  "CurrManager": {
+                                      "type": "string",
+                                      "title": "The CurrManager Schema",
+                                      "examples": [
+                                          "",
+                                          "Laura "
+                                      ]
+                                  },
+                                  "AreaSupervisorId": {
+                                      "type": "null",
+                                      "title": "The AreaSupervisorId Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RegionalManagementCompanyId": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The RegionalManagementCompanyId Schema",
+                                      "examples": [
+                                          null,
+                                          "ba625abf-0d24-4c85-a10f-c079b5d7c07f"
+                                      ]
+                                  },
+                                  "CorporateManagementCompanyId": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The CorporateManagementCompanyId Schema",
+                                      "examples": [
+                                          null,
+                                          "b705b856-972b-4e38-8239-e37c15021b95"
+                                      ]
+                                  },
+                                  "OwnerId": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The OwnerId Schema",
+                                      "examples": [
+                                          null,
+                                          "3cc98828-4512-4725-b672-8d3d11b70a6d"
+                                      ]
+                                  },
+                                  "Views": {
+                                      "type": "null",
+                                      "title": "The Views Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "ACHeating": {
+                                      "type": "null",
+                                      "title": "The ACHeating Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MapCoordinates": {
+                                      "type": "null",
+                                      "title": "The MapCoordinates Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "OtherNotes": {
+                                      "type": "null",
+                                      "title": "The OtherNotes Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AverageRent": {
+                                      "type": [
+                                          "null",
+                                          "number"
+                                      ],
+                                      "title": "The AverageRent Schema",
+                                      "examples": [
+                                          null,
+                                          0.00000
+                                      ]
+                                  },
+                                  "AverageSqFt": {
+                                      "type": [
+                                          "null",
+                                          "number"
+                                      ],
+                                      "title": "The AverageSqFt Schema",
+                                      "examples": [
+                                          null,
+                                          0.00000
+                                      ]
+                                  },
+                                  "MktPctEffRentUnit": {
+                                      "type": "null",
+                                      "title": "The MktPctEffRentUnit Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MktPctEffRentSqFt": {
+                                      "type": "null",
+                                      "title": "The MktPctEffRentSqFt Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "SubMktPctEffRentUnit": {
+                                      "type": "null",
+                                      "title": "The SubMktPctEffRentUnit Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "SubMktPctEffRentSqFt": {
+                                      "type": "null",
+                                      "title": "The SubMktPctEffRentSqFt Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MktPctNetRentUnit": {
+                                      "type": "null",
+                                      "title": "The MktPctNetRentUnit Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MktPctNetRentSqFt": {
+                                      "type": "null",
+                                      "title": "The MktPctNetRentSqFt Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "SubMktPctNetRentUnit": {
+                                      "type": "null",
+                                      "title": "The SubMktPctNetRentUnit Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "SubMktPctNetRentSqFt": {
+                                      "type": "null",
+                                      "title": "The SubMktPctNetRentSqFt Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PricingAndAvailWebsite": {
+                                      "type": "null",
+                                      "title": "The PricingAndAvailWebsite Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PricingAndAvailWebsiteAlt": {
+                                      "type": "null",
+                                      "title": "The PricingAndAvailWebsiteAlt Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RMSId": {
+                                      "type": "null",
+                                      "title": "The RMSId Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RMSProgram": {
+                                      "type": "null",
+                                      "title": "The RMSProgram Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PricingTier": {
+                                      "type": "null",
+                                      "title": "The PricingTier Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AssetOrFeeManaged": {
+                                      "type": "null",
+                                      "title": "The AssetOrFeeManaged Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PMSoftware": {
+                                      "type": "null",
+                                      "title": "The PMSoftware Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PMSoftwareNotes": {
+                                      "type": "null",
+                                      "title": "The PMSoftwareNotes Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  }
+                              },
+                              "examples": [{
+                                  "ALNId": 288546,
+                                  "Status": 15,
+                                  "StatusDescription": "15-Duplicate/Discarded",
+                                  "AptName": "Oceanside Pompano Beach",
+                                  "FKA": null,
+                                  "Hours": null,
+                                  "EMailAddress": null,
+                                  "Market": "FLL",
+                                  "MarketDescription": null,
+                                  "AptOwnerId": null,
+                                  "SubmarketId": null,
+                                  "SubmarketDescription": null,
+                                  "NumUnits": 77,
+                                  "YearBuilt": "2021",
+                                  "YearRemodeled": null,
+                                  "TimeZone": "E ",
+                                  "Occupancy": "0.01",
+                                  "NumberOfStories": "24",
+                                  "Directions": null,
+                                  "PropertyDescription": null,
+                                  "AptHomePage": null,
+                                  "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                                  "CurrManager": "",
+                                  "AreaSupervisorId": null,
+                                  "RegionalManagementCompanyId": null,
+                                  "CorporateManagementCompanyId": null,
+                                  "OwnerId": null,
+                                  "Views": null,
+                                  "ACHeating": null,
+                                  "MapCoordinates": null,
+                                  "OtherNotes": null,
+                                  "AverageRent": null,
+                                  "AverageSqFt": null,
+                                  "MktPctEffRentUnit": null,
+                                  "MktPctEffRentSqFt": null,
+                                  "SubMktPctEffRentUnit": null,
+                                  "SubMktPctEffRentSqFt": null,
+                                  "MktPctNetRentUnit": null,
+                                  "MktPctNetRentSqFt": null,
+                                  "SubMktPctNetRentUnit": null,
+                                  "SubMktPctNetRentSqFt": null,
+                                  "PricingAndAvailWebsite": null,
+                                  "PricingAndAvailWebsiteAlt": null,
+                                  "RMSId": null,
+                                  "RMSProgram": null,
+                                  "PricingTier": null,
+                                  "AssetOrFeeManaged": null,
+                                  "PMSoftware": null,
+                                  "PMSoftwareNotes": null
+                              },
+                              {
+                                  "ALNId": 166799,
+                                  "Status": 33,
+                                  "StatusDescription": "33-Rent Based on Income",
+                                  "AptName": "Russell Manor",
+                                  "FKA": null,
+                                  "Hours": "MF 8-4:30",
+                                  "EMailAddress": null,
+                                  "Market": "SMF",
+                                  "MarketDescription": "CA - Sacramento",
+                                  "AptOwnerId": 52027,
+                                  "SubmarketId": "9f1e6ba9-1a74-44a6-8550-0b7c065fa309",
+                                  "SubmarketDescription": "South Sacramento",
+                                  "NumUnits": 65,
+                                  "YearBuilt": "1998",
+                                  "YearRemodeled": null,
+                                  "TimeZone": "P ",
+                                  "Occupancy": "100",
+                                  "NumberOfStories": "3",
+                                  "Directions": null,
+                                  "PropertyDescription": null,
+                                  "AptHomePage": null,
+                                  "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                                  "CurrManager": "Laura ",
+                                  "AreaSupervisorId": null,
+                                  "RegionalManagementCompanyId": "ba625abf-0d24-4c85-a10f-c079b5d7c07f",
+                                  "CorporateManagementCompanyId": "b705b856-972b-4e38-8239-e37c15021b95",
+                                  "OwnerId": "3cc98828-4512-4725-b672-8d3d11b70a6d",
+                                  "Views": null,
+                                  "ACHeating": null,
+                                  "MapCoordinates": null,
+                                  "OtherNotes": null,
+                                  "AverageRent": 0.00000,
+                                  "AverageSqFt": 0.00000,
+                                  "MktPctEffRentUnit": null,
+                                  "MktPctEffRentSqFt": null,
+                                  "SubMktPctEffRentUnit": null,
+                                  "SubMktPctEffRentSqFt": null,
+                                  "MktPctNetRentUnit": null,
+                                  "MktPctNetRentSqFt": null,
+                                  "SubMktPctNetRentUnit": null,
+                                  "SubMktPctNetRentSqFt": null,
+                                  "PricingAndAvailWebsite": null,
+                                  "PricingAndAvailWebsiteAlt": null,
+                                  "RMSId": null,
+                                  "RMSProgram": null,
+                                  "PricingTier": null,
+                                  "AssetOrFeeManaged": null,
+                                  "PMSoftware": null,
+                                  "PMSoftwareNotes": null
+                              }]
+                          },
+                          "Pets": {
+                              "type": "object",
+                              "title": "The Pets Schema",
+                              "required": [
+                                  "MaxNumPets",
+                                  "MaxPetWeight",
+                                  "MaxPetHeight",
+                                  "PetDescription",
+                                  "PetDeposit",
+                                  "PetNonRefundable",
+                                  "PetRentPerMonth",
+                                  "CatsOnly",
+                                  "BreedRestrictions"
+                              ],
+                              "properties": {
+                                  "MaxNumPets": {
+                                      "type": "null",
+                                      "title": "The MaxNumPets Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MaxPetWeight": {
+                                      "type": "null",
+                                      "title": "The MaxPetWeight Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "MaxPetHeight": {
+                                      "type": "null",
+                                      "title": "The MaxPetHeight Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PetDescription": {
+                                      "type": "null",
+                                      "title": "The PetDescription Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PetDeposit": {
+                                      "type": "null",
+                                      "title": "The PetDeposit Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PetNonRefundable": {
+                                      "type": "null",
+                                      "title": "The PetNonRefundable Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PetRentPerMonth": {
+                                      "type": "null",
+                                      "title": "The PetRentPerMonth Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "CatsOnly": {
+                                      "type": "string",
+                                      "title": "The CatsOnly Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "BreedRestrictions": {
+                                      "type": "string",
+                                      "title": "The BreedRestrictions Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  }
+                              },
+                              "examples": [{
+                                  "MaxNumPets": null,
+                                  "MaxPetWeight": null,
+                                  "MaxPetHeight": null,
+                                  "PetDescription": null,
+                                  "PetDeposit": null,
+                                  "PetNonRefundable": null,
+                                  "PetRentPerMonth": null,
+                                  "CatsOnly": "N",
+                                  "BreedRestrictions": "N"
+                              },
+                              {
+                                  "MaxNumPets": null,
+                                  "MaxPetWeight": null,
+                                  "MaxPetHeight": null,
+                                  "PetDescription": null,
+                                  "PetDeposit": null,
+                                  "PetNonRefundable": null,
+                                  "PetRentPerMonth": null,
+                                  "CatsOnly": "N",
+                                  "BreedRestrictions": "N"
+                              }]
+                          },
+                          "Leasing": {
+                              "type": "object",
+                              "title": "The Leasing Schema",
+                              "required": [
+                                  "IncomeRestricted",
+                                  "IncomeRestrictionSpecifics",
+                                  "Section8",
+                                  "SeniorLiving",
+                                  "StudentHousing",
+                                  "LeaseTerms",
+                                  "ShortTerm",
+                                  "Corporate",
+                                  "ApplicationFee",
+                                  "CurrentSpecials",
+                                  "AssistedLiving"
+                              ],
+                              "properties": {
+                                  "IncomeRestricted": {
+                                      "type": "string",
+                                      "title": "The IncomeRestricted Schema",
+                                      "examples": [
+                                          "N",
+                                          "Y"
+                                      ]
+                                  },
+                                  "IncomeRestrictionSpecifics": {
+                                      "type": "null",
+                                      "title": "The IncomeRestrictionSpecifics Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "Section8": {
+                                      "type": "string",
+                                      "title": "The Section8 Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "SeniorLiving": {
+                                      "type": "string",
+                                      "title": "The SeniorLiving Schema",
+                                      "examples": [
+                                          "N",
+                                          "Y"
+                                      ]
+                                  },
+                                  "StudentHousing": {
+                                      "type": "string",
+                                      "title": "The StudentHousing Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "LeaseTerms": {
+                                      "type": "null",
+                                      "title": "The LeaseTerms Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "ShortTerm": {
+                                      "type": "null",
+                                      "title": "The ShortTerm Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "Corporate": {
+                                      "type": "null",
+                                      "title": "The Corporate Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "ApplicationFee": {
+                                      "type": "string",
+                                      "title": "The ApplicationFee Schema",
+                                      "examples": [
+                                          "0"
+                                      ]
+                                  },
+                                  "CurrentSpecials": {
+                                      "type": "null",
+                                      "title": "The CurrentSpecials Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AssistedLiving": {
+                                      "type": [
+                                          "string",
+                                          "null"
+                                      ],
+                                      "title": "The AssistedLiving Schema",
+                                      "examples": [
+                                          "N",
+                                          null
+                                      ]
+                                  }
+                              },
+                              "examples": [{
+                                  "IncomeRestricted": "N",
+                                  "IncomeRestrictionSpecifics": null,
+                                  "Section8": "N",
+                                  "SeniorLiving": "N",
+                                  "StudentHousing": "N",
+                                  "LeaseTerms": null,
+                                  "ShortTerm": null,
+                                  "Corporate": null,
+                                  "ApplicationFee": "0",
+                                  "CurrentSpecials": null,
+                                  "AssistedLiving": "N"
+                              },
+                              {
+                                  "IncomeRestricted": "Y",
+                                  "IncomeRestrictionSpecifics": null,
+                                  "Section8": "N",
+                                  "SeniorLiving": "Y",
+                                  "StudentHousing": "N",
+                                  "LeaseTerms": null,
+                                  "ShortTerm": null,
+                                  "Corporate": null,
+                                  "ApplicationFee": "0",
+                                  "CurrentSpecials": null,
+                                  "AssistedLiving": null
+                              }]
+                          },
+                          "GeoLocation": {
+                              "type": "object",
+                              "title": "The GeoLocation Schema",
+                              "required": [
+                                  "County",
+                                  "GPSLatitude",
+                                  "GPSLongitude",
+                                  "PMSA",
+                                  "PMSADescription",
+                                  "CMSA",
+                                  "CensusBlock",
+                                  "CensusTract",
+                                  "CountyFIPSCode",
+                                  "CensusTract2010GeoId",
+                                  "CensusTractGeoId"
+                              ],
+                              "properties": {
+                                  "County": {
+                                      "type": "string",
+                                      "title": "The County Schema",
+                                      "examples": [
+                                          "Broward",
+                                          "Sacramento"
+                                      ]
+                                  },
+                                  "GPSLatitude": {
+                                      "type": "string",
+                                      "title": "The GPSLatitude Schema",
+                                      "examples": [
+                                          "26.232966",
+                                          "38.459147"
+                                      ]
+                                  },
+                                  "GPSLongitude": {
+                                      "type": "string",
+                                      "title": "The GPSLongitude Schema",
+                                      "examples": [
+                                          "-80.090393",
+                                          "-121.417721"
+                                      ]
+                                  },
+                                  "PMSA": {
+                                      "type": "string",
+                                      "title": "The PMSA Schema",
+                                      "examples": [
+                                          "33100",
+                                          "40900"
+                                      ]
+                                  },
+                                  "PMSADescription": {
+                                      "type": "string",
+                                      "title": "The PMSADescription Schema",
+                                      "examples": [
+                                          "Miami-Fort Lauderdale-West Palm Beach, FL",
+                                          "Sacramento--Roseville--Arden-Arcade, CA"
+                                      ]
+                                  },
+                                  "CMSA": {
+                                      "type": "string",
+                                      "title": "The CMSA Schema",
+                                      "examples": [
+                                          "370",
+                                          "472"
+                                      ]
+                                  },
+                                  "CensusBlock": {
+                                      "type": [
+                                          "null",
+                                          "string"
+                                      ],
+                                      "title": "The CensusBlock Schema",
+                                      "examples": [
+                                          null,
+                                          "4012"
+                                      ]
+                                  },
+                                  "CensusTract": {
+                                      "type": "string",
+                                      "title": "The CensusTract Schema",
+                                      "examples": [
+                                          "0312.03",
+                                          "0096.41"
+                                      ]
+                                  },
+                                  "CountyFIPSCode": {
+                                      "type": "string",
+                                      "title": "The CountyFIPSCode Schema",
+                                      "examples": [
+                                          "12011",
+                                          "06067"
+                                      ]
+                                  },
+                                  "CensusTract2010GeoId": {
+                                      "type": "string",
+                                      "title": "The CensusTract2010GeoId Schema",
+                                      "examples": [
+                                          "12011031203",
+                                          "06067009606"
+                                      ]
+                                  },
+                                  "CensusTractGeoId": {
+                                      "type": "string",
+                                      "title": "The CensusTractGeoId Schema",
+                                      "examples": [
+                                          "12011031203",
+                                          "06067009641"
+                                      ]
+                                  }
+                              },
+                              "examples": [{
+                                  "County": "Broward",
+                                  "GPSLatitude": "26.232966",
+                                  "GPSLongitude": "-80.090393",
+                                  "PMSA": "33100",
+                                  "PMSADescription": "Miami-Fort Lauderdale-West Palm Beach, FL",
+                                  "CMSA": "370",
+                                  "CensusBlock": null,
+                                  "CensusTract": "0312.03",
+                                  "CountyFIPSCode": "12011",
+                                  "CensusTract2010GeoId": "12011031203",
+                                  "CensusTractGeoId": "12011031203"
+                              },
+                              {
+                                  "County": "Sacramento",
+                                  "GPSLatitude": "38.459147",
+                                  "GPSLongitude": "-121.417721",
+                                  "PMSA": "40900",
+                                  "PMSADescription": "Sacramento--Roseville--Arden-Arcade, CA",
+                                  "CMSA": "472",
+                                  "CensusBlock": "4012",
+                                  "CensusTract": "0096.41",
+                                  "CountyFIPSCode": "06067",
+                                  "CensusTract2010GeoId": "06067009606",
+                                  "CensusTractGeoId": "06067009641"
+                              }]
+                          },
+                          "Agency": {
+                              "type": "object",
+                              "title": "The Agency Schema",
+                              "required": [
+                                  "Commission",
+                                  "LocatorSpecials",
+                                  "PayLocatorsOnSection8",
+                                  "DotComCommission",
+                                  "RegistrationRequired",
+                                  "RegisterByFax",
+                                  "FaxRegistrationNumber",
+                                  "RegisterByPhone",
+                                  "PhoneRegistrationNumber",
+                                  "RegisterByEMail",
+                                  "EMailRegistrationAddress",
+                                  "AptRegDotCom",
+                                  "RegisterWithLRN",
+                                  "NoteToLocators",
+                                  "NoteToLocatorsExpires"
+                              ],
+                              "properties": {
+                                  "Commission": {
+                                      "type": "null",
+                                      "title": "The Commission Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "LocatorSpecials": {
+                                      "type": "null",
+                                      "title": "The LocatorSpecials Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "PayLocatorsOnSection8": {
+                                      "type": "null",
+                                      "title": "The PayLocatorsOnSection8 Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "DotComCommission": {
+                                      "type": "null",
+                                      "title": "The DotComCommission Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RegistrationRequired": {
+                                      "type": "string",
+                                      "title": "The RegistrationRequired Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "RegisterByFax": {
+                                      "type": "string",
+                                      "title": "The RegisterByFax Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "FaxRegistrationNumber": {
+                                      "type": "null",
+                                      "title": "The FaxRegistrationNumber Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RegisterByPhone": {
+                                      "type": "string",
+                                      "title": "The RegisterByPhone Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "PhoneRegistrationNumber": {
+                                      "type": "null",
+                                      "title": "The PhoneRegistrationNumber Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "RegisterByEMail": {
+                                      "type": "string",
+                                      "title": "The RegisterByEMail Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "EMailRegistrationAddress": {
+                                      "type": "null",
+                                      "title": "The EMailRegistrationAddress Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "AptRegDotCom": {
+                                      "type": "string",
+                                      "title": "The AptRegDotCom Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "RegisterWithLRN": {
+                                      "type": "string",
+                                      "title": "The RegisterWithLRN Schema",
+                                      "examples": [
+                                          "N"
+                                      ]
+                                  },
+                                  "NoteToLocators": {
+                                      "type": "null",
+                                      "title": "The NoteToLocators Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  },
+                                  "NoteToLocatorsExpires": {
+                                      "type": "null",
+                                      "title": "The NoteToLocatorsExpires Schema",
+                                      "examples": [
+                                          null
+                                      ]
+                                  }
+                              },
+                              "examples": [{
+                                  "Commission": null,
+                                  "LocatorSpecials": null,
+                                  "PayLocatorsOnSection8": null,
+                                  "DotComCommission": null,
+                                  "RegistrationRequired": "N",
+                                  "RegisterByFax": "N",
+                                  "FaxRegistrationNumber": null,
+                                  "RegisterByPhone": "N",
+                                  "PhoneRegistrationNumber": null,
+                                  "RegisterByEMail": "N",
+                                  "EMailRegistrationAddress": null,
+                                  "AptRegDotCom": "N",
+                                  "RegisterWithLRN": "N",
+                                  "NoteToLocators": null,
+                                  "NoteToLocatorsExpires": null
+                              },
+                              {
+                                  "Commission": null,
+                                  "LocatorSpecials": null,
+                                  "PayLocatorsOnSection8": null,
+                                  "DotComCommission": null,
+                                  "RegistrationRequired": "N",
+                                  "RegisterByFax": "N",
+                                  "FaxRegistrationNumber": null,
+                                  "RegisterByPhone": "N",
+                                  "PhoneRegistrationNumber": null,
+                                  "RegisterByEMail": "N",
+                                  "EMailRegistrationAddress": null,
+                                  "AptRegDotCom": "N",
+                                  "RegisterWithLRN": "N",
+                                  "NoteToLocators": null,
+                                  "NoteToLocatorsExpires": null
+                              }]
+                          }
+                      },
+                      "examples": [{
+                          "ApartmentId": "a35b0838-39ef-44be-85d4-00002557fa5e",
+                          "LastDateUpdated": "1970-01-01T00:00:00Z",
+                          "LastDateChanged": "2022-06-17T09:33:38.74Z",
+                          "LastDateContacted": "1970-01-01T00:00:00Z",
+                          "DateStabilized": null,
+                          "RowVersion": 415136504,
+                          "Property": {
+                              "ALNId": 288546,
+                              "Status": 15,
+                              "StatusDescription": "15-Duplicate/Discarded",
+                              "AptName": "Oceanside Pompano Beach",
+                              "FKA": null,
+                              "Hours": null,
+                              "EMailAddress": null,
+                              "Market": "FLL",
+                              "MarketDescription": null,
+                              "AptOwnerId": null,
+                              "SubmarketId": null,
+                              "SubmarketDescription": null,
+                              "NumUnits": 77,
+                              "YearBuilt": "2021",
+                              "YearRemodeled": null,
+                              "TimeZone": "E ",
+                              "Occupancy": "0.01",
+                              "NumberOfStories": "24",
+                              "Directions": null,
+                              "PropertyDescription": null,
+                              "AptHomePage": null,
+                              "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                              "CurrManager": "",
+                              "AreaSupervisorId": null,
+                              "RegionalManagementCompanyId": null,
+                              "CorporateManagementCompanyId": null,
+                              "OwnerId": null,
+                              "Views": null,
+                              "ACHeating": null,
+                              "MapCoordinates": null,
+                              "OtherNotes": null,
+                              "AverageRent": null,
+                              "AverageSqFt": null,
+                              "MktPctEffRentUnit": null,
+                              "MktPctEffRentSqFt": null,
+                              "SubMktPctEffRentUnit": null,
+                              "SubMktPctEffRentSqFt": null,
+                              "MktPctNetRentUnit": null,
+                              "MktPctNetRentSqFt": null,
+                              "SubMktPctNetRentUnit": null,
+                              "SubMktPctNetRentSqFt": null,
+                              "PricingAndAvailWebsite": null,
+                              "PricingAndAvailWebsiteAlt": null,
+                              "RMSId": null,
+                              "RMSProgram": null,
+                              "PricingTier": null,
+                              "AssetOrFeeManaged": null,
+                              "PMSoftware": null,
+                              "PMSoftwareNotes": null
+                          },
+                          "Pets": {
+                              "MaxNumPets": null,
+                              "MaxPetWeight": null,
+                              "MaxPetHeight": null,
+                              "PetDescription": null,
+                              "PetDeposit": null,
+                              "PetNonRefundable": null,
+                              "PetRentPerMonth": null,
+                              "CatsOnly": "N",
+                              "BreedRestrictions": "N"
+                          },
+                          "Leasing": {
+                              "IncomeRestricted": "N",
+                              "IncomeRestrictionSpecifics": null,
+                              "Section8": "N",
+                              "SeniorLiving": "N",
+                              "StudentHousing": "N",
+                              "LeaseTerms": null,
+                              "ShortTerm": null,
+                              "Corporate": null,
+                              "ApplicationFee": "0",
+                              "CurrentSpecials": null,
+                              "AssistedLiving": "N"
+                          },
+                          "GeoLocation": {
+                              "County": "Broward",
+                              "GPSLatitude": "26.232966",
+                              "GPSLongitude": "-80.090393",
+                              "PMSA": "33100",
+                              "PMSADescription": "Miami-Fort Lauderdale-West Palm Beach, FL",
+                              "CMSA": "370",
+                              "CensusBlock": null,
+                              "CensusTract": "0312.03",
+                              "CountyFIPSCode": "12011",
+                              "CensusTract2010GeoId": "12011031203",
+                              "CensusTractGeoId": "12011031203"
+                          },
+                          "Agency": {
+                              "Commission": null,
+                              "LocatorSpecials": null,
+                              "PayLocatorsOnSection8": null,
+                              "DotComCommission": null,
+                              "RegistrationRequired": "N",
+                              "RegisterByFax": "N",
+                              "FaxRegistrationNumber": null,
+                              "RegisterByPhone": "N",
+                              "PhoneRegistrationNumber": null,
+                              "RegisterByEMail": "N",
+                              "EMailRegistrationAddress": null,
+                              "AptRegDotCom": "N",
+                              "RegisterWithLRN": "N",
+                              "NoteToLocators": null,
+                              "NoteToLocatorsExpires": null
+                          }
+                      },
+                      {
+                          "ApartmentId": "a9f29e7a-458e-4882-853e-0045bb443809",
+                          "LastDateUpdated": "2013-08-01T12:37:02.503Z",
+                          "LastDateChanged": "2022-07-20T14:47:32.28Z",
+                          "LastDateContacted": "2013-08-01T12:37:02.503Z",
+                          "DateStabilized": "1999-11-01T00:00:00Z",
+                          "RowVersion": 422880378,
+                          "Property": {
+                              "ALNId": 166799,
+                              "Status": 33,
+                              "StatusDescription": "33-Rent Based on Income",
+                              "AptName": "Russell Manor",
+                              "FKA": null,
+                              "Hours": "MF 8-4:30",
+                              "EMailAddress": null,
+                              "Market": "SMF",
+                              "MarketDescription": "CA - Sacramento",
+                              "AptOwnerId": 52027,
+                              "SubmarketId": "9f1e6ba9-1a74-44a6-8550-0b7c065fa309",
+                              "SubmarketDescription": "South Sacramento",
+                              "NumUnits": 65,
+                              "YearBuilt": "1998",
+                              "YearRemodeled": null,
+                              "TimeZone": "P ",
+                              "Occupancy": "100",
+                              "NumberOfStories": "3",
+                              "Directions": null,
+                              "PropertyDescription": null,
+                              "AptHomePage": null,
+                              "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                              "CurrManager": "Laura ",
+                              "AreaSupervisorId": null,
+                              "RegionalManagementCompanyId": "ba625abf-0d24-4c85-a10f-c079b5d7c07f",
+                              "CorporateManagementCompanyId": "b705b856-972b-4e38-8239-e37c15021b95",
+                              "OwnerId": "3cc98828-4512-4725-b672-8d3d11b70a6d",
+                              "Views": null,
+                              "ACHeating": null,
+                              "MapCoordinates": null,
+                              "OtherNotes": null,
+                              "AverageRent": 0.00000,
+                              "AverageSqFt": 0.00000,
+                              "MktPctEffRentUnit": null,
+                              "MktPctEffRentSqFt": null,
+                              "SubMktPctEffRentUnit": null,
+                              "SubMktPctEffRentSqFt": null,
+                              "MktPctNetRentUnit": null,
+                              "MktPctNetRentSqFt": null,
+                              "SubMktPctNetRentUnit": null,
+                              "SubMktPctNetRentSqFt": null,
+                              "PricingAndAvailWebsite": null,
+                              "PricingAndAvailWebsiteAlt": null,
+                              "RMSId": null,
+                              "RMSProgram": null,
+                              "PricingTier": null,
+                              "AssetOrFeeManaged": null,
+                              "PMSoftware": null,
+                              "PMSoftwareNotes": null
+                          },
+                          "Pets": {
+                              "MaxNumPets": null,
+                              "MaxPetWeight": null,
+                              "MaxPetHeight": null,
+                              "PetDescription": null,
+                              "PetDeposit": null,
+                              "PetNonRefundable": null,
+                              "PetRentPerMonth": null,
+                              "CatsOnly": "N",
+                              "BreedRestrictions": "N"
+                          },
+                          "Leasing": {
+                              "IncomeRestricted": "Y",
+                              "IncomeRestrictionSpecifics": null,
+                              "Section8": "N",
+                              "SeniorLiving": "Y",
+                              "StudentHousing": "N",
+                              "LeaseTerms": null,
+                              "ShortTerm": null,
+                              "Corporate": null,
+                              "ApplicationFee": "0",
+                              "CurrentSpecials": null,
+                              "AssistedLiving": null
+                          },
+                          "GeoLocation": {
+                              "County": "Sacramento",
+                              "GPSLatitude": "38.459147",
+                              "GPSLongitude": "-121.417721",
+                              "PMSA": "40900",
+                              "PMSADescription": "Sacramento--Roseville--Arden-Arcade, CA",
+                              "CMSA": "472",
+                              "CensusBlock": "4012",
+                              "CensusTract": "0096.41",
+                              "CountyFIPSCode": "06067",
+                              "CensusTract2010GeoId": "06067009606",
+                              "CensusTractGeoId": "06067009641"
+                          },
+                          "Agency": {
+                              "Commission": null,
+                              "LocatorSpecials": null,
+                              "PayLocatorsOnSection8": null,
+                              "DotComCommission": null,
+                              "RegistrationRequired": "N",
+                              "RegisterByFax": "N",
+                              "FaxRegistrationNumber": null,
+                              "RegisterByPhone": "N",
+                              "PhoneRegistrationNumber": null,
+                              "RegisterByEMail": "N",
+                              "EMailRegistrationAddress": null,
+                              "AptRegDotCom": "N",
+                              "RegisterWithLRN": "N",
+                              "NoteToLocators": null,
+                              "NoteToLocatorsExpires": null
+                          }
+                      }]
                   },
-                  {
-                    "ApartmentId": "ad973cb0-2ca9-49b0-a4a4-fc0f7663a164",
-                    "LastDateUpdated": "1970-01-01T00:00:00Z",
-                    "LastDateChanged": "2022-06-18T16:55:31.853Z",
-                    "LastDateContacted": "1970-01-01T00:00:00Z",
-                    "DateStabilized": null,
-                    "RowVersion": 424590461,
-                    "Property": {
-                      "ALNId": 260055,
-                      "Status": 15,
-                      "StatusDescription": "15-Duplicate/Discarded",
-                      "AptName": "Lofts on the Square",
-                      "FKA": null,
-                      "Hours": null,
-                      "EMailAddress": "info@themartinogroup.com",
-                      "Market": "DFW",
-                      "MarketDescription": "TX - Dallas/Ft. Worth",
-                      "AptOwnerId": null,
-                      "SubmarketId": "9ed9a205-5ba6-41bf-871e-6ea6ab942d68",
-                      "SubmarketDescription": "Denton / Corinth",
-                      "NumUnits": null,
-                      "YearBuilt": null,
-                      "YearRemodeled": null,
-                      "TimeZone": "C ",
-                      "Occupancy": null,
-                      "NumberOfStories": null,
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "http://www.themartinogroup.com/showlisting.php?sid=1005",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                      "CurrManager": "",
-                      "AreaSupervisorId": null,
-                      "RegionalManagementCompanyId": null,
-                      "CorporateManagementCompanyId": null,
-                      "OwnerId": null,
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": null,
-                      "AverageSqFt": null,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": null,
-                      "RMSProgram": null,
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": null,
-                      "PMSoftware": null,
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": null,
-                      "MaxPetWeight": null,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": null,
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "N"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "N",
-                      "IncomeRestrictionSpecifics": null,
-                      "Section8": "N",
-                      "SeniorLiving": "N",
-                      "StudentHousing": "N",
-                      "LeaseTerms": null,
-                      "ShortTerm": null,
-                      "Corporate": null,
-                      "ApplicationFee": "0",
-                      "CurrentSpecials": null,
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Denton",
-                      "GPSLatitude": "33.215191",
-                      "GPSLongitude": "-97.1320085",
-                      "PMSA": "19100",
-                      "PMSADescription": "Dallas-Fort Worth-Arlington, TX",
-                      "CMSA": "206",
-                      "CensusBlock": null,
-                      "CensusTract": "0211.00",
-                      "CountyFIPSCode": "48121",
-                      "CensusTract2010GeoId": "48121021100",
-                      "CensusTractGeoId": "48121021100"
-                    },
-                    "Agency": {
-                      "Commission": null,
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
-                  },
-                  {
-                    "ApartmentId": "a6f39c52-3d30-46c2-948e-fe4fbd909d5a",
-                    "LastDateUpdated": "2015-07-13T00:00:00Z",
-                    "LastDateChanged": "2022-05-22T20:00:13.097Z",
-                    "LastDateContacted": "2015-07-13T00:00:00Z",
-                    "DateStabilized": null,
-                    "RowVersion": 415162148,
-                    "Property": {
-                      "ALNId": 276514,
-                      "Status": 21,
-                      "StatusDescription": "21-New Construction (For Lease)",
-                      "AptName": "Villages at Westview",
-                      "FKA": "Westview Village",
-                      "Hours": null,
-                      "EMailAddress": null,
-                      "Market": "MRY",
-                      "MarketDescription": "CA - Central Coast",
-                      "AptOwnerId": null,
-                      "SubmarketId": "44df90c6-4a07-418f-b3a3-056b4f4c935d",
-                      "SubmarketDescription": "Ventura / Oxnard",
-                      "NumUnits": 180,
-                      "YearBuilt": "2021",
-                      "YearRemodeled": null,
-                      "TimeZone": "P ",
-                      "Occupancy": "0.01",
-                      "NumberOfStories": null,
-                      "Directions": null,
-                      "PropertyDescription": null,
-                      "AptHomePage": "https://hacityventura.org/westview.html",
-                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                      "CurrManager": "",
-                      "AreaSupervisorId": null,
-                      "RegionalManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                      "CorporateManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                      "OwnerId": null,
-                      "Views": null,
-                      "ACHeating": null,
-                      "MapCoordinates": null,
-                      "OtherNotes": null,
-                      "AverageRent": null,
-                      "AverageSqFt": null,
-                      "MktPctEffRentUnit": null,
-                      "MktPctEffRentSqFt": null,
-                      "SubMktPctEffRentUnit": null,
-                      "SubMktPctEffRentSqFt": null,
-                      "MktPctNetRentUnit": null,
-                      "MktPctNetRentSqFt": null,
-                      "SubMktPctNetRentUnit": null,
-                      "SubMktPctNetRentSqFt": null,
-                      "PricingAndAvailWebsite": null,
-                      "PricingAndAvailWebsiteAlt": null,
-                      "RMSId": null,
-                      "RMSProgram": null,
-                      "PricingTier": null,
-                      "AssetOrFeeManaged": null,
-                      "PMSoftware": null,
-                      "PMSoftwareNotes": null
-                    },
-                    "Pets": {
-                      "MaxNumPets": null,
-                      "MaxPetWeight": null,
-                      "MaxPetHeight": null,
-                      "PetDescription": null,
-                      "PetDeposit": null,
-                      "PetNonRefundable": null,
-                      "PetRentPerMonth": null,
-                      "CatsOnly": "N",
-                      "BreedRestrictions": "N"
-                    },
-                    "Leasing": {
-                      "IncomeRestricted": "N",
-                      "IncomeRestrictionSpecifics": null,
-                      "Section8": "N",
-                      "SeniorLiving": "N",
-                      "StudentHousing": "N",
-                      "LeaseTerms": null,
-                      "ShortTerm": null,
-                      "Corporate": null,
-                      "ApplicationFee": "0",
-                      "CurrentSpecials": null,
-                      "AssistedLiving": "N"
-                    },
-                    "GeoLocation": {
-                      "County": "Ventura",
-                      "GPSLatitude": "34.2935904",
-                      "GPSLongitude": "-119.3037525",
-                      "PMSA": "37100",
-                      "PMSADescription": "Oxnard-Thousand Oaks-Ventura, CA",
-                      "CMSA": "348",
-                      "CensusBlock": null,
-                      "CensusTract": "0023.02",
-                      "CountyFIPSCode": "06111",
-                      "CensusTract2010GeoId": "06111002300",
-                      "CensusTractGeoId": "06111002302"
-                    },
-                    "Agency": {
-                      "Commission": null,
-                      "LocatorSpecials": null,
-                      "PayLocatorsOnSection8": "N",
-                      "DotComCommission": null,
-                      "RegistrationRequired": "N",
-                      "RegisterByFax": "N",
-                      "FaxRegistrationNumber": null,
-                      "RegisterByPhone": "N",
-                      "PhoneRegistrationNumber": null,
-                      "RegisterByEMail": "N",
-                      "EMailRegistrationAddress": null,
-                      "AptRegDotCom": "N",
-                      "RegisterWithLRN": "N",
-                      "NoteToLocators": null,
-                      "NoteToLocatorsExpires": null
-                    }
-                  }
-                ]
-              ]
-            }
+                  "examples": [
+                      [{
+                          "ApartmentId": "a35b0838-39ef-44be-85d4-00002557fa5e",
+                          "LastDateUpdated": "1970-01-01T00:00:00Z",
+                          "LastDateChanged": "2022-06-17T09:33:38.74Z",
+                          "LastDateContacted": "1970-01-01T00:00:00Z",
+                          "DateStabilized": null,
+                          "RowVersion": 415136504,
+                          "Property": {
+                              "ALNId": 288546,
+                              "Status": 15,
+                              "StatusDescription": "15-Duplicate/Discarded",
+                              "AptName": "Oceanside Pompano Beach",
+                              "FKA": null,
+                              "Hours": null,
+                              "EMailAddress": null,
+                              "Market": "FLL",
+                              "MarketDescription": null,
+                              "AptOwnerId": null,
+                              "SubmarketId": null,
+                              "SubmarketDescription": null,
+                              "NumUnits": 77,
+                              "YearBuilt": "2021",
+                              "YearRemodeled": null,
+                              "TimeZone": "E ",
+                              "Occupancy": "0.01",
+                              "NumberOfStories": "24",
+                              "Directions": null,
+                              "PropertyDescription": null,
+                              "AptHomePage": null,
+                              "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                              "CurrManager": "",
+                              "AreaSupervisorId": null,
+                              "RegionalManagementCompanyId": null,
+                              "CorporateManagementCompanyId": null,
+                              "OwnerId": null,
+                              "Views": null,
+                              "ACHeating": null,
+                              "MapCoordinates": null,
+                              "OtherNotes": null,
+                              "AverageRent": null,
+                              "AverageSqFt": null,
+                              "MktPctEffRentUnit": null,
+                              "MktPctEffRentSqFt": null,
+                              "SubMktPctEffRentUnit": null,
+                              "SubMktPctEffRentSqFt": null,
+                              "MktPctNetRentUnit": null,
+                              "MktPctNetRentSqFt": null,
+                              "SubMktPctNetRentUnit": null,
+                              "SubMktPctNetRentSqFt": null,
+                              "PricingAndAvailWebsite": null,
+                              "PricingAndAvailWebsiteAlt": null,
+                              "RMSId": null,
+                              "RMSProgram": null,
+                              "PricingTier": null,
+                              "AssetOrFeeManaged": null,
+                              "PMSoftware": null,
+                              "PMSoftwareNotes": null
+                          },
+                          "Pets": {
+                              "MaxNumPets": null,
+                              "MaxPetWeight": null,
+                              "MaxPetHeight": null,
+                              "PetDescription": null,
+                              "PetDeposit": null,
+                              "PetNonRefundable": null,
+                              "PetRentPerMonth": null,
+                              "CatsOnly": "N",
+                              "BreedRestrictions": "N"
+                          },
+                          "Leasing": {
+                              "IncomeRestricted": "N",
+                              "IncomeRestrictionSpecifics": null,
+                              "Section8": "N",
+                              "SeniorLiving": "N",
+                              "StudentHousing": "N",
+                              "LeaseTerms": null,
+                              "ShortTerm": null,
+                              "Corporate": null,
+                              "ApplicationFee": "0",
+                              "CurrentSpecials": null,
+                              "AssistedLiving": "N"
+                          },
+                          "GeoLocation": {
+                              "County": "Broward",
+                              "GPSLatitude": "26.232966",
+                              "GPSLongitude": "-80.090393",
+                              "PMSA": "33100",
+                              "PMSADescription": "Miami-Fort Lauderdale-West Palm Beach, FL",
+                              "CMSA": "370",
+                              "CensusBlock": null,
+                              "CensusTract": "0312.03",
+                              "CountyFIPSCode": "12011",
+                              "CensusTract2010GeoId": "12011031203",
+                              "CensusTractGeoId": "12011031203"
+                          },
+                          "Agency": {
+                              "Commission": null,
+                              "LocatorSpecials": null,
+                              "PayLocatorsOnSection8": null,
+                              "DotComCommission": null,
+                              "RegistrationRequired": "N",
+                              "RegisterByFax": "N",
+                              "FaxRegistrationNumber": null,
+                              "RegisterByPhone": "N",
+                              "PhoneRegistrationNumber": null,
+                              "RegisterByEMail": "N",
+                              "EMailRegistrationAddress": null,
+                              "AptRegDotCom": "N",
+                              "RegisterWithLRN": "N",
+                              "NoteToLocators": null,
+                              "NoteToLocatorsExpires": null
+                          }
+                      },
+                      {
+                          "ApartmentId": "a9f29e7a-458e-4882-853e-0045bb443809",
+                          "LastDateUpdated": "2013-08-01T12:37:02.503Z",
+                          "LastDateChanged": "2022-07-20T14:47:32.28Z",
+                          "LastDateContacted": "2013-08-01T12:37:02.503Z",
+                          "DateStabilized": "1999-11-01T00:00:00Z",
+                          "RowVersion": 422880378,
+                          "Property": {
+                              "ALNId": 166799,
+                              "Status": 33,
+                              "StatusDescription": "33-Rent Based on Income",
+                              "AptName": "Russell Manor",
+                              "FKA": null,
+                              "Hours": "MF 8-4:30",
+                              "EMailAddress": null,
+                              "Market": "SMF",
+                              "MarketDescription": "CA - Sacramento",
+                              "AptOwnerId": 52027,
+                              "SubmarketId": "9f1e6ba9-1a74-44a6-8550-0b7c065fa309",
+                              "SubmarketDescription": "South Sacramento",
+                              "NumUnits": 65,
+                              "YearBuilt": "1998",
+                              "YearRemodeled": null,
+                              "TimeZone": "P ",
+                              "Occupancy": "100",
+                              "NumberOfStories": "3",
+                              "Directions": null,
+                              "PropertyDescription": null,
+                              "AptHomePage": null,
+                              "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                              "CurrManager": "Laura ",
+                              "AreaSupervisorId": null,
+                              "RegionalManagementCompanyId": "ba625abf-0d24-4c85-a10f-c079b5d7c07f",
+                              "CorporateManagementCompanyId": "b705b856-972b-4e38-8239-e37c15021b95",
+                              "OwnerId": "3cc98828-4512-4725-b672-8d3d11b70a6d",
+                              "Views": null,
+                              "ACHeating": null,
+                              "MapCoordinates": null,
+                              "OtherNotes": null,
+                              "AverageRent": 0.00000,
+                              "AverageSqFt": 0.00000,
+                              "MktPctEffRentUnit": null,
+                              "MktPctEffRentSqFt": null,
+                              "SubMktPctEffRentUnit": null,
+                              "SubMktPctEffRentSqFt": null,
+                              "MktPctNetRentUnit": null,
+                              "MktPctNetRentSqFt": null,
+                              "SubMktPctNetRentUnit": null,
+                              "SubMktPctNetRentSqFt": null,
+                              "PricingAndAvailWebsite": null,
+                              "PricingAndAvailWebsiteAlt": null,
+                              "RMSId": null,
+                              "RMSProgram": null,
+                              "PricingTier": null,
+                              "AssetOrFeeManaged": null,
+                              "PMSoftware": null,
+                              "PMSoftwareNotes": null
+                          },
+                          "Pets": {
+                              "MaxNumPets": null,
+                              "MaxPetWeight": null,
+                              "MaxPetHeight": null,
+                              "PetDescription": null,
+                              "PetDeposit": null,
+                              "PetNonRefundable": null,
+                              "PetRentPerMonth": null,
+                              "CatsOnly": "N",
+                              "BreedRestrictions": "N"
+                          },
+                          "Leasing": {
+                              "IncomeRestricted": "Y",
+                              "IncomeRestrictionSpecifics": null,
+                              "Section8": "N",
+                              "SeniorLiving": "Y",
+                              "StudentHousing": "N",
+                              "LeaseTerms": null,
+                              "ShortTerm": null,
+                              "Corporate": null,
+                              "ApplicationFee": "0",
+                              "CurrentSpecials": null,
+                              "AssistedLiving": null
+                          },
+                          "GeoLocation": {
+                              "County": "Sacramento",
+                              "GPSLatitude": "38.459147",
+                              "GPSLongitude": "-121.417721",
+                              "PMSA": "40900",
+                              "PMSADescription": "Sacramento--Roseville--Arden-Arcade, CA",
+                              "CMSA": "472",
+                              "CensusBlock": "4012",
+                              "CensusTract": "0096.41",
+                              "CountyFIPSCode": "06067",
+                              "CensusTract2010GeoId": "06067009606",
+                              "CensusTractGeoId": "06067009641"
+                          },
+                          "Agency": {
+                              "Commission": null,
+                              "LocatorSpecials": null,
+                              "PayLocatorsOnSection8": null,
+                              "DotComCommission": null,
+                              "RegistrationRequired": "N",
+                              "RegisterByFax": "N",
+                              "FaxRegistrationNumber": null,
+                              "RegisterByPhone": "N",
+                              "PhoneRegistrationNumber": null,
+                              "RegisterByEMail": "N",
+                              "EMailRegistrationAddress": null,
+                              "AptRegDotCom": "N",
+                              "RegisterWithLRN": "N",
+                              "NoteToLocators": null,
+                              "NoteToLocatorsExpires": null
+                          }
+                      }]
+                  ]
+              },
+              "@odata.nextLink": {
+                  "type": "string",
+                  "default": "",
+                  "title": "The @odata.nextLink Schema",
+                  "examples": [
+                      "https://odata4.alndata.com/Apartments?apikey=ef042397-0e78-46d0-b87e-e5c8352685af\u0026$skip=200"
+                  ]
+              }
           },
-          "examples": [
-            {
+          "examples": [{
               "@odata.context": "https://odata4.alndata.com/$metadata#Apartments",
-              "value": [
-                {
-                  "ApartmentId": "a78c3fd4-95a3-46a8-8423-01af3aa08c1a",
-                  "LastDateUpdated": "2022-07-27T08:53:26.457Z",
-                  "LastDateChanged": "2022-07-27T08:57:26.13Z",
-                  "LastDateContacted": "2022-07-27T08:53:26.457Z",
-                  "DateStabilized": "2016-10-01T00:00:00Z",
-                  "RowVersion": 425334108,
-                  "Property": {
-                    "ALNId": 226494,
-                    "Status": 92,
-                    "StatusDescription": "92-Published, Does Not Pay Locators",
-                    "AptName": "Givens Gerber Park I",
-                    "FKA": null,
-                    "Hours": "MTh 9-3",
-                    "EMailAddress": "info@givensgerberpark.org",
-                    "Market": "AVL",
-                    "MarketDescription": "NC - Asheville",
-                    "AptOwnerId": 194983,
-                    "SubmarketId": "3baef41b-7b18-426a-82b5-a4ed80a567c6",
-                    "SubmarketDescription": "South Asheville / Arden",
-                    "NumUnits": 120,
-                    "YearBuilt": "2015",
-                    "YearRemodeled": null,
-                    "TimeZone": "E ",
-                    "Occupancy": "N/A",
-                    "NumberOfStories": "4",
-                    "Directions": null,
-                    "PropertyDescription": null,
-                    "AptHomePage": "http://www.givensgerberpark.org/",
-                    "AptPictureURL": "https://picturescdn.alndata.com/?pid=97b9da08-572f-4b53-8863-7084fa37f346",
-                    "CurrManager": "Nicole Allen",
-                    "AreaSupervisorId": "cc2d623b-46e4-4b4b-b7cc-f97b39911ef1",
-                    "RegionalManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                    "CorporateManagementCompanyId": "b65d1b43-8431-4e94-868f-c844a41ec290",
-                    "OwnerId": "1546a325-8b8e-47a5-b9b8-ab1c223cc81e",
-                    "Views": null,
-                    "ACHeating": null,
-                    "MapCoordinates": null,
-                    "OtherNotes": null,
-                    "AverageRent": 471.79167,
-                    "AverageSqFt": 771.60417,
-                    "MktPctEffRentUnit": null,
-                    "MktPctEffRentSqFt": null,
-                    "SubMktPctEffRentUnit": null,
-                    "SubMktPctEffRentSqFt": null,
-                    "MktPctNetRentUnit": null,
-                    "MktPctNetRentSqFt": null,
-                    "SubMktPctNetRentUnit": null,
-                    "SubMktPctNetRentSqFt": null,
-                    "PricingAndAvailWebsite": null,
-                    "PricingAndAvailWebsiteAlt": null,
-                    "RMSId": 14,
-                    "RMSProgram": "No RMS Program",
-                    "PricingTier": null,
-                    "AssetOrFeeManaged": "F",
-                    "PMSoftware": "Yardi",
-                    "PMSoftwareNotes": null
-                  },
-                  "Pets": {
-                    "MaxNumPets": 1,
-                    "MaxPetWeight": 35,
-                    "MaxPetHeight": null,
-                    "PetDescription": null,
-                    "PetDeposit": null,
-                    "PetNonRefundable": "300",
-                    "PetRentPerMonth": null,
-                    "CatsOnly": "N",
-                    "BreedRestrictions": "Y"
-                  },
-                  "Leasing": {
-                    "IncomeRestricted": "Y",
-                    "IncomeRestrictionSpecifics": "1p-$33,780, 2p-$38,580",
-                    "Section8": "Y",
-                    "SeniorLiving": "Y",
-                    "StudentHousing": "N",
-                    "LeaseTerms": "12",
-                    "ShortTerm": "N",
-                    "Corporate": "N",
-                    "ApplicationFee": "",
-                    "CurrentSpecials": "Deposit Can Be Up To 1mo Rent Based On Credit; Wait List ",
-                    "AssistedLiving": "N"
-                  },
-                  "GeoLocation": {
-                    "County": "Buncombe",
-                    "GPSLatitude": "35.5032638",
-                    "GPSLongitude": "-82.5208934",
-                    "PMSA": "11700",
-                    "PMSADescription": "Asheville, NC",
-                    "CMSA": "120",
-                    "CensusBlock": null,
-                    "CensusTract": "0022.04",
-                    "CountyFIPSCode": "37021",
-                    "CensusTract2010GeoId": "37021002204",
-                    "CensusTractGeoId": "37021002204"
-                  },
-                  "Agency": {
-                    "Commission": "NO LOCATORS",
-                    "LocatorSpecials": null,
-                    "PayLocatorsOnSection8": "N",
-                    "DotComCommission": null,
-                    "RegistrationRequired": "N",
-                    "RegisterByFax": "N",
-                    "FaxRegistrationNumber": null,
-                    "RegisterByPhone": "N",
-                    "PhoneRegistrationNumber": null,
-                    "RegisterByEMail": "N",
-                    "EMailRegistrationAddress": null,
-                    "AptRegDotCom": "N",
-                    "RegisterWithLRN": "N",
-                    "NoteToLocators": null,
-                    "NoteToLocatorsExpires": null
-                  }
-                },
-                {
-                  "ApartmentId": "ad973cb0-2ca9-49b0-a4a4-fc0f7663a164",
+              "value": [{
+                  "ApartmentId": "a35b0838-39ef-44be-85d4-00002557fa5e",
                   "LastDateUpdated": "1970-01-01T00:00:00Z",
-                  "LastDateChanged": "2022-06-18T16:55:31.853Z",
+                  "LastDateChanged": "2022-06-17T09:33:38.74Z",
                   "LastDateContacted": "1970-01-01T00:00:00Z",
                   "DateStabilized": null,
-                  "RowVersion": 424590461,
+                  "RowVersion": 415136504,
                   "Property": {
-                    "ALNId": 260055,
-                    "Status": 15,
-                    "StatusDescription": "15-Duplicate/Discarded",
-                    "AptName": "Lofts on the Square",
-                    "FKA": null,
-                    "Hours": null,
-                    "EMailAddress": "info@themartinogroup.com",
-                    "Market": "DFW",
-                    "MarketDescription": "TX - Dallas/Ft. Worth",
-                    "AptOwnerId": null,
-                    "SubmarketId": "9ed9a205-5ba6-41bf-871e-6ea6ab942d68",
-                    "SubmarketDescription": "Denton / Corinth",
-                    "NumUnits": null,
-                    "YearBuilt": null,
-                    "YearRemodeled": null,
-                    "TimeZone": "C ",
-                    "Occupancy": null,
-                    "NumberOfStories": null,
-                    "Directions": null,
-                    "PropertyDescription": null,
-                    "AptHomePage": "http://www.themartinogroup.com/showlisting.php?sid=1005",
-                    "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                    "CurrManager": "",
-                    "AreaSupervisorId": null,
-                    "RegionalManagementCompanyId": null,
-                    "CorporateManagementCompanyId": null,
-                    "OwnerId": null,
-                    "Views": null,
-                    "ACHeating": null,
-                    "MapCoordinates": null,
-                    "OtherNotes": null,
-                    "AverageRent": null,
-                    "AverageSqFt": null,
-                    "MktPctEffRentUnit": null,
-                    "MktPctEffRentSqFt": null,
-                    "SubMktPctEffRentUnit": null,
-                    "SubMktPctEffRentSqFt": null,
-                    "MktPctNetRentUnit": null,
-                    "MktPctNetRentSqFt": null,
-                    "SubMktPctNetRentUnit": null,
-                    "SubMktPctNetRentSqFt": null,
-                    "PricingAndAvailWebsite": null,
-                    "PricingAndAvailWebsiteAlt": null,
-                    "RMSId": null,
-                    "RMSProgram": null,
-                    "PricingTier": null,
-                    "AssetOrFeeManaged": null,
-                    "PMSoftware": null,
-                    "PMSoftwareNotes": null
+                      "ALNId": 288546,
+                      "Status": 15,
+                      "StatusDescription": "15-Duplicate/Discarded",
+                      "AptName": "Oceanside Pompano Beach",
+                      "FKA": null,
+                      "Hours": null,
+                      "EMailAddress": null,
+                      "Market": "FLL",
+                      "MarketDescription": null,
+                      "AptOwnerId": null,
+                      "SubmarketId": null,
+                      "SubmarketDescription": null,
+                      "NumUnits": 77,
+                      "YearBuilt": "2021",
+                      "YearRemodeled": null,
+                      "TimeZone": "E ",
+                      "Occupancy": "0.01",
+                      "NumberOfStories": "24",
+                      "Directions": null,
+                      "PropertyDescription": null,
+                      "AptHomePage": null,
+                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                      "CurrManager": "",
+                      "AreaSupervisorId": null,
+                      "RegionalManagementCompanyId": null,
+                      "CorporateManagementCompanyId": null,
+                      "OwnerId": null,
+                      "Views": null,
+                      "ACHeating": null,
+                      "MapCoordinates": null,
+                      "OtherNotes": null,
+                      "AverageRent": null,
+                      "AverageSqFt": null,
+                      "MktPctEffRentUnit": null,
+                      "MktPctEffRentSqFt": null,
+                      "SubMktPctEffRentUnit": null,
+                      "SubMktPctEffRentSqFt": null,
+                      "MktPctNetRentUnit": null,
+                      "MktPctNetRentSqFt": null,
+                      "SubMktPctNetRentUnit": null,
+                      "SubMktPctNetRentSqFt": null,
+                      "PricingAndAvailWebsite": null,
+                      "PricingAndAvailWebsiteAlt": null,
+                      "RMSId": null,
+                      "RMSProgram": null,
+                      "PricingTier": null,
+                      "AssetOrFeeManaged": null,
+                      "PMSoftware": null,
+                      "PMSoftwareNotes": null
                   },
                   "Pets": {
-                    "MaxNumPets": null,
-                    "MaxPetWeight": null,
-                    "MaxPetHeight": null,
-                    "PetDescription": null,
-                    "PetDeposit": null,
-                    "PetNonRefundable": null,
-                    "PetRentPerMonth": null,
-                    "CatsOnly": "N",
-                    "BreedRestrictions": "N"
+                      "MaxNumPets": null,
+                      "MaxPetWeight": null,
+                      "MaxPetHeight": null,
+                      "PetDescription": null,
+                      "PetDeposit": null,
+                      "PetNonRefundable": null,
+                      "PetRentPerMonth": null,
+                      "CatsOnly": "N",
+                      "BreedRestrictions": "N"
                   },
                   "Leasing": {
-                    "IncomeRestricted": "N",
-                    "IncomeRestrictionSpecifics": null,
-                    "Section8": "N",
-                    "SeniorLiving": "N",
-                    "StudentHousing": "N",
-                    "LeaseTerms": null,
-                    "ShortTerm": null,
-                    "Corporate": null,
-                    "ApplicationFee": "0",
-                    "CurrentSpecials": null,
-                    "AssistedLiving": "N"
+                      "IncomeRestricted": "N",
+                      "IncomeRestrictionSpecifics": null,
+                      "Section8": "N",
+                      "SeniorLiving": "N",
+                      "StudentHousing": "N",
+                      "LeaseTerms": null,
+                      "ShortTerm": null,
+                      "Corporate": null,
+                      "ApplicationFee": "0",
+                      "CurrentSpecials": null,
+                      "AssistedLiving": "N"
                   },
                   "GeoLocation": {
-                    "County": "Denton",
-                    "GPSLatitude": "33.215191",
-                    "GPSLongitude": "-97.1320085",
-                    "PMSA": "19100",
-                    "PMSADescription": "Dallas-Fort Worth-Arlington, TX",
-                    "CMSA": "206",
-                    "CensusBlock": null,
-                    "CensusTract": "0211.00",
-                    "CountyFIPSCode": "48121",
-                    "CensusTract2010GeoId": "48121021100",
-                    "CensusTractGeoId": "48121021100"
+                      "County": "Broward",
+                      "GPSLatitude": "26.232966",
+                      "GPSLongitude": "-80.090393",
+                      "PMSA": "33100",
+                      "PMSADescription": "Miami-Fort Lauderdale-West Palm Beach, FL",
+                      "CMSA": "370",
+                      "CensusBlock": null,
+                      "CensusTract": "0312.03",
+                      "CountyFIPSCode": "12011",
+                      "CensusTract2010GeoId": "12011031203",
+                      "CensusTractGeoId": "12011031203"
                   },
                   "Agency": {
-                    "Commission": null,
-                    "LocatorSpecials": null,
-                    "PayLocatorsOnSection8": "N",
-                    "DotComCommission": null,
-                    "RegistrationRequired": "N",
-                    "RegisterByFax": "N",
-                    "FaxRegistrationNumber": null,
-                    "RegisterByPhone": "N",
-                    "PhoneRegistrationNumber": null,
-                    "RegisterByEMail": "N",
-                    "EMailRegistrationAddress": null,
-                    "AptRegDotCom": "N",
-                    "RegisterWithLRN": "N",
-                    "NoteToLocators": null,
-                    "NoteToLocatorsExpires": null
+                      "Commission": null,
+                      "LocatorSpecials": null,
+                      "PayLocatorsOnSection8": null,
+                      "DotComCommission": null,
+                      "RegistrationRequired": "N",
+                      "RegisterByFax": "N",
+                      "FaxRegistrationNumber": null,
+                      "RegisterByPhone": "N",
+                      "PhoneRegistrationNumber": null,
+                      "RegisterByEMail": "N",
+                      "EMailRegistrationAddress": null,
+                      "AptRegDotCom": "N",
+                      "RegisterWithLRN": "N",
+                      "NoteToLocators": null,
+                      "NoteToLocatorsExpires": null
                   }
-                },
-                {
-                  "ApartmentId": "a6f39c52-3d30-46c2-948e-fe4fbd909d5a",
-                  "LastDateUpdated": "2015-07-13T00:00:00Z",
-                  "LastDateChanged": "2022-05-22T20:00:13.097Z",
-                  "LastDateContacted": "2015-07-13T00:00:00Z",
-                  "DateStabilized": null,
-                  "RowVersion": 415162148,
+              },
+              {
+                  "ApartmentId": "a9f29e7a-458e-4882-853e-0045bb443809",
+                  "LastDateUpdated": "2013-08-01T12:37:02.503Z",
+                  "LastDateChanged": "2022-07-20T14:47:32.28Z",
+                  "LastDateContacted": "2013-08-01T12:37:02.503Z",
+                  "DateStabilized": "1999-11-01T00:00:00Z",
+                  "RowVersion": 422880378,
                   "Property": {
-                    "ALNId": 276514,
-                    "Status": 21,
-                    "StatusDescription": "21-New Construction (For Lease)",
-                    "AptName": "Villages at Westview",
-                    "FKA": "Westview Village",
-                    "Hours": null,
-                    "EMailAddress": null,
-                    "Market": "MRY",
-                    "MarketDescription": "CA - Central Coast",
-                    "AptOwnerId": null,
-                    "SubmarketId": "44df90c6-4a07-418f-b3a3-056b4f4c935d",
-                    "SubmarketDescription": "Ventura / Oxnard",
-                    "NumUnits": 180,
-                    "YearBuilt": "2021",
-                    "YearRemodeled": null,
-                    "TimeZone": "P ",
-                    "Occupancy": "0.01",
-                    "NumberOfStories": null,
-                    "Directions": null,
-                    "PropertyDescription": null,
-                    "AptHomePage": "https://hacityventura.org/westview.html",
-                    "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
-                    "CurrManager": "",
-                    "AreaSupervisorId": null,
-                    "RegionalManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                    "CorporateManagementCompanyId": "b8d9fcac-19db-4383-b884-9fc5c6212d55",
-                    "OwnerId": null,
-                    "Views": null,
-                    "ACHeating": null,
-                    "MapCoordinates": null,
-                    "OtherNotes": null,
-                    "AverageRent": null,
-                    "AverageSqFt": null,
-                    "MktPctEffRentUnit": null,
-                    "MktPctEffRentSqFt": null,
-                    "SubMktPctEffRentUnit": null,
-                    "SubMktPctEffRentSqFt": null,
-                    "MktPctNetRentUnit": null,
-                    "MktPctNetRentSqFt": null,
-                    "SubMktPctNetRentUnit": null,
-                    "SubMktPctNetRentSqFt": null,
-                    "PricingAndAvailWebsite": null,
-                    "PricingAndAvailWebsiteAlt": null,
-                    "RMSId": null,
-                    "RMSProgram": null,
-                    "PricingTier": null,
-                    "AssetOrFeeManaged": null,
-                    "PMSoftware": null,
-                    "PMSoftwareNotes": null
+                      "ALNId": 166799,
+                      "Status": 33,
+                      "StatusDescription": "33-Rent Based on Income",
+                      "AptName": "Russell Manor",
+                      "FKA": null,
+                      "Hours": "MF 8-4:30",
+                      "EMailAddress": null,
+                      "Market": "SMF",
+                      "MarketDescription": "CA - Sacramento",
+                      "AptOwnerId": 52027,
+                      "SubmarketId": "9f1e6ba9-1a74-44a6-8550-0b7c065fa309",
+                      "SubmarketDescription": "South Sacramento",
+                      "NumUnits": 65,
+                      "YearBuilt": "1998",
+                      "YearRemodeled": null,
+                      "TimeZone": "P ",
+                      "Occupancy": "100",
+                      "NumberOfStories": "3",
+                      "Directions": null,
+                      "PropertyDescription": null,
+                      "AptHomePage": null,
+                      "AptPictureURL": "https://picturescdn.alndata.com/?pid=bd6938a8-6933-4a93-afe9-552f7ee003cf",
+                      "CurrManager": "Laura ",
+                      "AreaSupervisorId": null,
+                      "RegionalManagementCompanyId": "ba625abf-0d24-4c85-a10f-c079b5d7c07f",
+                      "CorporateManagementCompanyId": "b705b856-972b-4e38-8239-e37c15021b95",
+                      "OwnerId": "3cc98828-4512-4725-b672-8d3d11b70a6d",
+                      "Views": null,
+                      "ACHeating": null,
+                      "MapCoordinates": null,
+                      "OtherNotes": null,
+                      "AverageRent": 0.00000,
+                      "AverageSqFt": 0.00000,
+                      "MktPctEffRentUnit": null,
+                      "MktPctEffRentSqFt": null,
+                      "SubMktPctEffRentUnit": null,
+                      "SubMktPctEffRentSqFt": null,
+                      "MktPctNetRentUnit": null,
+                      "MktPctNetRentSqFt": null,
+                      "SubMktPctNetRentUnit": null,
+                      "SubMktPctNetRentSqFt": null,
+                      "PricingAndAvailWebsite": null,
+                      "PricingAndAvailWebsiteAlt": null,
+                      "RMSId": null,
+                      "RMSProgram": null,
+                      "PricingTier": null,
+                      "AssetOrFeeManaged": null,
+                      "PMSoftware": null,
+                      "PMSoftwareNotes": null
                   },
                   "Pets": {
-                    "MaxNumPets": null,
-                    "MaxPetWeight": null,
-                    "MaxPetHeight": null,
-                    "PetDescription": null,
-                    "PetDeposit": null,
-                    "PetNonRefundable": null,
-                    "PetRentPerMonth": null,
-                    "CatsOnly": "N",
-                    "BreedRestrictions": "N"
+                      "MaxNumPets": null,
+                      "MaxPetWeight": null,
+                      "MaxPetHeight": null,
+                      "PetDescription": null,
+                      "PetDeposit": null,
+                      "PetNonRefundable": null,
+                      "PetRentPerMonth": null,
+                      "CatsOnly": "N",
+                      "BreedRestrictions": "N"
                   },
                   "Leasing": {
-                    "IncomeRestricted": "N",
-                    "IncomeRestrictionSpecifics": null,
-                    "Section8": "N",
-                    "SeniorLiving": "N",
-                    "StudentHousing": "N",
-                    "LeaseTerms": null,
-                    "ShortTerm": null,
-                    "Corporate": null,
-                    "ApplicationFee": "0",
-                    "CurrentSpecials": null,
-                    "AssistedLiving": "N"
+                      "IncomeRestricted": "Y",
+                      "IncomeRestrictionSpecifics": null,
+                      "Section8": "N",
+                      "SeniorLiving": "Y",
+                      "StudentHousing": "N",
+                      "LeaseTerms": null,
+                      "ShortTerm": null,
+                      "Corporate": null,
+                      "ApplicationFee": "0",
+                      "CurrentSpecials": null,
+                      "AssistedLiving": null
                   },
                   "GeoLocation": {
-                    "County": "Ventura",
-                    "GPSLatitude": "34.2935904",
-                    "GPSLongitude": "-119.3037525",
-                    "PMSA": "37100",
-                    "PMSADescription": "Oxnard-Thousand Oaks-Ventura, CA",
-                    "CMSA": "348",
-                    "CensusBlock": null,
-                    "CensusTract": "0023.02",
-                    "CountyFIPSCode": "06111",
-                    "CensusTract2010GeoId": "06111002300",
-                    "CensusTractGeoId": "06111002302"
+                      "County": "Sacramento",
+                      "GPSLatitude": "38.459147",
+                      "GPSLongitude": "-121.417721",
+                      "PMSA": "40900",
+                      "PMSADescription": "Sacramento--Roseville--Arden-Arcade, CA",
+                      "CMSA": "472",
+                      "CensusBlock": "4012",
+                      "CensusTract": "0096.41",
+                      "CountyFIPSCode": "06067",
+                      "CensusTract2010GeoId": "06067009606",
+                      "CensusTractGeoId": "06067009641"
                   },
                   "Agency": {
-                    "Commission": null,
-                    "LocatorSpecials": null,
-                    "PayLocatorsOnSection8": "N",
-                    "DotComCommission": null,
-                    "RegistrationRequired": "N",
-                    "RegisterByFax": "N",
-                    "FaxRegistrationNumber": null,
-                    "RegisterByPhone": "N",
-                    "PhoneRegistrationNumber": null,
-                    "RegisterByEMail": "N",
-                    "EMailRegistrationAddress": null,
-                    "AptRegDotCom": "N",
-                    "RegisterWithLRN": "N",
-                    "NoteToLocators": null,
-                    "NoteToLocatorsExpires": null
+                      "Commission": null,
+                      "LocatorSpecials": null,
+                      "PayLocatorsOnSection8": null,
+                      "DotComCommission": null,
+                      "RegistrationRequired": "N",
+                      "RegisterByFax": "N",
+                      "FaxRegistrationNumber": null,
+                      "RegisterByPhone": "N",
+                      "PhoneRegistrationNumber": null,
+                      "RegisterByEMail": "N",
+                      "EMailRegistrationAddress": null,
+                      "AptRegDotCom": "N",
+                      "RegisterWithLRN": "N",
+                      "NoteToLocators": null,
+                      "NoteToLocatorsExpires": null
                   }
-                }
-              ]
-            }
-          ]
+              }],
+              "@odata.nextLink": "https://odata4.alndata.com/Apartments?apikey=ef042397-0e78-46d0-b87e-e5c8352685af\u0026$skip=200"
+          }]
         },
         "supported_sync_modes": ["full_refresh", "incremental"],
         "supported_destination_sync_modes": ["overwrite", "append_dedup"]
