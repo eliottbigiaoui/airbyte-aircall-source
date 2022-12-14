@@ -1,0 +1,177 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "SchoolEntityId",
+        "SchoolDistrictEntityId",
+        "SchoolLastDateChanged",
+        "SchoolName",
+        "NCESSchoolId",
+        "StateSchoolId",
+        "NCESDistrictId",
+        "StateDistrictId",
+        "SchoolCountyName",
+        "SchoolStreetAddress",
+        "SchoolCity",
+        "SchoolState",
+        "SchoolZIP",
+        "SchoolPhoneNumber",
+        "SchoolLowGrade",
+        "SchoolHighGrade",
+        "SchoolType",
+        "SchoolTypeDescription"
+    ],
+    "properties": {
+                    "SchoolEntityId": {
+                        "title": "The SchoolEntityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "816d04c9-8b94-442e-bb5c-02f5f9df65d0",
+                            "86e67545-8f07-47b5-820b-097880f7ab65"
+                        ]
+                    },
+                    "SchoolDistrictEntityId": {
+                        "title": "The SchoolDistrictEntityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "8b15ee86-12a2-44db-96a4-2b70d1819cbe",
+                            "a648117e-a7d0-4c3d-aba7-c37b9743d719"
+                        ]
+                    },
+                    "SchoolLastDateChanged": {
+                        "title": "The SchoolLastDateChanged Schema",
+                        "type": "string",
+                        "examples": [
+                            "2015-08-20T21:17:04.493Z",
+                            "2015-08-20T21:17:28.003Z"
+                        ]
+                    },
+                    "SchoolName": {
+                        "title": "The SchoolName Schema",
+                        "type": "string",
+                        "examples": [
+                            "George L Cooke School",
+                            "James Cashman Middle School"
+                        ]
+                    },
+                    "NCESSchoolId": {
+                        "title": "The NCESSchoolId Schema",
+                        "type": "string",
+                        "examples": [
+                            "361974001808"
+                        ]
+                    },
+                    "StateSchoolId": {
+                        "title": "The StateSchoolId Schema",
+                        "type": "string",
+                        "examples": [
+                            "591401060003"
+                        ]
+                    },
+                    "NCESDistrictId": {
+                        "title": "The NCESDistrictId Schema",
+                        "type": "string",
+                        "examples": [
+                            "3619740",
+                            "3200060"
+                        ]
+                    },
+                    "StateDistrictId": {
+                        "title": "The StateDistrictId Schema",
+                        "type": "string",
+                        "examples": [
+                            "591401060000",
+                            "02"
+                        ]
+                    },
+                    "SchoolCountyName": {
+                        "title": "The SchoolCountyName Schema",
+                        "type": "string",
+                        "examples": [
+                            "SULLIVAN COUNTY",
+                            "CLARK COUNTY"
+                        ]
+                    },
+                    "SchoolStreetAddress": {
+                        "title": "The SchoolStreetAddress Schema",
+                        "type": "string",
+                        "examples": [
+                            "69 RICHARDSON AVE",
+                            "4622 WEST DESERT INN RD"
+                        ]
+                    },
+                    "SchoolCity": {
+                        "title": "The SchoolCity Schema",
+                        "type": "string",
+                        "examples": [
+                            "MONTICELLO",
+                            "SAN ANGELO"
+                        ]
+                    },
+                    "SchoolState": {
+                        "title": "The SchoolState Schema",
+                        "type": "string",
+                        "examples": [
+                            "NY",
+                            "NV"
+                        ]
+                    },
+                    "SchoolZIP": {
+                        "title": "The SchoolZIP Schema",
+                        "type": "string",
+                        "examples": [
+                            "12701-",
+                            "89102-7115",
+                            "78411-2237"
+                        ]
+                    },
+                    "SchoolPhoneNumber": {
+                        "title": "The SchoolPhoneNumber Schema",
+                        "type": "string",
+                        "examples": [
+                            "8457948830",
+                            "7027995880"
+                        ]
+                    },
+                    "SchoolLowGrade": {
+                        "title": "The SchoolLowGrade Schema",
+                        "type": "string",
+                        "examples": [
+                            "KG",
+                            "06",
+                            "09"
+                        ]
+                    },
+                    "SchoolHighGrade": {
+                        "title": "The SchoolHighGrade Schema",
+                        "type": "string",
+                        "examples": [
+                            "05",
+                            "08",
+                            "12"
+                        ]
+                    },
+                    "SchoolType": {
+                        "title": "The SchoolType Schema",
+                        "type": "string",
+                        "examples": [
+                            "E",
+                            "M",
+                            "H"
+                        ]
+                    },
+                    "SchoolTypeDescription": {
+                        "title": "The SchoolTypeDescription Schema",
+                        "type": "string",
+                        "examples": [
+                            "Elementary",
+                            "Middle/Jr High",
+                            "High"
+                        ]
+                    }
+                },
+                "examples": []
+            }

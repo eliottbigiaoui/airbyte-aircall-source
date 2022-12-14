@@ -1,0 +1,195 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "NewConstructionId",
+      "ApartmentId",
+      "LastDateNewConstructionChanged",
+      "Company",
+      "ProjectName",
+      "ProjectAddress",
+      "ProjectCity",
+      "ProjectState",
+      "ProjectZIP",
+      "NumberOfUnits",
+      "PropertyType",
+      "NewConstructionStatus",
+      "StartDate",
+      "LeaseDate",
+      "OccupancyDate",
+      "CompletionDate",
+      "Progress",
+      "RowVersion"
+    ],
+    "properties": {
+                    "NewConstructionId": {
+                        "title": "The NewConstructionId Schema",
+                        "type": "string",
+                        "examples": [
+                            "4ed7aa40-b4a2-4c50-b611-45100f81fa17",
+                            "dcf7e5b2-6c5b-424f-80f9-88c82aa14276",
+                            "ba4ac005-82c5-4043-83f6-8a93d74a84ca",
+                            "552b397e-1876-4ab6-ac8c-b7735975b3c0"
+                        ]
+                    },
+                    "ApartmentId": {
+                        "title": "The ApartmentId Schema",
+                        "type": "string",
+                        "examples": [
+                            "aee65289-aed3-4c63-9286-2f02f82050b0",
+                            "a6de9963-8106-4d02-b3f5-bf9202ef9995",
+                            "a6f39c52-3d30-46c2-948e-fe4fbd909d5a",
+                            "a36bdd02-80cb-45e1-8510-9909a90793bd"
+                        ]
+                    },
+                    "LastDateNewConstructionChanged": {
+                        "title": "The LastDateNewConstructionChanged Schema",
+                        "type": "string",
+                        "examples": [
+                            "2022-08-31T18:31:56.637Z",
+                            "2022-08-31T18:31:56.623Z",
+                            "2022-08-31T18:31:56.537Z",
+                            "2022-08-31T18:31:56.64Z"
+                        ]
+                    },
+                    "Company": {
+                        "title": "The Company Schema",
+                        "type": "string",
+                        "examples": [
+                            "Wilhoit Properties",
+                            "Palladium USA",
+                            "Roesling Nakamura Tereda Architects",
+                            "Belmont Management Company"
+                        ]
+                    },
+                    "ProjectName": {
+                        "title": "The ProjectName Schema",
+                        "type": "string",
+                        "examples": [
+                            "Carver Ridge",
+                            "Palladium Museum Place",
+                            "Villages at Westview",
+                            "Edgewood Villas"
+                        ]
+                    },
+                    "ProjectAddress": {
+                        "title": "The ProjectAddress Schema",
+                        "type": "string",
+                        "examples": [
+                            "1301 E Dormard Ave",
+                            "1711 W Francis Ave",
+                            "231 W Vince St",
+                            "N 60th St and Bills Rd"
+                        ]
+                    },
+                    "ProjectCity": {
+                        "title": "The ProjectCity Schema",
+                        "type": "string",
+                        "examples": [
+                            "Midland",
+                            "Ventura",
+                            "Killeen"
+                        ]
+                    },
+                    "ProjectState": {
+                        "title": "The ProjectState Schema",
+                        "type": "string",
+                        "examples": [
+                            "TX",
+                            "CA"
+                        ]
+                    },
+                    "ProjectZIP": {
+                        "title": "The ProjectZIP Schema",
+                        "type": "string",
+                        "examples": [
+                            "79701",
+                            "93001",
+                            "76543"
+                        ]
+                    },
+                    "NumberOfUnits": {
+                        "title": "The NumberOfUnits Schema",
+                        "type": "string",
+                        "examples": [
+                            "60",
+                            "240",
+                            "180 (Est.)",
+                            "85"
+                        ]
+                    },
+                    "PropertyType": {
+                        "title": "The PropertyType Schema",
+                        "type": "string",
+                        "examples": [
+                            "Garden",
+                            "Garden, Income Rest.",
+                            "Garden, Seniors"
+                        ]
+                    },
+                    "NewConstructionStatus": {
+                        "title": "The NewConstructionStatus Schema",
+                        "type": "string",
+                        "examples": [
+                            "Planned",
+                            "Construction/Lease-Up",
+                            "Under Construction"
+                        ]
+                    },
+                    "StartDate": {
+                        "title": "The StartDate Schema",
+                        "type": "string",
+                        "examples": [
+                            "2023/02 (Est)",
+                            "2020/12",
+                            "2017/02",
+                            "2022/09 (Est)"
+                        ]
+                    },
+                    "LeaseDate": {
+                        "title": "The LeaseDate Schema",
+                        "type": "string",
+                        "examples": [
+                            "2022/04",
+                            "2022/12 (Est)",
+                            "2023/07 (Est)"
+                        ]
+                    },
+                    "OccupancyDate": {
+                        "title": "The OccupancyDate Schema",
+                        "type": "string",
+                        "examples": [
+                            "2022/06"
+                        ]
+                    },
+                    "CompletionDate": {
+                        "title": "The CompletionDate Schema",
+                        "type": "string",
+                        "examples": [
+                            "2022/10 (Est)"
+                        ]
+                    },
+                    "Progress": {
+                        "title": "The Progress Schema",
+                        "type": "string",
+                        "examples": [
+                            "A mixture of market-rate and affordable housing on a 13.6-acre tract. ",
+                            "Demolition of 180 existing public housing units. Construction of new housing units to include 50 senior units, and 40 market rate units.  Plans also include 7,000sqft of community space and associated site work.  For senior living units, one-bedroom will be 560sqft and two-bedrooms will be 830sqft. For the multifamily units, one-bedroom will be 625sqft, two-bedrooms will be 1,050sqft, three-bedrooms will be 1,100sqft, and four-bedrooms will be 1,900sqft.  This project is set to be built in phases.  Phase 1A will be 129 units of 1, 2, 3, and 4-bedroom multifamily apartments. Phase 1B will be 50 units of 1 and 2-bedroom senior apartments. Phase 2A will be 101 units of 1, 2, 3, and 4-bedroom multifamily apartments. Phase 2B will be 40 units of market rate 1, 2, and 3-bedroom units.  As of November 2014, this project is seeking entitlement approvals from the city.  Once these approvals are granted, the architect will move to plan the approval. "
+                        ]
+                    },
+                    "RowVersion": {
+                        "title": "The RowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            431108606,
+                            433241915,
+                            431079212,
+                            431108601
+                        ]
+                    }
+                },
+                "examples": []
+              }

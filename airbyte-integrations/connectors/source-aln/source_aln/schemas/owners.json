@@ -1,0 +1,63 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "OwnerId",
+      "OwnerName",
+      "OwnerAddress",
+      "OwnerPhone",
+      "RowVersion"
+    ],
+    "properties": {
+                    "OwnerId": {
+                        "title": "The OwnerId Schema",
+                        "type": "string",
+                        "examples": [
+                            "03e3cebb-0a9b-4f67-8726-143ea06adf52",
+                            "e5044f07-30a9-46c7-9070-fd4b80c4d179",
+                            "3f342f3a-4aa2-42d6-93a7-fe90c0dec2c5"
+                        ]
+                    },
+                    "OwnerName": {
+                        "title": "The OwnerName Schema",
+                        "type": "string",
+                        "examples": [
+                            "RIVERSIDE VILLAS NEVADA LLC",
+                            "404 HOMES LLC",
+                            "SP\u0026D SHALLOTTE LLC",
+                            "BARROWS KENNETH L \u0026 TERESA G",
+                            "WALTON HEIGHTS LAND LLC"
+                        ]
+                    },
+                    "OwnerAddress": {
+                        "title": "The OwnerAddress Schema",
+                        "type": "string",
+                        "examples": [
+                            "180 N University Ave #200, Provo, UT 84601, USA",
+                            "",
+                            "2281 Akers Mill Rd SE, Atlanta, GA 30339, USA"
+                        ]
+                    },
+                    "OwnerPhone": {
+                        "title": "The OwnerPhone Schema",
+                        "type": "string",
+                        "examples": [
+                            ""
+                        ]
+                    },
+                    "RowVersion": {
+                        "title": "The RowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            414709951,
+                            414669545,
+                            414674314,
+                            414721056
+                        ]
+                    }
+                },
+                "examples": []
+              }

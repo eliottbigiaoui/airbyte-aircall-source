@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "EntityId",
+      "DatePurged",
+      "EntityType",
+      "PurgedRowVersion"
+    ],
+    "properties": {
+                    "EntityId": {
+                        "title": "The EntityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "325828c8-f065-4674-95a8-47a85bec79f5",
+                            "57343bc8-93e5-4c3b-a5cd-283f747d56de",
+                            "31dfa4c1-6c16-4f12-b14e-7cacfd17abf5",
+                            "c70d82eb-2210-4222-89dd-7d5aad6a7395"
+                        ]
+                    },
+                    "DatePurged": {
+                        "title": "The DatePurged Schema",
+                        "type": "string",
+                        "examples": [
+                            "2020-08-20T19:24:16.687Z",
+                            "2020-08-20T19:24:16.69Z"
+                        ]
+                    },
+                    "EntityType": {
+                        "title": "The EntityType Schema",
+                        "type": "string",
+                        "examples": [
+                            "AptEntityId",
+                            "ContactEntityId",
+                            "FPEntityId"
+                        ]
+                    },
+                    "PurgedRowVersion": {
+                        "title": "The PurgedRowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            247928288,
+                            247928290,
+                            247928292
+                        ]
+                    }
+                },
+                "examples": []
+              }

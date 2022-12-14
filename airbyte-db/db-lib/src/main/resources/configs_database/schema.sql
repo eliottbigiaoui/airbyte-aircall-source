@@ -10,6 +10,23 @@ CREATE
             updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
         );
 
+
+create table "public"."state"(
+  "id" uuid not null,
+  "connection_id" uuid not null,
+  "state" jsonb null,
+  "created_at" timestamptz(35) not null default null,
+  "updated_at" timestamptz(35) not null default null,
+  "stream_name" text null,
+  "namespace" text null,
+  "type" state_type not null default null,
+  constraint "state_pkey"
+    primary key (
+      "id", 
+      "connection_id"
+    )
+);
+
 -- indices
 CREATE
     UNIQUE INDEX IF NOT EXISTS airbyte_configs_type_id_idx ON

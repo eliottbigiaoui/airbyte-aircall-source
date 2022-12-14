@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "AmenityGroupId",
+        "GroupName",
+        "GroupParentId"
+    ],
+    "properties": {
+                    "AmenityGroupId": {
+                        "type": "string",
+                        "title": "The AmenityGroupId Schema",
+                        "examples": [
+                            "e14cbcdb-4e04-4df9-8a8d-b23d79b3374b",
+                            "8467bf52-7eb3-41c9-a475-791b5d59a13e",
+                            "3aba74cc-16f4-4106-aa85-5f77df0ca993"
+                        ]
+                    },
+                    "GroupName": {
+                        "type": "string",
+                        "title": "The GroupName Schema",
+                        "examples": [
+                            "Activity/Lifestyle",
+                            "Bath",
+                            "Waste Disposal"
+                        ]
+                    },
+                    "GroupParentId": {
+                        "type": "string",
+                        "title": "The GroupParentId Schema",
+                        "examples": [
+                            "2d1adee8-be43-4bba-85e6-3484f19e3dd2",
+                            "07e6a797-ed3d-4645-82cb-4a9db268030e",
+                            null,
+                            "9c33a7c3-1ba3-4140-925b-b1c679e3e8cf"
+                        ]
+                    }
+                },
+                "examples": [{
+                    "AmenityGroupId": "e14cbcdb-4e04-4df9-8a8d-b23d79b3374b",
+                    "GroupName": "Activity/Lifestyle",
+                    "GroupParentId": "2d1adee8-be43-4bba-85e6-3484f19e3dd2"
+                },
+                {
+                    "AmenityGroupId": "3aba74cc-16f4-4106-aa85-5f77df0ca993",
+                    "GroupName": "Waste Disposal",
+                    "GroupParentId": "2d1adee8-be43-4bba-85e6-3484f19e3dd2"
+                }]
+}

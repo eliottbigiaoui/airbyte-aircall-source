@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+                    "InactiveEntityType",
+                    "InactiveEntityId",
+                    "EntityRowVersion"
+                ],
+                "properties": {
+                    "InactiveEntityType": {
+                        "title": "The InactiveEntityType Schema",
+                        "type": "string",
+                        "examples": [
+                            "Apartment"
+                        ]
+                    },
+                    "InactiveEntityId": {
+                        "title": "The InactiveEntityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "a35b0838-39ef-44be-85d4-00002557fa5e",
+                            "ab64a4ee-9e72-4ffb-8a10-000279a4be8d",
+                            "ae921724-ad86-494f-9f99-00056b2d5a8c",
+                            "acfc284f-eb2c-4eb9-a0d0-000683b60717",
+                            "a35aac74-9d10-40dc-b29b-000d8ba4537f",
+                            "ab9a7737-021c-4acd-9ea3-000e4bcf783e",
+                            "a23eeade-f05f-4318-8b46-0011e80fb090",
+                            "ae6658dd-f8ec-4280-934c-0014e01a66d7",
+                            "ab841ac8-37f0-4e9b-a6b5-0015832dda2e",
+                            "69a214fe-6756-48d7-a78c-0015fe7a29c8"
+                        ]
+                    },
+                    "EntityRowVersion": {
+                        "title": "The EntityRowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            415136504,
+                            415114243,
+                            415142835,
+                            422881306,
+                            408378271,
+                            415133147,
+                            415137484,
+                            430700570,
+                            415141557,
+                            414953949
+                        ]
+                    }
+                },
+                "examples": []
+            }

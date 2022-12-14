@@ -1,0 +1,108 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "ContactId",
+      "ContactName",
+      "ContactTitle",
+      "ContactEMail",
+      "ContactCompanyOrProperty",
+      "ContactLastDateChanged",
+      "AssociatedEntity",
+      "CorporateEntityId",
+      "RowVersion",
+      "JobCategories"
+    ],
+    "properties": {
+                    "ContactId": {
+                        "title": "The ContactId Schema",
+                        "type": "string",
+                        "examples": [
+                            "c2e66071-4f55-491c-826d-006d9da91f35",
+                            "cabf8df1-b157-4558-a05c-006f87bc7c35",
+                            "c9bce573-5551-47b1-8c8d-00f8086910db"
+                        ]
+                    },
+                    "ContactName": {
+                        "title": "The ContactName Schema",
+                        "type": "string",
+                        "examples": [
+                            "Marilyn Hernandez",
+                            "Rachel Weaver",
+                            "Michael Eisler"
+                        ]
+                    },
+                    "ContactTitle": {
+                        "title": "The ContactTitle Schema",
+                        "type": "string",
+                        "examples": [
+                            "Executive Assistant",
+                            "Operations Specialist",
+                            "President"
+                        ]
+                    },
+                    "ContactEMail": {
+                        "title": "The ContactEMail Schema",
+                        "type": "string",
+                        "examples": [
+                            "mhernandez@thepencos.com",
+                            "rachel.weaver@wellingtonadvisors.com",
+                            "meisler@bacorealty.com"
+                        ]
+                    },
+                    "ContactCompanyOrProperty": {
+                        "title": "The ContactCompanyOrProperty Schema",
+                        "type": "string",
+                        "examples": [
+                            "Pendergraph Management Company, LLC",
+                            "Wellington Advisors",
+                            "AO Realty Corporation"
+                        ]
+                    },
+                    "ContactLastDateChanged": {
+                        "title": "The ContactLastDateChanged Schema",
+                        "type": "string",
+                        "examples": [
+                            "2020-03-11T11:37:18.07Z",
+                            "2022-08-15T11:03:46.83Z",
+                            "2022-07-21T19:30:27.353Z"
+                        ]
+                    },
+                    "AssociatedEntity": {
+                        "title": "The AssociatedEntity Schema",
+                        "type": "string",
+                        "examples": [
+                            "b876a9cd-ffc7-4809-9949-f14f3ccaaf2e",
+                            "b4ebd03a-6b44-456a-8d89-c232fb91bf64",
+                            "b0b2e6ed-3270-4775-9bc4-2f3472d8d593"
+                        ]
+                    },
+                    "CorporateEntityId": {
+                        "title": "The CorporateEntityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "b876a9cd-ffc7-4809-9949-f14f3ccaaf2e",
+                            "b4ebd03a-6b44-456a-8d89-c232fb91bf64",
+                            "bb52a49b-6130-4ae7-8e90-4ca8c955d89e"
+                        ]
+                    },
+                    "RowVersion": {
+                        "title": "The RowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            432358048,
+                            432414801,
+                            432383106
+                        ]
+                    },
+                    "JobCategories": {
+                        "title": "The JobCategories Schema",
+                        "type": "string",
+                        "examples": []
+                    }
+            },
+            "examples": []
+        }

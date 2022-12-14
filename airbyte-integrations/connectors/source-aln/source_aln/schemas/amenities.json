@@ -1,0 +1,71 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "AmenityId",
+      "AmenityGroupId",
+      "Description",
+      "HasQty",
+      "HasValue",
+      "HasAdditionalInformation"
+    ],
+    "properties": {
+                    "AmenityId": {
+                        "title": "The AmenityId Schema",
+                        "type": "string",
+                        "examples": [
+                            "d062bb47-6e15-481a-b7cf-98a3287113c3",
+                            "cbecc40d-cd6d-48d5-a71e-cccaa46f690f",
+                            "2eb959df-a4d6-4370-84f2-4855fcaa568d"
+                        ]
+                    },
+                    "AmenityGroupId": {
+                        "title": "The AmenityGroupId Schema",
+                        "type": "string",
+                        "examples": [
+                            "2d1adee8-be43-4bba-85e6-3484f19e3dd2",
+                            "e14cbcdb-4e04-4df9-8a8d-b23d79b3374b",
+                            "8467bf52-7eb3-41c9-a475-791b5d59a13e"
+                        ]
+                    },
+                    "Description": {
+                        "title": "The Description Schema",
+                        "type": "string",
+                        "examples": [
+                            "# Common Laundry Rms",
+                            "# of Pools",
+                            "# of Tennis Courts",
+                            "24hr Fitness Room",
+                            "Whirlpool/Garden Tubs"
+                        ]
+                    },
+                    "HasQty": {
+                        "title": "The HasQty Schema",
+                        "type": "string",
+                        "examples": [
+                            "Y",
+                            "N"
+                        ]
+                    },
+                    "HasValue": {
+                        "title": "The HasValue Schema",
+                        "type": "string",
+                        "examples": [
+                            "N",
+                            "Y"
+                        ]
+                    },
+                    "HasAdditionalInformation": {
+                        "title": "The HasAdditionalInformation Schema",
+                        "type": "string",
+                        "examples": [
+                            "N",
+                            "Y"
+                        ]
+                    }
+                },
+                "examples": []
+              }

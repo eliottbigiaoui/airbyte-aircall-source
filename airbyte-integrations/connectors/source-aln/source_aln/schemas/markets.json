@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "MarketId",
+      "MarketDescription",
+      "RowVersion"
+    ],
+    "properties": {
+                    "MarketId": {
+                        "title": "The MarketId Schema",
+                        "type": "string",
+                        "examples": [
+                            "ABI",
+                            "ABY",
+                            "ACT",
+                            "TPA"
+                        ]
+                    },
+                    "MarketDescription": {
+                        "title": "The MarketDescription Schema",
+                        "type": "string",
+                        "examples": [
+                            "TX - Abilene",
+                            "GA - Albany",
+                            "TX - Waco/Temple/Killeen",
+                            "FL - Tampa"
+                        ]
+                    },
+                    "RowVersion": {
+                        "title": "The RowVersion Schema",
+                        "type": "integer",
+                        "examples": [
+                            433244610,
+                            433290599,
+                            433244613,
+                            433299096
+                        ]
+                    }
+                },
+                "examples": []
+              }

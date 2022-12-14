@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Root Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+      "JobCategoryId",
+      "JobCategoryDescription"
+    ],
+    "properties": {
+                    "JobCategoryId": {
+                        "title": "The JobCategoryId Schema",
+                        "type": "string",
+                        "examples": [
+                            "c7793b0c-8c6c-412f-a502-91bc8c4b9876",
+                            "c8120229-7c24-4bb7-91f2-0e30b6318462",
+                            "bcd649df-281e-486a-b6b4-b36f08acc13b",
+                            "f88ab456-5402-4d68-b916-7bab6684d23b"
+                        ]
+                    },
+                    "JobCategoryDescription": {
+                        "title": "The JobCategoryDescription Schema",
+                        "type": "string",
+                        "examples": [
+                            "Accounting",
+                            "Acquisitions/Dispositions",
+                            "Admin Asst.",
+                            "Property Manager"
+                        ]
+                    }
+                },
+                "examples": []
+              }
