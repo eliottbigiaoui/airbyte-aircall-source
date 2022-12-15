@@ -82,18 +82,25 @@ class IncrementalAircallStream(AircallStream, ABC):
         try:
             latest_call = latest_record['ended_at']
             if current_stream_state not in [None, {}]:
+                print("current_stream_state is ok")
                 if latest_call != None:
+                    print("and latest_call is ok")
                     return {self.cursor_field[-1]: max(current_stream_state['ended_at'], latest_call)}
                 else:
-                    {self.cursor_field[-1]: current_stream_state['ended_at']}
+                    print("but latest_call is None, so we keep the current state:")
+                    return {self.cursor_field[-1]: current_stream_state['ended_at']}
             else:
+                print("current_stream_state is None or empty")
                 if latest_call != None:
+                    print("but latest_call is not None")
                     return {self.cursor_field[-1]: latest_call}
                 else:
+                    print("and latest_call is None, so we show the starting time:")
                     print({self.cursor_field[-1]: latest_record['started_at']})
                     return {self.cursor_field[-1]: latest_record['started_at']}
         except Exception as e:
             print(e)
+            print("problem excepted")
             print({self.cursor_field[-1]: latest_record['started_at']})
             return {self.cursor_field[-1]: latest_record['started_at']}
 
