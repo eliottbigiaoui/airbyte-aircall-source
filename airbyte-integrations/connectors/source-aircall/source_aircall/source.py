@@ -90,9 +90,11 @@ class IncrementalAircallStream(AircallStream, ABC):
                 if latest_call != None:
                     return {self.cursor_field[-1]: latest_call}
                 else:
+                    print({self.cursor_field[-1]: latest_record['started_at']})
                     return {self.cursor_field[-1]: latest_record['started_at']}
         except Exception as e:
             print(e)
+            print({self.cursor_field[-1]: latest_record['started_at']})
             return {self.cursor_field[-1]: latest_record['started_at']}
 
 
