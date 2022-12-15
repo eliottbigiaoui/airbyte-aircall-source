@@ -77,7 +77,7 @@ class IncrementalAircallStream(AircallStream, ABC):
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
         print(current_stream_state)
-        print(self.state)
+        print(self)
         print(latest_record)
         try:
             latest_call = latest_record['ended_at']
