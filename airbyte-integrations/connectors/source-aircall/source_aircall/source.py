@@ -76,6 +76,9 @@ class IncrementalAircallStream(AircallStream, ABC):
         Override to determine the latest state after reading the latest record. This typically compared the cursor_field from the latest record and
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
+        print(current_stream_state)
+        print(self)
+        print(latest_record)
         try:
             latest_call = latest_record['ended_at']
             if current_stream_state not in [None, {}]:
@@ -88,8 +91,9 @@ class IncrementalAircallStream(AircallStream, ABC):
                     return {self.cursor_field[-1]: latest_call}
                 else:
                     return None
-        except:
-            None
+        except Exception as e:
+            print(e)
+            raise e
 
 
 
