@@ -39,11 +39,11 @@ class AircallStream(HttpStream, ABC):
         params = super().request_params(stream_state, stream_slice, next_page_token)
         if stream_state not in [None, {}]:
             if stream_state.get('ended_at') == None:
-                params['from'] = int(datetime.utcnow().timestamp()) - 157784630
+                params['from'] = 1671091566 #int(datetime.utcnow().timestamp()) - 260000
             else:
-                params['from'] = int(stream_state.get('ended_at'))
+                params['from'] = 1671091566 #stream_state.get('ended_at')
         else:
-            params['from'] = int(datetime.utcnow().timestamp()) - 157784630 #260000
+            params['from'] = 1671091566 #int(datetime.utcnow().timestamp()) - 260000
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
@@ -76,6 +76,7 @@ class IncrementalAircallStream(AircallStream, ABC):
         Override to determine the latest state after reading the latest record. This typically compared the cursor_field from the latest record and
         the current state and picks the 'most' recent cursor. This is how a stream's state is determined. Required for incremental.
         """
+
         try:
             latest_call = latest_record['ended_at']
             if current_stream_state not in [None, {}]:
@@ -96,7 +97,7 @@ class IncrementalAircallStream(AircallStream, ABC):
                     return {self.cursor_field[-1]: latest_record['started_at']}
         except Exception as e:
             print(e)
-            #print("error excepted")
+            #print("problem excepted")
             return {self.cursor_field[-1]: latest_record['started_at']}
 
 
