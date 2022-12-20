@@ -41,7 +41,7 @@ class AircallStream(HttpStream, ABC):
             if stream_state.get('ended_at') == None:
                 params['from'] = int(datetime.utcnow().timestamp()) - 157784630
             else:
-                params['from'] = stream_state.get('ended_at')
+                params['from'] = int(stream_state.get('ended_at'))
         else:
             params['from'] = int(datetime.utcnow().timestamp()) - 157784630 #260000
         return {**params, **next_page_token} if next_page_token else params
