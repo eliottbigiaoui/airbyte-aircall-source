@@ -39,11 +39,11 @@ class AircallStream(HttpStream, ABC):
         params = super().request_params(stream_state, stream_slice, next_page_token)
         if stream_state not in [None, {}]:
             if stream_state.get('ended_at') == None:
-                params['from'] = 1671091566 #int(datetime.utcnow().timestamp()) - 260000
+                params['from'] = int(datetime.utcnow().timestamp()) - 1671091566 #260000  #int(datetime.utcnow().timestamp()) - 260000
             else:
-                params['from'] = 1671091566 #stream_state.get('ended_at')
+                params['from'] = int(stream_state.get('ended_at'))
         else:
-            params['from'] = 1671091566 #int(datetime.utcnow().timestamp()) - 260000
+            params['from'] = int(datetime.utcnow().timestamp()) - 1671091566 #int(datetime.utcnow().timestamp()) - 260000
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
