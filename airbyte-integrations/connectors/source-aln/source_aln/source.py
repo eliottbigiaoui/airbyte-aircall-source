@@ -39,8 +39,7 @@ class AlnStream(HttpStream, ABC):
             if stream_state not in [None, {}]:
                 params['$filter'] = f"RowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                pass
-                #params['$filter'] = f"RowVersion gt 437089133"
+                params['$filter'] = f"RowVersion gt 437089133"
             if self.name == "apartments":
                 params['$expand'] = "PhoneNumbers,Addresses"
             elif self.name == "contacts":
@@ -50,26 +49,22 @@ class AlnStream(HttpStream, ABC):
             if stream_state not in [None, {}]:
                 params['$filter'] = f"EntityRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                pass
-                #params['$filter'] = f"EntityRowVersion gt 437089133"
+                params['$filter'] = f"EntityRowVersion gt 437089133"
         elif self.name == "purged_entities":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"PurgedRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                pass
-                #params['$filter'] = f"PurgedRowVersion gt 437089133"
+                params['$filter'] = f"PurgedRowVersion gt 437089133"
         elif self.name == "schools":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"SchoolLastDateChanged gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                pass
-                #params['$filter'] = f"SchoolLastDateChanged gt 2014-02-02T16:15:23.693Z"
+                params['$filter'] = f"SchoolLastDateChanged gt 2014-02-02T16:15:23.693Z"
         elif self.name == "school_districts":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"SchoolDistrictLastDateChanged gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                pass
-                #params['$filter'] = f"SchoolDistrictLastDateChanged gt 2014-02-02T16:15:23.693Z"
+                params['$filter'] = f"SchoolDistrictLastDateChanged gt 2014-02-02T16:15:23.693Z"
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
