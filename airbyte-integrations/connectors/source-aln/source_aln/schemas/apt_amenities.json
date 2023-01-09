@@ -1,0 +1,104 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "AmenityId",
+        "ApartmentId",
+        "LastDateChanged",
+        "Qty",
+        "Value",
+        "AdditionalInformation",
+        "RowVersion"
+    ],
+    "properties": {
+                    "AmenityId": {
+                        "type": "string",
+                        "title": "The AmenityId Schema",
+                        "examples": [
+                            "1b34236c-7f4e-4c00-a083-06a0b1f63aeb"
+                        ]
+                    },
+                    "ApartmentId": {
+                        "type": "string",
+                        "title": "The ApartmentId Schema",
+                        "examples": [
+                            "a18ac1a8-8223-44af-bc81-0003e6679df7",
+                            "a0446304-e070-412a-b5c3-0005f58e6f44",
+                            "a949689e-e86f-4bf6-bae5-000619f54cd4",
+                            "a02d121d-6a89-40ea-96e1-000626ba02a3",
+                            "ace20467-7def-47ff-be9c-00068b9f58a2",
+                            "a5411524-817b-46d4-8380-0009c669d4bc",
+                            "a34bd547-a8fb-4ee9-b362-000a829125b0"
+                        ]
+                    },
+                    "LastDateChanged": {
+                        "type": "string",
+                        "title": "The LastDateChanged Schema",
+                        "examples": [
+                            "2016-02-08T08:30:48.05Z",
+                            "2019-06-06T17:14:41.183Z",
+                            "2015-12-16T11:11:45.467Z",
+                            "2018-08-20T14:01:13.867Z",
+                            "2018-11-05T10:58:22.79Z",
+                            "2020-01-20T15:07:26.28Z",
+                            "2017-03-20T12:54:38.817Z"
+                        ]
+                    },
+                    "Qty": {
+                        "type": "null",
+                        "title": "The Qty Schema",
+                        "examples": [
+                            null
+                        ]
+                    },
+                    "Value": {
+                        "type": "string",
+                        "title": "The Value Schema",
+                        "examples": [
+                            "N",
+                            "Y"
+                        ]
+                    },
+                    "AdditionalInformation": {
+                        "type": "null",
+                        "title": "The AdditionalInformation Schema",
+                        "examples": [
+                            null
+                        ]
+                    },
+                    "RowVersion": {
+                        "type": "integer",
+                        "title": "The RowVersion Schema",
+                        "examples": [
+                            375784372,
+                            377026225,
+                            375230994,
+                            377229384,
+                            378076445,
+                            380486609,
+                            377920628
+                        ]
+                    }
+                },
+                "examples": [{
+                    "AmenityId": "1b34236c-7f4e-4c00-a083-06a0b1f63aeb",
+                    "ApartmentId": "a18ac1a8-8223-44af-bc81-0003e6679df7",
+                    "LastDateChanged": "2016-02-08T08:30:48.05Z",
+                    "Qty": null,
+                    "Value": "N",
+                    "AdditionalInformation": null,
+                    "RowVersion": 375784372
+                },
+                {
+                    "AmenityId": "1b34236c-7f4e-4c00-a083-06a0b1f63aeb",
+                    "ApartmentId": "a34bd547-a8fb-4ee9-b362-000a829125b0",
+                    "LastDateChanged": "2017-03-20T12:54:38.817Z",
+                    "Qty": null,
+                    "Value": "N",
+                    "AdditionalInformation": null,
+                    "RowVersion": 377920628
+                }]
+            }

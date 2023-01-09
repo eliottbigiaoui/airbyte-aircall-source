@@ -35,11 +35,11 @@ class AlnStream(HttpStream, ABC):
     ) -> MutableMapping[str, Any]:
         params = super().request_params(stream_state, stream_slice, next_page_token)
         params['apikey'] = self.apikey
-        if self.name in ["apartments", "contacts", "markets", "submarkets", "new_constructions", "owners", "management_companies"]:
+        if self.name in ["apartments", "apt_amenities" "contacts", "markets", "submarkets", "new_constructions", "owners", "management_companies"]:
             if stream_state not in [None, {}]:
                 params['$filter'] = f"RowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"RowVersion gt 437089133"
+                params['$filter'] = f"RowVersion gt 453757017"
             if self.name == "apartments":
                 params['$expand'] = "PhoneNumbers,Addresses"
             elif self.name == "contacts":
@@ -49,22 +49,22 @@ class AlnStream(HttpStream, ABC):
             if stream_state not in [None, {}]:
                 params['$filter'] = f"EntityRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"EntityRowVersion gt 437089133"
+                params['$filter'] = f"EntityRowVersion gt 453757017"
         elif self.name == "purged_entities":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"PurgedRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"PurgedRowVersion gt 437089133"
+                params['$filter'] = f"PurgedRowVersion gt 453757017"
         elif self.name == "schools":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"SchoolLastDateChanged gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"SchoolLastDateChanged gt 2014-02-02T16:15:23.693Z"
+                params['$filter'] = f"SchoolLastDateChanged gt 2022-02-02T16:15:23.693Z"
         elif self.name == "school_districts":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"SchoolDistrictLastDateChanged gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"SchoolDistrictLastDateChanged gt 2014-02-02T16:15:23.693Z"
+                params['$filter'] = f"SchoolDistrictLastDateChanged gt 2022-02-02T16:15:23.693Z"
         return {**params, **next_page_token} if next_page_token else params
 
     def parse_response(self, response: requests.Response, **kwargs) -> Iterable[Mapping]:
@@ -186,6 +186,17 @@ class Apartments(IncrementalAlnStream):
 
     def path(self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None) -> str:
         return "FlatApartments"
+
+
+class AptAmenities(IncrementalAlnStream):
+    primary_key = "AmenityId"
+
+    def __init__(self, apikey: str):
+        super().__init__()
+        self.apikey = apikey
+
+    def path(self, stream_state: Mapping[str, Any] = None, stream_slice: Mapping[str, Any] = None, next_page_token: Mapping[str, Any] = None) -> str:
+        return "AptAmenities"
 
 
 class Contacts(IncrementalAlnStream):
@@ -335,6 +346,7 @@ class SourceAln(AbstractSource):
                 SchoolDistricts(config['apikey']),
                 StatusCodes(config['apikey']),
                 Apartments(config['apikey']),
+                AptAmenities(config['apikey']),
                 Contacts(config['apikey']),
                 ManagementCompanies(config['apikey']),
                 Markets(config['apikey']),
