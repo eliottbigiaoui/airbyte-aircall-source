@@ -189,7 +189,7 @@ class Apartments(IncrementalAlnStream):
 
 
 class AptAmenities(IncrementalAlnStream):
-    primary_key = "AmenityId"
+    primary_key = ["AmenityId", "ApartmentId"]
 
     def __init__(self, apikey: str):
         super().__init__()
