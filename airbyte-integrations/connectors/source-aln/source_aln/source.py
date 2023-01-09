@@ -39,7 +39,7 @@ class AlnStream(HttpStream, ABC):
             if stream_state not in [None, {}]:
                 params['$filter'] = f"RowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"RowVersion gt 453757017"
+                params['$filter'] = f"RowVersion gt 463750017"
             if self.name == "apartments":
                 params['$expand'] = "PhoneNumbers,Addresses"
             elif self.name == "contacts":
@@ -49,12 +49,12 @@ class AlnStream(HttpStream, ABC):
             if stream_state not in [None, {}]:
                 params['$filter'] = f"EntityRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"EntityRowVersion gt 453757017"
+                params['$filter'] = f"EntityRowVersion gt 463750017"
         elif self.name == "purged_entities":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"PurgedRowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
-                params['$filter'] = f"PurgedRowVersion gt 453757017"
+                params['$filter'] = f"PurgedRowVersion gt 463750017"
         elif self.name == "schools":
             if stream_state not in [None, {}]:
                 params['$filter'] = f"SchoolLastDateChanged gt {stream_state.get(self.cursor_field[-1])}"
