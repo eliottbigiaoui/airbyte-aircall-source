@@ -35,7 +35,7 @@ class AlnStream(HttpStream, ABC):
     ) -> MutableMapping[str, Any]:
         params = super().request_params(stream_state, stream_slice, next_page_token)
         params['apikey'] = self.apikey
-        if self.name in ["apartments", "apt_amenities" "contacts", "markets", "submarkets", "new_constructions", "owners", "management_companies"]:
+        if self.name in ["apartments", "apt_amenities", "contacts", "markets", "submarkets", "new_constructions", "owners", "management_companies"]:
             if stream_state not in [None, {}]:
                 params['$filter'] = f"RowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
