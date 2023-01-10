@@ -40,10 +40,12 @@ class AlnStream(HttpStream, ABC):
                 params['$filter'] = f"RowVersion gt {stream_state.get(self.cursor_field[-1])}"
             else:
                 params['$filter'] = f"RowVersion gt 463750000"
-            if self.name == "apartments":
-                params['$expand'] = "PhoneNumbers,Addresses"
+            if self.name in "apartments":
+                params['$expand'] = "PhoneNumbers,Addresses,Schools"
             elif self.name == "contacts":
-                params['$expand'] = "JobCategories"
+                params['$expand'] = "JobCategories,PhoneNumbers,Addresses"
+            elif self.name == "management_companies":
+                params['$expand'] = "PhoneNumbers,Addresses"
             return {**params, **next_page_token} if next_page_token else params
         elif self.name == "inactive_entities":
             if stream_state not in [None, {}]:
@@ -74,8 +76,14 @@ class AlnStream(HttpStream, ABC):
             if self.name == "apartments":
                 record["PhoneNumbers"] = str(record.get("PhoneNumbers"))
                 record["Addresses"] = str(record.get("Addresses"))
+                record["Schools"] = str(record.get("Schools"))
             elif self.name == "contacts":
                 record["JobCategories"] = str(record.get("JobCategories"))
+                record["PhoneNumbers"] = str(record.get("PhoneNumbers"))
+                record["Addresses"] = str(record.get("Addresses"))
+            elif self.name == "management_companies":
+                record["PhoneNumbers"] = str(record.get("PhoneNumbers"))
+                record["Addresses"] = str(record.get("Addresses"))
         yield from records
 
 

@@ -14,7 +14,9 @@
       "AssociatedEntity",
       "CorporateEntityId",
       "RowVersion",
-      "JobCategories"
+      "JobCategories",
+      "PhoneNumbers",
+      "Addresses"
     ],
     "properties": {
                     "ContactId": {
@@ -102,6 +104,22 @@
                         "title": "The JobCategories Schema",
                         "type": "string",
                         "examples": []
+                    },
+                    "PhoneNumbers": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The PhoneNumbers Schema",
+                        "examples": [
+                            ""
+                        ]
+                    },
+                    "Addresses": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The Addresses Schema",
+                        "examples": [
+                            ""
+                        ]
                     }
             },
             "examples": []

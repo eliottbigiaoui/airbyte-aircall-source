@@ -20,7 +20,9 @@
       "CorporatePropertyCount",
       "CorporateUnitCount",
       "CorporateOfficeEntityId",
-      "RowVersion"
+      "RowVersion",
+      "PhoneNumbers",
+      "Addresses"
     ],
     "properties": {
                     "ManagementCompanyEntityId": {
@@ -165,6 +167,22 @@
                         "examples": [
                             1,
                             2
+                        ]
+                    },
+                    "PhoneNumbers": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The PhoneNumbers Schema",
+                        "examples": [
+                            ""
+                        ]
+                    },
+                    "Addresses": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The Addresses Schema",
+                        "examples": [
+                            ""
                         ]
                     }
                 },

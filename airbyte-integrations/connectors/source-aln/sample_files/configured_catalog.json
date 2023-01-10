@@ -112,7 +112,8 @@
                 "NoteToLocators",
                 "NoteToLocatorsExpires",
                 "PhoneNumbers",
-                "Addresses"
+                "Addresses",
+                "Schools"
             ],
             "properties": {
                 "ApartmentId": {
@@ -938,6 +939,14 @@
                     "examples": [
                         ""
                     ]
+                },
+                "Schools": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The Schools Schema",
+                    "examples": [
+                        ""
+                    ]
                 }
             },
             "examples": [{
@@ -1043,7 +1052,8 @@
                 "NoteToLocators": null,
                 "NoteToLocatorsExpires": null,
                 "PhoneNumbers": "",
-                "Addresses": ""
+                "Addresses": "",
+                "Schools": ""
             }]
         },
         "supported_sync_modes": ["full_refresh", "incremental"],
@@ -1225,7 +1235,9 @@
               "AssociatedEntity",
               "CorporateEntityId",
               "RowVersion",
-              "JobCategories"
+              "JobCategories",
+              "PhoneNumbers",
+              "Addresses"
             ],
             "properties": {
                             "ContactId": {
@@ -1313,10 +1325,26 @@
                                 "title": "The JobCategories Schema",
                                 "type": "string",
                                 "examples": []
+                            },
+                            "PhoneNumbers": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The PhoneNumbers Schema",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "Addresses": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The Addresses Schema",
+                                "examples": [
+                                    ""
+                                ]
                             }
                     },
                     "examples": []
-              },
+                },
               "supported_sync_modes": ["full_refresh", "incremental"],
               "supported_destination_sync_modes": ["overwrite", "append_dedup"],
               "source_defined_cursor": false,
@@ -1526,177 +1554,195 @@
       "stream": {
         "name": "management_companies",
         "json_schema": {
-          "$schema": "https://json-schema.org/draft/2019-09/schema",
-          "$id": "http://example.com/example.json",
-          "title": "Root Schema",
-          "type": "object",
-          "default": {},
-          "required": [
-            "ManagementCompanyEntityId",
-            "ManagementCompanyMarket",
-            "ManagementCompanyName",
-            "ManagementCompanyWebSite",
-            "ManagementCompanyLastDateChanged",
-            "ManagementCompanyParentId",
-            "MgmtOfficeLevel",
-            "MgmtOfficeIntegerId",
-            "ParentOfficeIntegerId",
-            "CorporateOfficeIntegerId",
-            "OfficePropertyCount",
-            "OfficeUnitCount",
-            "CorporatePropertyCount",
-            "CorporateUnitCount",
-            "CorporateOfficeEntityId",
-            "RowVersion"
-          ],
-          "properties": {
-                          "ManagementCompanyEntityId": {
-                              "title": "The ManagementCompanyEntityId Schema",
-                              "type": "string",
-                              "examples": [
-                                  "b509198a-8bd4-430b-af13-02c0bd7d9dc4",
-                                  "b406fc5b-a403-4dc8-b139-0aa29c0d0873",
-                                  "baf889d5-9bf5-4674-87be-213455292aef"
-                              ]
-                          },
-                          "ManagementCompanyMarket": {
-                              "title": "The ManagementCompanyMarket Schema",
-                              "type": "string",
-                              "examples": [
-                                  "PHL",
-                                  "ORF",
-                                  "NYC"
-                              ]
-                          },
-                          "ManagementCompanyName": {
-                              "title": "The ManagementCompanyName Schema",
-                              "type": "string",
-                              "examples": [
-                                  "AJH Management",
-                                  "Franklin Johnston Group",
-                                  "Grenadier Realty Corporation"
-                              ]
-                          },
-                          "ManagementCompanyWebSite": {
-                              "title": "The ManagementCompanyWebSite Schema",
-                              "type": "string",
-                              "examples": [
-                                  "https://www.ajhmanagement.com/",
-                                  "https://www.thefranklinjohnstongroup.com",
-                                  "http://www.westminstercompany.com",
-                                  "http://www.rhf.org",
-                                  "https://lurincapital.com/",
-                                  "http://www.upmapartments.com",
-                                  "https://www.grcrealty.com/contact-us"
-                              ]
-                          },
-                          "ManagementCompanyLastDateChanged": {
-                              "title": "The ManagementCompanyLastDateChanged Schema",
-                              "type": "string",
-                              "examples": [
-                                  "2022-05-06T10:15:10.073Z",
-                                  "2022-02-25T08:51:02.71Z",
-                                  "2022-08-18T16:13:34.237Z"
-                              ]
-                          },
-                          "ManagementCompanyParentId": {
-                              "title": "The ManagementCompanyParentId Schema",
-                              "type": "string",
-                              "examples": [
-                                  "be8fed32-e75a-4331-94d2-f3d0774bc824"
-                              ]
-                          },
-                          "RowVersion": {
-                              "title": "The RowVersion Schema",
-                              "type": "integer",
-                              "examples": [
-                                  432271059,
-                                  432261079,
-                                  432267474
-                              ]
-                          },
-                          "OfficePropertyCount": {
-                              "title": "The OfficePropertyCount Schema",
-                              "type": "integer",
-                              "examples": [
-                                  1,
-                                  0
-                              ]
-                          },
-                          "OfficeUnitCount": {
-                              "title": "The OfficeUnitCount Schema",
-                              "type": "integer",
-                              "examples": [
-                                  90,
-                                  180,
-                                  20,
-                                  0,
-                                  41
-                              ]
-                          },
-                          "CorporatePropertyCount": {
-                              "title": "The CorporatePropertyCount Schema",
-                              "type": "integer",
-                              "examples": [
-                                  52,
-                                  106,
-                                  11
-                              ]
-                          },
-                          "CorporateUnitCount": {
-                              "title": "The CorporateUnitCount Schema",
-                              "type": "integer",
-                              "examples": [
-                                  16859,
-                                  17947,
-                                  3673
-                              ]
-                          },
-                          "CorporateOfficeEntityId": {
-                              "title": "The CorporateOfficeEntityId Schema",
-                              "type": "string",
-                              "examples": [
-                                  "b509198a-8bd4-430b-af13-02c0bd7d9dc4",
-                                  "b406fc5b-a403-4dc8-b139-0aa29c0d0873",
-                                  "baf889d5-9bf5-4674-87be-213455292aef"
-                              ]
-                          },
-                          "MgmtOfficeIntegerId": {
-                              "title": "The MgmtOfficeIntegerId Schema",
-                              "type": "integer",
-                              "examples": [
-                                  142094,
-                                  123275,
-                                  138162
-                              ]
-                          },
-                          "ParentOfficeIntegerId": {
-                              "title": "The ParentOfficeIntegerId Schema",
-                              "type": "integer",
-                              "examples": [
-                                  114690
-                              ]
-                          },
-                          "CorporateOfficeIntegerId": {
-                              "title": "The CorporateOfficeIntegerId Schema",
-                              "type": "integer",
-                              "examples": [
-                                  142094,
-                                  123275,
-                                  138162
-                              ]
-                          },
-                          "MgmtOfficeLevel": {
-                              "title": "The MgmtOfficeLevel Schema",
-                              "type": "integer",
-                              "examples": [
-                                  1,
-                                  2
-                              ]
-                          }
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "$id": "http://example.com/example.json",
+            "title": "Root Schema",
+            "type": "object",
+            "default": {},
+            "required": [
+              "ManagementCompanyEntityId",
+              "ManagementCompanyMarket",
+              "ManagementCompanyName",
+              "ManagementCompanyWebSite",
+              "ManagementCompanyLastDateChanged",
+              "ManagementCompanyParentId",
+              "MgmtOfficeLevel",
+              "MgmtOfficeIntegerId",
+              "ParentOfficeIntegerId",
+              "CorporateOfficeIntegerId",
+              "OfficePropertyCount",
+              "OfficeUnitCount",
+              "CorporatePropertyCount",
+              "CorporateUnitCount",
+              "CorporateOfficeEntityId",
+              "RowVersion",
+              "PhoneNumbers",
+              "Addresses"
+            ],
+            "properties": {
+                            "ManagementCompanyEntityId": {
+                                "title": "The ManagementCompanyEntityId Schema",
+                                "type": "string",
+                                "examples": [
+                                    "b509198a-8bd4-430b-af13-02c0bd7d9dc4",
+                                    "b406fc5b-a403-4dc8-b139-0aa29c0d0873",
+                                    "baf889d5-9bf5-4674-87be-213455292aef"
+                                ]
+                            },
+                            "ManagementCompanyMarket": {
+                                "title": "The ManagementCompanyMarket Schema",
+                                "type": "string",
+                                "examples": [
+                                    "PHL",
+                                    "ORF",
+                                    "NYC"
+                                ]
+                            },
+                            "ManagementCompanyName": {
+                                "title": "The ManagementCompanyName Schema",
+                                "type": "string",
+                                "examples": [
+                                    "AJH Management",
+                                    "Franklin Johnston Group",
+                                    "Grenadier Realty Corporation"
+                                ]
+                            },
+                            "ManagementCompanyWebSite": {
+                                "title": "The ManagementCompanyWebSite Schema",
+                                "type": "string",
+                                "examples": [
+                                    "https://www.ajhmanagement.com/",
+                                    "https://www.thefranklinjohnstongroup.com",
+                                    "http://www.westminstercompany.com",
+                                    "http://www.rhf.org",
+                                    "https://lurincapital.com/",
+                                    "http://www.upmapartments.com",
+                                    "https://www.grcrealty.com/contact-us"
+                                ]
+                            },
+                            "ManagementCompanyLastDateChanged": {
+                                "title": "The ManagementCompanyLastDateChanged Schema",
+                                "type": "string",
+                                "examples": [
+                                    "2022-05-06T10:15:10.073Z",
+                                    "2022-02-25T08:51:02.71Z",
+                                    "2022-08-18T16:13:34.237Z"
+                                ]
+                            },
+                            "ManagementCompanyParentId": {
+                                "title": "The ManagementCompanyParentId Schema",
+                                "type": "string",
+                                "examples": [
+                                    "be8fed32-e75a-4331-94d2-f3d0774bc824"
+                                ]
+                            },
+                            "RowVersion": {
+                                "title": "The RowVersion Schema",
+                                "type": "integer",
+                                "examples": [
+                                    432271059,
+                                    432261079,
+                                    432267474
+                                ]
+                            },
+                            "OfficePropertyCount": {
+                                "title": "The OfficePropertyCount Schema",
+                                "type": "integer",
+                                "examples": [
+                                    1,
+                                    0
+                                ]
+                            },
+                            "OfficeUnitCount": {
+                                "title": "The OfficeUnitCount Schema",
+                                "type": "integer",
+                                "examples": [
+                                    90,
+                                    180,
+                                    20,
+                                    0,
+                                    41
+                                ]
+                            },
+                            "CorporatePropertyCount": {
+                                "title": "The CorporatePropertyCount Schema",
+                                "type": "integer",
+                                "examples": [
+                                    52,
+                                    106,
+                                    11
+                                ]
+                            },
+                            "CorporateUnitCount": {
+                                "title": "The CorporateUnitCount Schema",
+                                "type": "integer",
+                                "examples": [
+                                    16859,
+                                    17947,
+                                    3673
+                                ]
+                            },
+                            "CorporateOfficeEntityId": {
+                                "title": "The CorporateOfficeEntityId Schema",
+                                "type": "string",
+                                "examples": [
+                                    "b509198a-8bd4-430b-af13-02c0bd7d9dc4",
+                                    "b406fc5b-a403-4dc8-b139-0aa29c0d0873",
+                                    "baf889d5-9bf5-4674-87be-213455292aef"
+                                ]
+                            },
+                            "MgmtOfficeIntegerId": {
+                                "title": "The MgmtOfficeIntegerId Schema",
+                                "type": "integer",
+                                "examples": [
+                                    142094,
+                                    123275,
+                                    138162
+                                ]
+                            },
+                            "ParentOfficeIntegerId": {
+                                "title": "The ParentOfficeIntegerId Schema",
+                                "type": "integer",
+                                "examples": [
+                                    114690
+                                ]
+                            },
+                            "CorporateOfficeIntegerId": {
+                                "title": "The CorporateOfficeIntegerId Schema",
+                                "type": "integer",
+                                "examples": [
+                                    142094,
+                                    123275,
+                                    138162
+                                ]
+                            },
+                            "MgmtOfficeLevel": {
+                                "title": "The MgmtOfficeLevel Schema",
+                                "type": "integer",
+                                "examples": [
+                                    1,
+                                    2
+                                ]
+                            },
+                            "PhoneNumbers": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The PhoneNumbers Schema",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "Addresses": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The Addresses Schema",
+                                "examples": [
+                                    ""
+                                ]
+                            }
+                        },
+                        "examples": []
                       },
-                      "examples": []
-                    },
                     "supported_sync_modes": ["full_refresh", "incremental"],
                     "supported_destination_sync_modes": ["overwrite", "append_dedup"],
                     "source_defined_cursor": false,
